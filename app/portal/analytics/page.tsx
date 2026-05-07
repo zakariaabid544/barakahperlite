@@ -22,7 +22,8 @@ export default async function Page() {
     cookieStore.get(adminSessionCookieName)?.value,
   );
 
-  if (!session) redirect("/portal/login");
+  if (!session) redirect("/portal/login?next=/portal/analytics");
+  if (session.role !== "admin") redirect("/portal/client");
 
   const data = await getAnalyticsDashboardData();
   return <AnalyticsDashboardPage data={data} />;

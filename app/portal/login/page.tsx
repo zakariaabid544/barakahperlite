@@ -8,7 +8,7 @@ import {
 } from "@/lib/auth/session";
 
 export const metadata: Metadata = {
-  title: "Portail admin",
+  title: "Portail client",
   robots: { index: false, follow: false },
 };
 
@@ -17,12 +17,28 @@ function getSafeNextPath(value: string | string[] | undefined) {
   if (
     nextPath &&
     (nextPath.startsWith("/portal/analytics") ||
-      nextPath.startsWith("/portal/admin"))
+      nextPath.startsWith("/portal/admin") ||
+      nextPath.startsWith("/portal/client"))
   ) {
     return nextPath;
   }
 
-  return "/portal/analytics";
+  return "/portal/client";
+}
+
+function getSessionRedirect(role: string, nextPath: string) {
+  if (role === "admin") {
+    if (
+      nextPath.startsWith("/portal/analytics") ||
+      nextPath.startsWith("/portal/admin")
+    ) {
+      return nextPath;
+    }
+
+    return "/portal/analytics";
+  }
+
+  return "/portal/client";
 }
 
 export default async function Page({
@@ -37,7 +53,7 @@ export default async function Page({
   const params = searchParams ? await searchParams : undefined;
   const nextPath = getSafeNextPath(params?.next);
 
-  if (session) redirect(nextPath);
+  if (session) redirect(getSessionRedirect(session.role, nextPath));
 
   return <PortalLoginPage nextPath={nextPath} />;
 }

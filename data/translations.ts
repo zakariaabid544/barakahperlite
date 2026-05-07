@@ -242,6 +242,11 @@ const metaFr: LocalizedMeta = {
     description:
       "Base du futur portail client Barakah Perlite pour devis, commandes, fiches techniques, documents et support.",
   },
+  "/portal/login": {
+    title: "Portail client | Barakah Perlite",
+    description:
+      "Connexion sécurisée au portail client Barakah Perlite pour accéder aux espaces privés autorisés.",
+  },
 };
 
 export const translations = {
@@ -300,7 +305,7 @@ export const translations = {
         { label: "Galerie", href: "/galerie" },
         { label: "Expérience", href: "/experience" },
         { label: "Contact", href: "/contact" },
-        { label: "Portail client", href: "/client" },
+        { label: "Portail client", href: "/portal/login" },
         { label: "Politique de confidentialité", href: "/privacy-policy" },
         { label: "Politique cookies", href: "/cookie-policy" },
         { label: "Conditions générales", href: "/terms" },
@@ -2159,6 +2164,11 @@ export const translations = {
         description:
           "Foundation for the future Barakah Perlite client portal: quotes, orders, technical sheets, documents and support.",
       },
+      "/portal/login": {
+        title: "Client portal | Barakah Perlite",
+        description:
+          "Secure login to the Barakah Perlite client portal for authorized private access.",
+      },
     } satisfies LocalizedMeta,
     nav: {
       aria: "Main navigation",
@@ -2239,7 +2249,7 @@ export const translations = {
         { label: "Gallery", href: "/galerie" },
         { label: "Experience", href: "/experience" },
         { label: "Contact", href: "/contact" },
-        { label: "Client portal", href: "/client" },
+        { label: "Client portal", href: "/portal/login" },
         { label: "Privacy Policy", href: "/privacy-policy" },
         { label: "Cookie Policy", href: "/cookie-policy" },
         { label: "Terms & Conditions", href: "/terms" },
@@ -4093,6 +4103,11 @@ export const translations = {
         description:
           "مساحة مبدئية لبوابة عملاء Barakah Perlite المستقبلية للعروض والطلبات والوثائق التقنية والدعم.",
       },
+      "/portal/login": {
+        title: "بوابة العميل | Barakah Perlite",
+        description:
+          "تسجيل دخول آمن إلى بوابة عملاء Barakah Perlite للوصول الخاص المصرح به.",
+      },
     } satisfies LocalizedMeta,
     nav: {
       aria: "التنقل الرئيسي",
@@ -4173,7 +4188,7 @@ export const translations = {
         { label: "المعرض", href: "/galerie" },
         { label: "الخبرة", href: "/experience" },
         { label: "اتصال", href: "/contact" },
-        { label: "بوابة العميل", href: "/client" },
+        { label: "بوابة العميل", href: "/portal/login" },
         { label: "سياسة الخصوصية", href: "/privacy-policy" },
         { label: "سياسة ملفات الارتباط", href: "/cookie-policy" },
         { label: "الشروط والأحكام", href: "/terms" },

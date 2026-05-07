@@ -4,7 +4,11 @@ import bcrypt from "bcryptjs";
 import { createSessionToken, isAuthConfigured } from "@/lib/auth/session";
 import { getPrisma, isDatabaseConfigured } from "@/lib/db";
 
-export async function authenticateAdmin(email: string, password: string) {
+function getPortalRedirect(role: string) {
+  return role === "admin" ? "/portal/analytics" : "/portal/client";
+}
+
+export async function authenticatePortalUser(email: string, password: string) {
   if (!isAuthConfigured()) {
     return { ok: false, message: "Authentication is not configured." };
   }
@@ -32,11 +36,17 @@ export async function authenticateAdmin(email: string, password: string) {
   }
 
   // TODO: Add RBAC and multi-admin permission checks when portal roles expand.
+  // Client accounts can move to a dedicated User/Client model later; for now
+  // non-admin roles authenticated from this table are routed to /portal/client.
   const token = await createSessionToken({
     adminId: admin.id,
     email: admin.email,
     role: admin.role,
   });
 
-  return { ok: true, token };
+  return { ok: true, token, role: admin.role, redirectTo: getPortalRedirect(admin.role) };
+}
+
+export async function authenticateAdmin(email: string, password: string) {
+  return authenticatePortalUser(email, password);
 }

@@ -60,8 +60,8 @@ export const contact = {
     "Bonjour, je souhaite avoir plus d’informations sur la perlite Barakah.",
   whatsappUrl:
     "https://wa.me/212707081425?text=Bonjour%2C%20je%20souhaite%20avoir%20plus%20d%E2%80%99informations%20sur%20la%20perlite%20Barakah.",
-  website: "barakahperlite.com",
-  websiteUrl: "https://barakahperlite.com",
+  website: "www.willems-perlite.com",
+  websiteUrl: "https://www.willems-perlite.com/",
   linkedinUrl: "https://www.linkedin.com/company/barakah-perlite/",
   address:
     "N°5 ET.3 Imm. El Khiati, Avenue Hassan II, Taroudant.",
@@ -345,7 +345,7 @@ export const footerLinks = [
   { label: "Agriculture", href: "/agriculture" },
   { label: "Industrie", href: "/industrie" },
   { label: "Contact", href: "/contact" },
-  { label: "Portail client", href: "/client" },
+  { label: "Portail client", href: "/portal/login" },
   { label: "Politique de confidentialité", href: "/privacy-policy" },
   { label: "Politique cookies", href: "/cookie-policy" },
   { label: "Conditions générales", href: "/terms" },

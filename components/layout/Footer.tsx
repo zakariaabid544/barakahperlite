@@ -93,7 +93,7 @@ export function Footer() {
               <a
                 href={contact.websiteUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex w-fit items-center gap-2 rounded-md border border-white/10 px-3 py-2 transition hover:border-atlas-sand/50 hover:text-atlas-sand"
               >
                 <ExternalLink aria-hidden="true" className="h-4 w-4" />

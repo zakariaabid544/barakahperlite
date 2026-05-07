@@ -26,23 +26,27 @@ export function PortalLoginPage({ nextPath }: PortalLoginPageProps) {
     void sendAnalyticsEvent({
       type: "LOGIN_CLICK",
       route: "/portal/login",
-      label: "admin_login_submit",
-      target: "/portal/analytics",
+      label: "portal_login_submit",
+      target: "/portal/login",
     });
 
     try {
       const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password, nextPath }),
       });
-      const result = (await response.json()) as { ok?: boolean; message?: string };
+      const result = (await response.json()) as {
+        ok?: boolean;
+        message?: string;
+        redirectTo?: string;
+      };
 
       if (!response.ok || !result.ok) {
         throw new Error(result.message || "Connexion impossible.");
       }
 
-      router.replace(nextPath);
+      router.replace(result.redirectTo || "/portal/client");
       router.refresh();
     } catch (error) {
       setStatus("error");
@@ -56,14 +60,14 @@ export function PortalLoginPage({ nextPath }: PortalLoginPageProps) {
       <div className="relative mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1fr_0.78fr] lg:items-center">
         <section>
           <p className="text-xs font-semibold uppercase tracking-[0.32em] text-atlas-sand">
-            Portail privé
+            Portail client
           </p>
           <h1 className="mt-5 max-w-2xl font-display text-4xl leading-tight text-perlite-50 md:text-5xl">
-            Analytics Barakah Perlite
+            Connexion au portail
           </h1>
           <p className="mt-5 max-w-xl text-base leading-8 text-silver-200/68 md:text-lg">
-            Accès réservé à l’administration. Les identifiants sont vérifiés côté
-            serveur et la session est stockée dans un cookie HTTP-only.
+            Accédez à votre espace Barakah Perlite avec une connexion sécurisée.
+            Les identifiants sont vérifiés côté serveur avant ouverture du portail.
           </p>
         </section>
 
@@ -75,10 +79,10 @@ export function PortalLoginPage({ nextPath }: PortalLoginPageProps) {
             <Lock aria-hidden="true" className="h-5 w-5" />
           </div>
           <div className="grid gap-4">
-            <label className="grid gap-2" htmlFor="admin-email">
+            <label className="grid gap-2" htmlFor="portal-email">
               <span className="text-sm font-medium text-perlite-50">Email</span>
               <input
-                id="admin-email"
+                id="portal-email"
                 type="email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
@@ -87,12 +91,12 @@ export function PortalLoginPage({ nextPath }: PortalLoginPageProps) {
                 className="h-12 rounded-md border border-white/10 bg-basalt-950/70 px-3 text-sm text-perlite-50 outline-none transition focus:border-agritech-emerald focus:ring-2 focus:ring-agritech-emerald/30"
               />
             </label>
-            <label className="grid gap-2" htmlFor="admin-password">
+            <label className="grid gap-2" htmlFor="portal-password">
               <span className="text-sm font-medium text-perlite-50">Mot de passe</span>
             </label>
             <div className="relative">
               <input
-                id="admin-password"
+                id="portal-password"
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}

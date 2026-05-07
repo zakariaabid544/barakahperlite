@@ -1,5 +1,5 @@
-import { ClientPageContent } from "@/components/pages/TranslatedPages";
 import { createMetadata } from "@/lib/seo";
+import { redirect } from "next/navigation";
 
 export const metadata = createMetadata({
   title: "Portail client futur",
@@ -9,5 +9,6 @@ export const metadata = createMetadata({
 });
 
 export default function ClientPage() {
-  return <ClientPageContent />;
+  // Compatibility redirect: the public client entry point is the unified portal login.
+  redirect("/portal/login");
 }

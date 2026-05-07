@@ -42,7 +42,8 @@ export function normalizeRoute(pathname: string | null | undefined): RouteKey {
     path === "/terms" ||
     path === "/admin" ||
     path === "/admin/content" ||
-    path === "/client"
+    path === "/client" ||
+    path === "/portal/login"
   ) {
     return path;
   }

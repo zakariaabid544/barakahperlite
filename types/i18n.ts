@@ -19,7 +19,8 @@ export type RouteKey =
   | "/terms"
   | "/admin"
   | "/admin/content"
-  | "/client";
+  | "/client"
+  | "/portal/login";
 
 export type ProductDetailKey = "naturelle" | "stable" | "technique";
 

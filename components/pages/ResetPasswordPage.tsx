@@ -61,14 +61,14 @@ export function ResetPasswordPage({ token }: ResetPasswordPageProps) {
       <div className="relative mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1fr_0.78fr] lg:items-center">
         <section>
           <p className="text-xs font-semibold uppercase tracking-[0.32em] text-atlas-sand">
-            Portail privé
+            Portail client
           </p>
           <h1 className="mt-5 max-w-2xl font-display text-4xl leading-tight text-perlite-50 md:text-5xl">
             Nouveau mot de passe
           </h1>
           <p className="mt-5 max-w-xl text-base leading-8 text-silver-200/68 md:text-lg">
-            Choisissez un mot de passe robuste pour sécuriser l’accès au
-            tableau de bord privé Barakah Perlite.
+            Choisissez un mot de passe robuste pour sécuriser l’accès à votre
+            portail Barakah Perlite.
           </p>
         </section>
 

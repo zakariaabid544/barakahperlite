@@ -22,6 +22,13 @@ export async function GET() {
     );
   }
 
+  if (session.role !== "admin") {
+    return NextResponse.json(
+      { ok: false, message: "Forbidden." },
+      { status: 403 },
+    );
+  }
+
   const data = await getAnalyticsDashboardData();
   return NextResponse.json({ ok: true, data });
 }

@@ -45,14 +45,14 @@ export function ForgotPasswordPage() {
       <div className="relative mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1fr_0.78fr] lg:items-center">
         <section>
           <p className="text-xs font-semibold uppercase tracking-[0.32em] text-atlas-sand">
-            Portail privé
+            Portail client
           </p>
           <h1 className="mt-5 max-w-2xl font-display text-4xl leading-tight text-perlite-50 md:text-5xl">
-            Réinitialiser l’accès admin
+            Réinitialiser l’accès
           </h1>
           <p className="mt-5 max-w-xl text-base leading-8 text-silver-200/68 md:text-lg">
-            Entrez l’email associé à votre compte administrateur. Si le compte
-            existe, un lien sécurisé expirant dans 30 minutes sera envoyé.
+            Entrez l’email associé à votre compte portail. Si le compte existe,
+            un lien sécurisé expirant dans 30 minutes sera envoyé.
           </p>
         </section>
 

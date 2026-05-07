@@ -1,5 +1,5 @@
-import { HomePageContent } from "@/components/pages/TranslatedPages";
 import { createMetadata } from "@/lib/seo";
+import { redirect } from "next/navigation";
 
 export const metadata = createMetadata({
   title: "Perlite marocaine agricole et industrielle",
@@ -9,5 +9,6 @@ export const metadata = createMetadata({
 });
 
 export default function HomePage() {
-  return <HomePageContent />;
+  // Temporary redirect: the homepage content stays in the codebase until the public home is finalized.
+  redirect("/produit");
 }

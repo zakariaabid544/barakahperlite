@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { authenticateAdmin } from "@/lib/auth/admin";
+import { authenticatePortalUser } from "@/lib/auth/admin";
 import {
   adminSessionCookieName,
   getSessionCookieOptions,
@@ -9,6 +9,21 @@ export const runtime = "nodejs";
 
 function cleanString(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
+}
+
+function getSafeRedirect(role: string, nextPath: string) {
+  if (role === "admin") {
+    if (
+      nextPath.startsWith("/portal/analytics") ||
+      nextPath.startsWith("/portal/admin")
+    ) {
+      return nextPath;
+    }
+
+    return "/portal/analytics";
+  }
+
+  return "/portal/client";
 }
 
 export async function POST(request: Request) {
@@ -26,6 +41,7 @@ export async function POST(request: Request) {
   const data = payload as Record<string, unknown>;
   const email = cleanString(data.email).toLowerCase();
   const password = cleanString(data.password);
+  const nextPath = cleanString(data.nextPath);
 
   if (!email || !password) {
     return NextResponse.json(
@@ -34,7 +50,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const result = await authenticateAdmin(email, password);
+  const result = await authenticatePortalUser(email, password);
   if (!result.ok || !result.token) {
     const message = result.message || "Invalid email or password.";
     return NextResponse.json(
@@ -43,7 +59,8 @@ export async function POST(request: Request) {
     );
   }
 
-  const response = NextResponse.json({ ok: true });
+  const redirectTo = getSafeRedirect(result.role || "client", nextPath);
+  const response = NextResponse.json({ ok: true, redirectTo });
   response.cookies.set(
     adminSessionCookieName,
     result.token,
