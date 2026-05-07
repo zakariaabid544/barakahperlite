@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: #080a08;
+  --foreground: #faf8ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 10, 8, 0.96), rgba(16, 19, 17, 0.98)),
+    var(--background);
+  color: var(--foreground);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(22, 214, 111, 0.35);
+  color: #faf8ef;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+.font-display {
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+.whatsapp-button {
+  --whatsapp-scale: 1;
+  animation: whatsapp-bounce 1.5s ease-in-out infinite;
+  transform: translateY(0) scale(var(--whatsapp-scale));
+  will-change: transform;
+}
+
+.whatsapp-button:hover {
+  --whatsapp-scale: 1.05;
+}
+
+@keyframes whatsapp-bounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(var(--whatsapp-scale));
+  }
+
+  50% {
+    transform: translateY(-8px) scale(var(--whatsapp-scale));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-button {
+    animation: none;
+  }
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.site-shell {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background:
+    linear-gradient(180deg, rgba(8, 10, 8, 0.85), rgba(8, 10, 8, 1) 38%),
+    radial-gradient(circle at 50% -20%, rgba(214, 184, 122, 0.13), transparent 28%),
+    radial-gradient(circle at 90% 10%, rgba(22, 214, 111, 0.12), transparent 22%);
+}
+
+.site-shell::before {
+  pointer-events: none;
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.13;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(250, 248, 239, 0.4) 1px, transparent 0),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size:
+    28px 28px,
+    100% 42px;
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 78%, transparent);
+}
+
+.moroccan-pattern {
+  background-image:
+    linear-gradient(45deg, transparent 44%, rgba(214, 184, 122, 0.38) 45%, rgba(214, 184, 122, 0.38) 46%, transparent 47%),
+    linear-gradient(-45deg, transparent 44%, rgba(22, 214, 111, 0.24) 45%, rgba(22, 214, 111, 0.24) 46%, transparent 47%),
+    linear-gradient(135deg, transparent 44%, rgba(250, 248, 239, 0.22) 45%, rgba(250, 248, 239, 0.22) 46%, transparent 47%);
+  background-position:
+    0 0,
+    0 0,
+    22px 22px;
+  background-size: 88px 88px;
+}
+
+.mineral-noise {
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(250, 248, 239, 0.14) 0 1px, transparent 2px),
+    radial-gradient(circle at 76% 34%, rgba(214, 184, 122, 0.12) 0 1px, transparent 2px),
+    radial-gradient(circle at 34% 78%, rgba(22, 214, 111, 0.11) 0 1px, transparent 2px),
+    linear-gradient(135deg, rgba(250, 248, 239, 0.04), transparent 42%, rgba(22, 214, 111, 0.035));
+  background-size:
+    18px 18px,
+    26px 26px,
+    32px 32px,
+    100% 100%;
+}
+
+.hero-mineral__strata {
+  background:
+    linear-gradient(155deg, transparent 0 24%, rgba(214, 184, 122, 0.12) 24% 25%, transparent 26% 100%),
+    linear-gradient(25deg, transparent 0 48%, rgba(22, 214, 111, 0.16) 48% 49%, transparent 50% 100%),
+    linear-gradient(180deg, rgba(250, 248, 239, 0.08), rgba(255, 255, 255, 0) 42%),
+    radial-gradient(circle at 50% 42%, rgba(250, 248, 239, 0.14), transparent 30%);
+}
+
+.perlite-cluster {
+  background-image:
+    radial-gradient(circle at 8% 52%, #faf8ef 0 9px, rgba(250, 248, 239, 0.12) 10px, transparent 12px),
+    radial-gradient(circle at 19% 26%, #f7f7f4 0 7px, rgba(250, 248, 239, 0.12) 8px, transparent 10px),
+    radial-gradient(circle at 28% 64%, #eee9dd 0 11px, rgba(250, 248, 239, 0.13) 12px, transparent 14px),
+    radial-gradient(circle at 40% 38%, #faf8ef 0 8px, rgba(250, 248, 239, 0.12) 9px, transparent 11px),
+    radial-gradient(circle at 52% 68%, #d8d2c3 0 10px, rgba(250, 248, 239, 0.12) 11px, transparent 13px),
+    radial-gradient(circle at 66% 31%, #faf8ef 0 12px, rgba(250, 248, 239, 0.13) 13px, transparent 16px),
+    radial-gradient(circle at 78% 58%, #eee9dd 0 8px, rgba(250, 248, 239, 0.12) 9px, transparent 12px),
+    radial-gradient(circle at 91% 35%, #f7f7f4 0 7px, rgba(250, 248, 239, 0.12) 8px, transparent 10px);
+  filter: drop-shadow(0 26px 38px rgba(0, 0, 0, 0.35));
+}
+
+.placeholder-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, transparent 0 42%, rgba(255, 255, 255, 0.08) 43%, transparent 46%),
+    linear-gradient(180deg, rgba(8, 10, 8, 0), rgba(8, 10, 8, 0.25));
+  z-index: 1;
+}
+
+.placeholder-visual > * {
+  z-index: 2;
+}
+
+.placeholder-visual--mineral {
+  background:
+    radial-gradient(circle at 36% 36%, rgba(250, 248, 239, 0.28), transparent 28%),
+    linear-gradient(135deg, #101311, #1b201b 46%, #063b24);
+}
+
+.placeholder-visual--greenhouse {
+  background:
+    linear-gradient(90deg, rgba(22, 214, 111, 0.12) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(250, 248, 239, 0.09) 1px, transparent 1px),
+    linear-gradient(135deg, #101311, #123a28 48%, #d6b87a);
+  background-size:
+    38px 38px,
+    38px 38px,
+    100% 100%;
+}
+
+.placeholder-visual--factory {
+  background:
+    linear-gradient(90deg, rgba(250, 248, 239, 0.08) 1px, transparent 1px),
+    linear-gradient(155deg, #080a08, #1b201b 44%, #b96842);
+  background-size:
+    34px 100%,
+    100% 100%;
+}
+
+.placeholder-visual--packaging {
+  background:
+    linear-gradient(115deg, rgba(214, 184, 122, 0.2), transparent 34%),
+    repeating-linear-gradient(90deg, rgba(250, 248, 239, 0.07) 0 1px, transparent 1px 42px),
+    linear-gradient(135deg, #141813, #063b24);
+}
+
+.placeholder-visual--map {
+  background:
+    linear-gradient(45deg, rgba(214, 184, 122, 0.15) 25%, transparent 25% 50%, rgba(22, 214, 111, 0.1) 50% 75%, transparent 75%),
+    linear-gradient(135deg, #101311, #1b201b);
+  background-size:
+    52px 52px,
+    100% 100%;
+}
+
+.placeholder-visual__light {
+  background:
+    radial-gradient(circle at 70% 20%, rgba(240, 196, 103, 0.26), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 36%);
+}
+
+@media (max-width: 640px) {
+  .perlite-cluster {
+    background-size: 92% 92%;
+  }
+}

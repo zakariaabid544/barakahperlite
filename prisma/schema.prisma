@@ -1,0 +1,115 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum AnalyticsEventType {
+  PAGE_VIEW
+  CTA_CLICK
+  PDF_DOWNLOAD
+  FORM_SUBMISSION
+  REGISTRATION_START
+  REGISTRATION_COMPLETE
+  LOGIN_CLICK
+}
+
+enum DeviceType {
+  DESKTOP
+  MOBILE
+  TABLET
+  UNKNOWN
+}
+
+model Admin {
+  id                  String               @id @default(cuid())
+  email               String               @unique
+  passwordHash        String
+  role                String               @default("admin")
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  passwordResetTokens PasswordResetToken[]
+
+  @@map("admins")
+}
+
+model PasswordResetToken {
+  id        String    @id @default(cuid())
+  adminId   String
+  admin     Admin     @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([adminId])
+  @@index([tokenHash])
+  @@index([expiresAt])
+  @@map("password_reset_tokens")
+}
+
+model AnalyticsVisitor {
+  id          String             @id @default(cuid())
+  anonymousId String            @unique
+  firstSeenAt DateTime          @default(now())
+  lastSeenAt  DateTime          @default(now())
+  country     String?
+  city        String?
+  deviceType  DeviceType        @default(UNKNOWN)
+  sessions    AnalyticsSession[]
+  events      AnalyticsEvent[]
+
+  @@index([lastSeenAt])
+  @@map("analytics_visitors")
+}
+
+model AnalyticsSession {
+  id           String             @id @default(cuid())
+  sessionId    String             @unique
+  visitorId    String
+  visitor      AnalyticsVisitor   @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  startedAt    DateTime           @default(now())
+  lastSeenAt   DateTime           @default(now())
+  referrer     String?
+  sourceDomain String?
+  country      String?
+  city         String?
+  deviceType   DeviceType         @default(UNKNOWN)
+  userAgentHash String?
+  events       AnalyticsEvent[]
+
+  @@index([visitorId, lastSeenAt])
+  @@index([sourceDomain])
+  @@index([country, city])
+  @@map("analytics_sessions")
+}
+
+model AnalyticsEvent {
+  id           String             @id @default(cuid())
+  type         AnalyticsEventType
+  route        String
+  label        String?
+  target       String?
+  metadata     Json?
+  occurredAt   DateTime           @default(now())
+  visitorId    String?
+  visitor      AnalyticsVisitor?  @relation(fields: [visitorId], references: [id], onDelete: SetNull)
+  sessionId    String?
+  session      AnalyticsSession?  @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+  referrer     String?
+  sourceDomain String?
+  country      String?
+  city         String?
+  deviceType   DeviceType         @default(UNKNOWN)
+
+  @@index([type, occurredAt])
+  @@index([route, occurredAt])
+  @@index([visitorId, occurredAt])
+  @@index([sessionId, occurredAt])
+  @@index([sourceDomain, occurredAt])
+  @@index([country, city])
+  @@map("analytics_events")
+}
