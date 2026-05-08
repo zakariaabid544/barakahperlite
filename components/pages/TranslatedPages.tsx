@@ -229,25 +229,6 @@ export function ProductPageContent() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow={t.product.expansion.eyebrow}
-            title={t.product.expansion.title}
-            description={t.product.expansion.description}
-          />
-          <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-3">
-            {t.product.expansion.features.map((feature, index) => (
-              <FeatureCard
-                key={feature.title}
-                {...featureProps(feature)}
-                index={index}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <TechnicalProfileSection profile={t.product.technicalProfile} />
 
       <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">

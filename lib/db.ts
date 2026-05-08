@@ -5,17 +5,18 @@ import {
   PrismaClient,
   type PrismaClient as PrismaClientType,
 } from "@/lib/generated/prisma/client";
+import { getDatabaseUrl } from "@/lib/database-url";
 
 const globalForPrisma = globalThis as typeof globalThis & {
   barakahPrisma?: PrismaClientType;
 };
 
 export function isDatabaseConfigured() {
-  return Boolean(process.env.DATABASE_URL);
+  return Boolean(getDatabaseUrl());
 }
 
 export function getPrisma() {
-  const connectionString = process.env.DATABASE_URL;
+  const connectionString = getDatabaseUrl();
 
   if (!connectionString) {
     return null;

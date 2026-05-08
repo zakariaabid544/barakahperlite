@@ -113,9 +113,8 @@ export function Footer() {
           </div>
         </address>
       </div>
-      <div className="relative mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-xs text-silver-200/50 md:flex-row md:items-center md:justify-between">
+      <div className="relative mx-auto mt-12 max-w-7xl border-t border-white/10 pt-6 text-xs text-silver-200/50">
         <p>{t.footer.copyright}</p>
-        <p>{t.footer.architecture}</p>
       </div>
     </footer>
   );

@@ -10,3 +10,5 @@ vercel
 .DS_Store
 
 /lib/generated/prisma
+.vercel
+.env*.local

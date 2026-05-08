@@ -1,12 +1,14 @@
 import { loadEnvConfig } from "@next/env";
 import { PrismaPg } from "@prisma/adapter-pg";
 import bcrypt from "bcryptjs";
+import { getDatabaseUrl, getDatabaseUrlRequirement } from "../lib/database-url";
 import { PrismaClient } from "../lib/generated/prisma/client";
 
 loadEnvConfig(process.cwd());
 
-const connectionString = process.env.DATABASE_URL;
+const connectionString = getDatabaseUrl();
 const seedPassword = process.env.SEED_ADMIN_PASSWORD;
+const forcePasswordReset = process.env.SEED_ADMIN_FORCE_RESET === "true";
 const seedEmails = (process.env.SEED_ADMIN_EMAILS || "")
   .split(",")
   .map((email) => email.trim().toLowerCase())
@@ -18,7 +20,9 @@ function isPlaceholderEmail(email: string) {
 
 async function main() {
   if (!connectionString) {
-    throw new Error("DATABASE_URL is required to seed admin accounts.");
+    throw new Error(
+      `${getDatabaseUrlRequirement()} is required to seed admin accounts.`,
+    );
   }
 
   if (!seedPassword) {
@@ -39,7 +43,9 @@ async function main() {
       // TODO: Force password rotation immediately after first login in production.
       await prisma.admin.upsert({
         where: { email },
-        update: { passwordHash, role: "admin" },
+        update: forcePasswordReset
+          ? { passwordHash, role: "admin" }
+          : { role: "admin" },
         create: { email, passwordHash, role: "admin" },
       });
       console.log(`Seeded admin: ${email}`);

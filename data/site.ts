@@ -45,6 +45,7 @@ export const navItems: NavItem[] = [
 export const contact = {
   emails: [
     "info@barakahperlite.com",
+    "support@barakahperlite.com",
     "Sven@barakahperlite.com",
     "Ahmed@barakahperlite.com",
   ],
@@ -52,7 +53,7 @@ export const contact = {
   phones: [
     { name: "Sven Willems", number: "+32 497 84 65 79" },
     { name: "Ahmed EL Marjou", number: "+212 707 08 14 25" },
-    { name: "Mohamed GOUASKAR", number: "+212 661 69 74 90" },
+    { name: "Mohamed Gouaskar", number: "+212 661 69 74 90" },
   ],
   phone: "+212 707 08 14 25",
   whatsapp: "212707081425",

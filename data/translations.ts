@@ -296,8 +296,6 @@ export const translations = {
       contact: "Contact",
       linkedin: "LinkedIn",
       copyright: "Copyright © 2026 Barakah Perlite. Tous droits réservés.",
-      architecture:
-        "Architecture prête pour PWA, portail client et tableau de bord.",
       links: [
         { label: "Produit", href: "/produit" },
         { label: "Agriculture", href: "/agriculture" },
@@ -704,35 +702,9 @@ export const translations = {
           },
         ] satisfies ProductFactTranslation[],
         moreLabel: "En savoir plus",
-        visualTitle: "Macro perlite expansée",
+        visualTitle: "Perlite expansée",
         visualCaption:
-          "Grains blancs expansés, texture minérale visible et granulométrie pensée pour des usages agricoles et industriels.",
-      },
-      expansion: {
-        eyebrow: "Expansion",
-        title: "Comment la perlite devient un matériau ultra léger.",
-        description:
-          "L’expansion thermique vaporise l’eau contenue dans la roche. Le volume augmente, la masse volumique diminue et la structure devient idéale pour l’air, l’eau et l’isolation.",
-        features: [
-          {
-            title: "Chaleur contrôlée",
-            description:
-              "La roche est transformée par expansion thermique pour créer une structure légère et poreuse.",
-            icon: "flame",
-          },
-          {
-            title: "Structure poreuse",
-            description:
-              "Les microcavités créent le pouvoir d’aération, de rétention et d’isolation.",
-            icon: "sparkles",
-          },
-          {
-            title: "Format calibré",
-            description:
-              "Les granulométries sont adaptées aux usages: semis, substrats, industrie, filtration.",
-            icon: "package",
-          },
-        ] satisfies FeatureTranslation[],
+          "Grains blancs expansés, texture minérale visible et granulométrie étudiée pour des usages agricoles et industriels.",
       },
       benefits: {
         eyebrow: "Bénéfices produit",
@@ -2240,8 +2212,6 @@ export const translations = {
       contact: "Contact",
       linkedin: "LinkedIn",
       copyright: "Copyright © 2026 Barakah Perlite. All rights reserved.",
-      architecture:
-        "Architecture ready for PWA, client portal and admin dashboard.",
       links: [
         { label: "Product", href: "/produit" },
         { label: "Agriculture", href: "/agriculture" },
@@ -2645,35 +2615,9 @@ export const translations = {
           },
         ] satisfies ProductFactTranslation[],
         moreLabel: "Learn more",
-        visualTitle: "Expanded perlite macro",
+        visualTitle: "Expanded perlite",
         visualCaption:
-          "White expanded grains, visible mineral texture and particle sizes designed for agricultural and industrial uses.",
-      },
-      expansion: {
-        eyebrow: "Expansion",
-        title: "How perlite becomes an ultra-light material.",
-        description:
-          "Thermal expansion vaporizes the water contained in the rock. Volume increases, bulk density drops and the structure becomes ideal for air, water and insulation.",
-        features: [
-          {
-            title: "Controlled heat",
-            description:
-              "The rock is exposed to high temperature to trigger expansion.",
-            icon: "flame",
-          },
-          {
-            title: "Porous structure",
-            description:
-              "Micro-cavities create aeration, retention and insulation performance.",
-            icon: "sparkles",
-          },
-          {
-            title: "Calibrated format",
-            description:
-              "Particle sizes are adapted to uses: seedlings, substrates, industry and filtration.",
-            icon: "package",
-          },
-        ] satisfies FeatureTranslation[],
+          "White expanded grains, visible mineral texture and particle size studied for agricultural and industrial uses.",
       },
       benefits: {
         eyebrow: "Product benefits",
@@ -4179,8 +4123,6 @@ export const translations = {
       contact: "اتصال",
       linkedin: "لينكدإن",
       copyright: "حقوق النشر © 2026 Barakah Perlite. جميع الحقوق محفوظة.",
-      architecture:
-        "بنية جاهزة لتطبيق PWA وبوابة العملاء ولوحة الإدارة.",
       links: [
         { label: "المنتج", href: "/produit" },
         { label: "الزراعة", href: "/agriculture" },
@@ -4584,34 +4526,9 @@ export const translations = {
           },
         ] satisfies ProductFactTranslation[],
         moreLabel: "اعرف المزيد",
-        visualTitle: "صورة مكبرة للبيرلايت الممدد",
+        visualTitle: "البيرلايت الممدد",
         visualCaption:
-          "حبيبات بيضاء ممددة، بنية معدنية واضحة ومقاسات حبيبية موجهة للاستخدامات الزراعية والصناعية.",
-      },
-      expansion: {
-        eyebrow: "التمدد",
-        title: "كيف يصبح البيرلايت مادة فائقة الخفة.",
-        description:
-          "التمدد الحراري يبخر الماء الموجود في الصخر. يزداد الحجم وتنخفض الكثافة وتصبح البنية مثالية للهواء والماء والعزل.",
-        features: [
-          {
-            title: "حرارة مضبوطة",
-            description: "يتعرض الصخر لحرارة عالية لإطلاق عملية التمدد.",
-            icon: "flame",
-          },
-          {
-            title: "بنية مسامية",
-            description:
-              "المسام الدقيقة تمنح التهوية والاحتفاظ والعزل.",
-            icon: "sparkles",
-          },
-          {
-            title: "صيغة معايرة",
-            description:
-              "المقاسات الحبيبية تتكيف مع البذور والركائز والصناعة والترشيح.",
-            icon: "package",
-          },
-        ] satisfies FeatureTranslation[],
+          "حبيبات بيضاء ممددة، بنية معدنية واضحة ومقاسات حبيبية مدروسة للاستخدامات الزراعية والصناعية.",
       },
       benefits: {
         eyebrow: "فوائد المنتج",
