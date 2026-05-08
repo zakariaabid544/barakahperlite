@@ -94,8 +94,8 @@ export function ProductHero() {
               {t.product.header.msdsCta}
             </a>
           </div>
-          <div className="mt-8 w-full max-w-[22rem] overflow-hidden rounded-xl border border-white/10 bg-basalt-900/70 p-3 shadow-glass backdrop-blur-xl sm:max-w-none lg:hidden">
-            <div className="relative h-44 sm:h-64 md:h-72">
+          <div className="mx-auto mt-7 w-full max-w-[24rem] overflow-hidden rounded-xl border border-white/10 bg-basalt-900/70 shadow-glass backdrop-blur-xl sm:max-w-none lg:hidden">
+            <div className="relative h-[300px] min-[390px]:h-[320px] sm:h-[360px] md:h-[420px]">
               <Image
                 src="/images/hero-perlite-final.svg"
                 alt=""
@@ -104,8 +104,9 @@ export function ProductHero() {
                 priority
                 unoptimized
                 sizes="(max-width: 1023px) 100vw"
-                className="object-contain object-center"
+                className="object-cover object-center"
               />
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(255,255,255,0.02),transparent_46%),linear-gradient(180deg,rgba(8,10,8,0.04),rgba(8,10,8,0.22))]" />
             </div>
           </div>
         </div>
