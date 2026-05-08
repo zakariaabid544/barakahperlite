@@ -16,7 +16,7 @@ export type I18nContextValue = {
 export const I18nContext = createContext<I18nContextValue | null>(null);
 
 export function isLocale(value: string | null | undefined): value is Locale {
-  return value === "fr" || value === "en" || value === "ar";
+  return value === "fr" || value === "en" || value === "ar" || value === "nl";
 }
 
 export function getDirection(locale: Locale): Direction {

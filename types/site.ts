@@ -1,6 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 
-export type Locale = "fr" | "ar" | "en";
+export type Locale = "fr" | "ar" | "en" | "nl";
 
 export type NavItem = {
   label: string;

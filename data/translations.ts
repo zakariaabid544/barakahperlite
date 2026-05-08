@@ -109,6 +109,7 @@ export const localeOptions: Array<{ code: Locale; label: string; name: string }>
   { code: "fr", label: "FR", name: "Français" },
   { code: "ar", label: "AR", name: "العربية" },
   { code: "en", label: "EN", name: "English" },
+  { code: "nl", label: "NL", name: "Nederlands" },
 ];
 
 export const defaultLocale: Locale = "fr";
@@ -3958,6 +3959,1760 @@ export const translations = {
       ] satisfies FeatureTranslation[],
     },
   },
+  nl: {
+  "localeName": "Nederlands",
+  "direction": "ltr",
+  "meta": {
+    "/": {
+      "title": "Marokkaans landbouw- en industrieel perliet | Barakah Perlite",
+      "description": "Barakah Perlite verandert een natuurlijke minerale hulpbron in een premium substraat voor de landbouw, hydrocultuur, tuinbouw, bouw, filtratie en industrie in Marokko."
+    },
+    "/produit": {
+      "title": "Geëxpandeerd perlietproduct | Barakah Perlite",
+      "description": "Ontdek Barakah geëxpandeerd perliet: natuurlijk vulkanisch gesteente, lichtgewicht, steriel, inert, neutrale pH, uitstekende beluchting en waterretentie."
+    },
+    "/produit/naturelle": {
+      "title": "Natuurlijk vulkanisch perliet | Barakah Perlite",
+      "description": "Begrijp natuurlijk perliet: een vulkanisch gesteente dat is getransformeerd door thermische expansie voor landbouw, tuinbouw, isolatie, filtratie en industriële toepassingen."
+    },
+    "/produit/stable": {
+      "title": "Stabiel, inert en duurzaam perliet | Barakah Perlite",
+      "description": "Chemisch stabiel geëxpandeerd perliet: steriel, niet-giftig en niet-afbreekbaar voor landbouwsubstraten, hydrocultuur, bouw, filtratie en industrie."
+    },
+    "/produit/technique": {
+      "title": "Technisch poreus lichtgewicht perliet | Barakah Perlite",
+      "description": "Wit, lichtgewicht en zeer poreus geëxpandeerd perliet voor wortelbeluchting, drainage, waterretentie, thermische isolatie, cryogenie en lichtgewicht aggregaten."
+    },
+    "/agriculture": {
+      "title": "Perliet voor land- en tuinbouw | Barakah Perlite",
+      "description": "Landbouwperliet in Marokko voor hydrocultuur, kassen, kwekerijen, kiemkracht, tuinbouw en bodemverbetering."
+    },
+    "/industrie": {
+      "title": "Industrieel perliet | Barakah Perlite",
+      "description": "Industrieel perliet in Marokko voor isolatie, filtratie, chemische industrie, gebruik bij hoge temperaturen, absorptie, cryogene en lichtgewicht aggregaten."
+    },
+    "/galerie": {
+      "title": "Perlietgalerij, landbouw en industrie | Barakah Perlite",
+      "description": "Barakah Perlite-galerij voor toekomstige foto's van landbouwperliet, fabrieksactiviteiten, industriële toepassingen, kassen, producten en verpakkingen in Marokko."
+    },
+    "/experience": {
+      "title": "Veldervaring en samenwerkingen | Barakah Perlite",
+      "description": "Ervaringen, samenwerkingen, landbouwproeven en industriële toepassingen rond Barakah Perlite voor Marokkaanse en internationale klanten."
+    },
+    "/a-propos": {
+      "title": "Over | Barakah Perlite",
+      "description": "Barakah Perlite is een Marokkaans bedrijf gespecialiseerd in natuurlijk perliet voor de landbouw, industrie, bouw en filtratie, met een duurzame exportgerichte visie."
+    },
+    "/contact": {
+      "title": "Contact- en offerteaanvraag | Barakah Perlite",
+      "description": "Neem contact op met Barakah Perlite voor offerteaanvragen voor landbouw-, tuinbouw-, hydrocultuur- of industriële perliet in Marokko."
+    },
+    "/privacy-policy": {
+      "title": "Privacybeleid | Barakah Perlite",
+      "description": "Privacybeleid voor barakahperlite.com: contactgegevens, offerteaanvragen, doeleinden, bewaring, beveiliging en gebruikersrechten."
+    },
+    "/cookie-policy": {
+      "title": "Cookiebeleid | Barakah Perlite",
+      "description": "Cookiebeleid voor barakahperlite.com: essentiële cookies, mogelijke analyses, diensten van derden en gebruikerscontroles."
+    },
+    "/terms": {
+      "title": "Algemene voorwaarden | Barakah Perlite",
+      "description": "Algemene voorwaarden voor barakahperlite.com: websitegebruik, productinformatie, technische gegevens, offerteaanvragen en intellectueel eigendom."
+    },
+    "/admin": {
+      "title": "Toekomstige beheerdersruimte | Barakah Perlite",
+      "description": "Basis voor de toekomst Barakah Perlite dashboard: offertebeheer, productcatalogus, klanten, CRM en meertalige inhoud."
+    },
+    "/admin/content": {
+      "title": "Prototype voor inhoudbeheer | Barakah Perlite",
+      "description": "Intern niet-functioneel UI-prototype voor toekomstige Barakah Perlite-galerij, ervaringen, samenwerkingen en contentbeheer."
+    },
+    "/client": {
+      "title": "Toekomstig klantenportaal | Barakah Perlite",
+      "description": "Basis voor de toekomst Barakah Perlite klantenportaal: offertes, bestellingen, technische fiches, documenten en ondersteuning."
+    },
+    "/portal/login": {
+      "title": "Klantenportaal | Barakah Perlite",
+      "description": "Veilig inloggen op het Barakah Perlite-klantenportaal voor geautoriseerde privétoegang."
+    }
+  },
+  "nav": {
+    "aria": "Hoofdnavigatie",
+    "mobileAria": "Mobiele navigatie",
+    "homeLabel": "Barakah Perlite - Home",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "language": "Taal",
+    "quoteShort": "Offerte",
+    "items": [
+      {
+        "label": "Product",
+        "href": "/produit"
+      },
+      {
+        "label": "Landbouw",
+        "href": "/agriculture"
+      },
+      {
+        "label": "Industrie",
+        "href": "/industrie"
+      },
+      {
+        "label": "Galerij",
+        "href": "/galerie"
+      },
+      {
+        "label": "Ervaring",
+        "href": "/experience"
+      },
+      {
+        "label": "Over ons",
+        "href": "/a-propos"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ]
+  },
+  "common": {
+    "brand": "Barakah Perlite",
+    "technicalQuote": "Technische offerte",
+    "quoteRequest": "Offerte aanvragen",
+    "productData": "Productgegevens bekijken",
+    "visualBrand": "Barakah Perlite",
+    "technicalTableCaption": "Technische fiche Barakah Perlite",
+    "technicalTableColumns": {
+      "parameter": "Parameter",
+      "value": "Waarde",
+      "note": "Opmerking"
+    },
+    "placeholderVisualTodo": "Institutionele Barakah Perlite-visual voor productpresentaties.",
+    "processSteps": [
+      {
+        "step": "01",
+        "title": "Minerale selectie",
+        "description": "Controle van de grondstof en traceerbaarheid per partij vóór verwerking."
+      },
+      {
+        "step": "02",
+        "title": "Thermische expansie",
+        "description": "Het gesteente wordt verhit om gebonden water vrij te maken en een lichte, witte en poreuze structuur te creëren."
+      },
+      {
+        "step": "03",
+        "title": "Kalibratie",
+        "description": "Korrelgroottesortering voor landbouwkundige, industriële en filtratietoepassingen."
+      },
+      {
+        "step": "04",
+        "title": "Kwaliteitscontrole",
+        "description": "Controle van dichtheid, granulometrie, zuiverheid, stabiliteit en verpakking."
+      }
+    ]
+  },
+  "whatsapp": {
+    "aria": "Neem contact op met Barakah Perlite op WhatsApp",
+    "label": "WhatsApp",
+    "ariaLabel": "Contact opnemen via WhatsApp"
+  },
+  "footer": {
+    "description": "Marokkaans bedrijf gespecialiseerd in de productie en commercialisering van perliet voor landbouw, industrie, bouw en filtratie.",
+    "tagline": "Marokko · Landbouw · Industrie · Export",
+    "navigation": "Navigatie",
+    "contact": "Contact",
+    "linkedin": "LinkedIn",
+    "copyright": "Copyright © 2026 Barakah Perlite. Alle rechten voorbehouden.",
+    "links": [
+      {
+        "label": "Product",
+        "href": "/produit"
+      },
+      {
+        "label": "Landbouw",
+        "href": "/agriculture"
+      },
+      {
+        "label": "Industrie",
+        "href": "/industrie"
+      },
+      {
+        "label": "Galerij",
+        "href": "/galerie"
+      },
+      {
+        "label": "Ervaring",
+        "href": "/experience"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      },
+      {
+        "label": "Klantenportaal",
+        "href": "/portal/login"
+      },
+      {
+        "label": "Privacybeleid",
+        "href": "/privacy-policy"
+      },
+      {
+        "label": "Cookiebeleid",
+        "href": "/cookie-policy"
+      },
+      {
+        "label": "Algemene voorwaarden",
+        "href": "/terms"
+      }
+    ]
+  },
+  "legal": {
+    "updatedLabel": "Laatst bijgewerkt",
+    "updatedValue": "Mei 2026",
+    "reviewNotice": "Deze inhoud biedt algemene informatie die van toepassing is op de Barakah Perlite-website.",
+    "privacy": {
+      "header": {
+        "eyebrow": "Privacybeleid",
+        "title": "Gegevensbescherming en contactverzoeken.",
+        "description": "In dit beleid wordt uitgelegd hoe Barakah Perlite informatie kan verwerken die via barakahperlite.com wordt ingediend."
+      },
+      "sections": [
+        {
+          "title": "Wie wij zijn",
+          "body": "Barakah Perlite is een Marokkaans bedrijf dat actief is in perliet voor agrarische en industriële toepassingen. De website waarop dit beleid van toepassing is, is barakahperlite.com. Neem voor privacyvragen contact op met info@barakahperlite.com."
+        },
+        {
+          "title": "Gegevens die kunnen worden verzameld",
+          "body": "Wanneer u een contactformulier of een offerteaanvraag gebruikt, kunnen wij de door u gewenste informatie ontvangen.",
+          "bullets": [
+            "Voor- en achternaam",
+            "Bedrijfsnaam",
+            "E-mailadres",
+            "Telefoonnummer",
+            "Bedrijfssector",
+            "Geschatte hoeveelheid of behoefte",
+            "Bericht en details met betrekking tot uw verzoek"
+          ]
+        },
+        {
+          "title": "Waarom gegevens worden verzameld",
+          "body": "Deze gegevens kunnen worden gebruikt om te reageren op vragen, commerciële offertes op te stellen, technische begeleiding te bieden, follow-up te organiseren en de kwaliteit van de dienstverlening te verbeteren."
+        },
+        {
+          "title": "Gegevensretentie",
+          "body": "Gegevens worden bewaard gedurende de tijd die nodig is om vragen te verwerken, de commerciële opvolging te beheren en aan de toepasselijke verplichtingen te voldoen."
+        },
+        {
+          "title": "Gebruikersrechten",
+          "body": "Afhankelijk van de toepasselijke wetgeving heeft u mogelijk recht op toegang, rectificatie, bezwaar, verwijdering of beperking door contact op te nemen met Barakah Perlite."
+        },
+        {
+          "title": "Beveiligingsmaatregelen",
+          "body": "Barakah Perlite past redelijke maatregelen toe om ontvangen informatie te beschermen tegen ongeoorloofde toegang, verlies of misbruik."
+        },
+        {
+          "title": "Contacteer",
+          "body": "Neem voor vragen over dit beleid contact op met Barakah Perlite via info@barakahperlite.com."
+        }
+      ]
+    },
+    "cookies": {
+      "header": {
+        "eyebrow": "Cookiebeleid",
+        "title": "Cookiegebruik op barakahperlite.com.",
+        "description": "In dit beleid worden de categorieën cookies uitgelegd die op de Barakah Perlite-website kunnen worden gebruikt."
+      },
+      "sections": [
+        {
+          "title": "Wat zijn cookies?",
+          "body": "Een cookie is een klein bestand dat door een website op uw apparaat wordt opgeslagen om bepaalde functies in te schakelen, voorkeuren te onthouden of het sitegebruik te meten."
+        },
+        {
+          "title": "Essentiële koekjes",
+          "body": "De site kan cookies gebruiken die nodig zijn voor de technische werking, beveiliging, navigatie en het onthouden van bepaalde keuzes, zoals de geselecteerde taal."
+        },
+        {
+          "title": "Analytics-cookies",
+          "body": "De website kan beperkte doelgroepmetingen gebruiken om inzicht te krijgen in paginaweergaven, downloads en belangrijke interacties en zo de kwaliteit van de dienstverlening te verbeteren."
+        },
+        {
+          "title": "Diensten van derden",
+          "body": "Sommige diensten van derden die nodig zijn voor de werking van de website, kaarten, communicatie of publieksmetingen kunnen hun eigen privacyregels toepassen."
+        },
+        {
+          "title": "Hoe gebruikers cookies kunnen beheren",
+          "body": "U kunt cookies beheren of verwijderen via uw browserinstellingen. Het blokkeren van essentiële cookies kan bepaalde websitefuncties beperken."
+        },
+        {
+          "title": "Contacteer",
+          "body": "Voor vragen over dit cookiebeleid kunt u contact opnemen met Barakah Perlite via info@barakahperlite.com."
+        }
+      ]
+    },
+    "terms": {
+      "header": {
+        "eyebrow": "Algemene voorwaarden",
+        "title": "Gebruiksvoorwaarden website.",
+        "description": "Deze voorwaarden zijn van toepassing op het gebruik van barakahperlite.com en de informatie gepubliceerd door Barakah Perlite."
+      },
+      "sections": [
+        {
+          "title": "Websitegebruik",
+          "body": "Toegang tot barakahperlite.com vereist rechtmatig gebruik, zonder pogingen om de werking van de website te wijzigen, misbruiken, overbelasten of verstoren."
+        },
+        {
+          "title": "Disclaimer voor productinformatie",
+          "body": "Informatie over perliet, toepassingen en voordelen wordt verstrekt ter algemene informatie. Het vervangt geen technische validatie die is aangepast aan de project-, substraat-, batch- of gebruikscontext."
+        },
+        {
+          "title": "Disclaimer technische gegevens",
+          "body": "Tabellen, waarden en referenties van technische fiches kunnen indicatief zijn of onderworpen zijn aan validatie. De definitieve kenmerken moeten worden bevestigd door middel van een officiële technische fiche, monster of schriftelijke offerte."
+        },
+        {
+          "title": "Offerte aanvragen",
+          "body": "Het indienen van een formulier of offerteaanvraag houdt geen definitieve bestelling in. Elk commercieel aanbod, beschikbaarheid, levertijd, prijs of logistieke voorwaarde moet schriftelijk worden bevestigd door Barakah Perlite."
+        },
+        {
+          "title": "Intellectueel eigendom",
+          "body": "Website-inhoud, inclusief tekst, beeldmateriaal, merkidentiteit, logo's en structuur, is beschermd. Reproductie of ongeoorloofd gebruik is verboden zonder voorafgaande schriftelijke toestemming."
+        },
+        {
+          "title": "Beperking van aansprakelijkheid",
+          "body": "Barakah Perlite streeft ernaar betrouwbare informatie te publiceren, maar garandeert niet dat de website vrij is van fouten of onderbrekingen. Gebruikers blijven verantwoordelijk voor het verifiëren van de geschiktheid voor eigen gebruik."
+        },
+        {
+          "title": "Contactgegevens",
+          "body": "Neem voor vragen over deze voorwaarden contact op met Barakah Perlite via info@barakahperlite.com."
+        }
+      ]
+    }
+  },
+  "applications": [
+    {
+      "title": "Landbouw",
+      "description": "Tuinbouwsubstraten, hydrocultuur, kwekerijen, kassen en uiterst nauwkeurige grondloze gewassen.",
+      "icon": "sprout",
+      "href": "/agriculture",
+      "accent": "emerald"
+    },
+    {
+      "title": "Industrie",
+      "description": "Isolatie, filtratie, absorptie, gebruik bij hoge temperaturen en lichtgewicht aggregaten voor technische specificaties.",
+      "icon": "factory",
+      "href": "/industrie",
+      "accent": "sand"
+    },
+    {
+      "title": "Meubilair",
+      "description": "Lichte minerale vulstoffen voor panelen, decoratieve elementen, composieten en lichtere formuleringen.",
+      "icon": "boxes",
+      "href": "/industrie",
+      "accent": "silver"
+    },
+    {
+      "title": "Groene ruimtes",
+      "description": "Professioneel tuinieren, stedelijke bodems, gazons, plantages en drainagemengsels voor beter beluchte wortels.",
+      "icon": "leaf",
+      "href": "/agriculture",
+      "accent": "clay"
+    }
+  ],
+  "technicalSpecs": [
+    {
+      "label": "Oorsprong",
+      "value": "Natuurlijk vulkanisch gesteente",
+      "note": "Waarden bewaakt per batch en kwaliteit."
+    },
+    {
+      "label": "pH",
+      "value": "6 – 8",
+      "note": "Neutraal profiel afhankelijk van soort en toepassing."
+    },
+    {
+      "label": "Bulkdichtheid",
+      "value": "60 – 100 kg/m³",
+      "note": "Indicatief bereik afhankelijk van deeltjesgrootte en expansie."
+    },
+    {
+      "label": "Thermische geleidbaarheid",
+      "value": "0.04 – 0.06 W/mK",
+      "note": "Indicatieve isolatieprestaties."
+    },
+    {
+      "label": "Deeltjesgrootte",
+      "value": "1–4 / 3–6 / <1,5 mm / 50–100 µm",
+      "note": "Kwaliteiten voor landbouw-, industrieel en filtratiegebruik."
+    },
+    {
+      "label": "Stabiliteit",
+      "value": "Inert, niet-ontvlambaar, recyclebaar",
+      "note": "Duurzaam, niet-reactief mineraal materiaal."
+    },
+    {
+      "label": "Verpakking",
+      "value": "Zakken van 100 L, bigbags van 1 m³, bulk",
+      "note": "Logistieke formaten aangepast aan de bestelling."
+    }
+  ],
+  "home": {
+    "hero": {
+      "eyebrow": "Marokkaanse perliet · precisielandbouw",
+      "title": "Marokkaanse perliet voor een productievere landbouw",
+      "subtitle": "Een natuurlijk, licht en duurzaam substraat dat beluchting, waterretentie en wortelontwikkeling verbetert.",
+      "ctaPrimary": "Vraag een offerte aan",
+      "ctaSecondary": "Ontdek perliet",
+      "visualLabel": "Atlas-mineraalsysteem",
+      "cardOneKicker": "Substraat",
+      "cardOneTitle": "neutraal en inert",
+      "cardTwoKicker": "Wortels",
+      "cardTwoTitle": "lucht + water",
+      "primaryCta": "Offerte aanvragen",
+      "secondaryCta": "Perliet ontdekken"
+    },
+    "stats": [
+      {
+        "value": "100%",
+        "label": "natuurlijk",
+        "detail": "Uitgebreid vulkanisch gesteente zonder chemische toevoegingen."
+      },
+      {
+        "value": "pH",
+        "label": "neutraal",
+        "detail": "Stabiele ondersteuning voor gecontroleerde bemesting."
+      },
+      {
+        "value": "3-4x",
+        "label": "waterretentie",
+        "detail": "Hoge capaciteit zonder verstikkende wortels."
+      },
+      {
+        "value": "ultra",
+        "label": "lichtgewicht",
+        "detail": "Geoptimaliseerde handling, logistiek en mengsels."
+      }
+    ],
+    "why": {
+      "eyebrow": "Waarom perliet",
+      "title": "Een mineraal substraat dat de agronomische precisie aanscherpt.",
+      "description": "Barakah Perlite positioneert perliet als een technisch hulpmiddel: het verbetert de oxygenatie, stabiliseert het vocht en geeft telers een betrouwbaar medium voor moderne gewassen.",
+      "features": [
+        {
+          "title": "Lucht, water, wortels: de juiste balans",
+          "description": "De poreuze structuur van Perliet creëert lucht- en vochtzones die de wortels helpen ademen, absorberen en ontwikkelen zonder verdichting.",
+          "icon": "wind"
+        },
+        {
+          "title": "Nauwkeurige irrigatiecontrole",
+          "description": "In kassen, kwekerijen of hydrocultuur maakt perliet het waterbeheer duidelijker en ondersteunt het regelmatige nutriëntenkringlopen.",
+          "icon": "droplets"
+        },
+        {
+          "title": "Neutrale en schone ondersteuning",
+          "description": "Het is inert, steriel en vrij van onverwachte chemische bijdragen en helpt telers de bemesting met vertrouwen onder controle te houden.",
+          "icon": "shield"
+        }
+      ]
+    },
+    "applications": {
+      "eyebrow": "Toepassingen",
+      "title": "Landbouw, industrie, meubilair en groene ruimten.",
+      "description": "Van tuinbouwsubstraten tot professioneel tuinieren, van industriële formuleringen tot lichtgewicht vulstoffen voor meubels, perliet opent duurzame technische toepassingen."
+    },
+    "origin": {
+      "visualTitle": "Marokkaanse afkomst, internationale ambitie",
+      "visualCaption": "Een gestructureerde Marokkaanse industriële aanwezigheid opgebouwd rond mineraal materiaal, kwaliteit en exportbetrouwbaarheid.",
+      "eyebrow": "Lokale expertise",
+      "title": "Taroudant als industriële basis, Marokko als signatuur.",
+      "description": "Barakah Perlite is geworteld in een mineraal en agrarisch gebied. Het doel is duidelijk: betrouwbare, gedocumenteerde perliet leveren die klaar is voor Marokkaanse, Afrikaanse en internationale normen.",
+      "cards": [
+        {
+          "label": "Landbouw",
+          "body": "Een antwoord op kassen, kwekerijen, grondloze boerderijen en nauwkeurige irrigatiesystemen."
+        },
+        {
+          "label": "Industrie",
+          "body": "Een technisch materiaal voor isolatie, filtratie, absorptie, thermische toepassingen en lichtgewicht vulstoffen."
+        }
+      ]
+    },
+    "advantages": {
+      "eyebrow": "Technische voordelen",
+      "title": "Prestaties die gemakkelijk te begrijpen en moeilijk te vervangen zijn.",
+      "description": "De kracht van Perlite is balans: lichtgewicht en toch stabiel, poreus en toch duurzaam, neutraal en toch bruikbaar in zeer verschillende specificaties.",
+      "features": [
+        {
+          "title": "Neutrale pH-waarde",
+          "description": "Sterke compatibiliteit met fertigatieprogramma's en gevoelige gewassen.",
+          "icon": "gauge"
+        },
+        {
+          "title": "Hoge porositeit",
+          "description": "Verbeterde luchtcirculatie, gecontroleerde drainage en verminderd risico op wortelverstikking.",
+          "icon": "wind"
+        },
+        {
+          "title": "Waterefficiëntie",
+          "description": "Een betere waterbeschikbaarheid in de wortelzone kan afhankelijk van het systeem verliezen verminderen.",
+          "icon": "droplets"
+        },
+        {
+          "title": "Duurzaam materiaal",
+          "description": "Mineraal, recyclebaar afhankelijk van gebruik en geschikt voor bedrijven die op zoek zijn naar schonere oplossingen.",
+          "icon": "recycle"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Proces & kwaliteit",
+      "title": "Een ketting ontworpen voor batchconsistentie.",
+      "description": "Het toekomstige industriële voordeel van Barakah Perlite is afhankelijk van het beheersen van grondstoffen, expansie, deeltjesgrootte en traceerbaarheid."
+    },
+    "cta": {
+      "title": "Klaar om perliet met hogere prestaties te specificeren?",
+      "description": "Vertel ons over uw gewas, formulering of specificatie. Wij begeleiden u naar het juiste formaat en deeltjesgrootte."
+    }
+  },
+  "product": {
+    "header": {
+      "eyebrow": "Ons product",
+      "title": "Natuurlijk geëxpandeerde perliet voor landbouw- en industriële toepassingen.",
+      "description": "Een vulkanisch gesteente dat door thermische expansie wordt omgezet in witte, lichte en poreuze korrels voor beluchting, stabiliteit en prestaties.",
+      "datasheetCta": "Technische fiche",
+      "msdsCta": "Veiligheidsfiche MSDS"
+    },
+    "what": {
+      "eyebrow": "Wat is perliet?",
+      "title": "Een natuurlijke minerale grondstof met een unieke poreuze structuur.",
+      "description": "Perliet is een vulkanisch gesteente met natuurlijk gebonden water. Door thermische expansie ontstaat een wit, licht, schoon en stabiel materiaal met poriën die water vasthouden en tegelijk lucht beschikbaar houden.",
+      "facts": [
+        {
+          "label": "Natuurlijk",
+          "value": "thermische expansie",
+          "description": "Minerale oorsprong, geen additief, getransformeerd door thermische expansie.",
+          "href": "/produit/naturelle",
+          "icon": "mountain"
+        },
+        {
+          "label": "Stabiel",
+          "value": "inert en niet-afbreekbaar",
+          "description": "Consistent gedrag in substraten, filtratie, isolatie en technische mengsels.",
+          "href": "/produit/stable",
+          "icon": "shield"
+        },
+        {
+          "label": "Technisch",
+          "value": "poreus, licht, gekalibreerd",
+          "description": "Witte geëxpandeerde structuur voor het regelen van lucht, water, gewicht en isolatie.",
+          "href": "/produit/technique",
+          "icon": "gauge"
+        }
+      ],
+      "moreLabel": "Meer informatie",
+      "visualTitle": "Geëxpandeerde perliet",
+      "visualCaption": "Witte geëxpandeerde korrels, zichtbare minerale textuur en onderzochte granulometrie voor landbouwkundige en industriële toepassingen."
+    },
+    "benefits": {
+      "eyebrow": "Productvoordelen",
+      "title": "Een technisch, schoon en veelzijdig materiaal.",
+      "description": "Barakah Perlite is gebouwd voor professionals die leesbaar, regelmatig materiaal nodig hebben dat gemakkelijk in protocollen kan worden geïntegreerd.",
+      "features": [
+        {
+          "title": "Gecontroleerde lichtheid",
+          "description": "Een uitgebreide structuur die de belasting vermindert, het transport vereenvoudigt en de mengsels verbetert.",
+          "icon": "feather"
+        },
+        {
+          "title": "Steriel medium",
+          "description": "Een schoon substraat dat de risico’s van ziekteverwekkers beperkt en de gewasstart stabiliseert.",
+          "icon": "shield"
+        },
+        {
+          "title": "Chemische inertie",
+          "description": "Perliet geeft geen onverwachte voedingsstoffen vrij en maakt nauwkeurige bemestingscontrole mogelijk.",
+          "icon": "beaker"
+        },
+        {
+          "title": "Neutrale pH-waarde",
+          "description": "Een basis die compatibel is met vele plantensoorten, meststoffen en formuleringen.",
+          "icon": "gauge"
+        },
+        {
+          "title": "Hoge beluchting",
+          "description": "Open porositeit verhoogt de zuurstofvoorziening van de wortels en vermindert de substraatverdichting.",
+          "icon": "wind"
+        },
+        {
+          "title": "Nuttige retentie",
+          "description": "Water blijft beschikbaar in de wortelzone zonder dat het substraat verzadigd raakt.",
+          "icon": "droplets"
+        },
+        {
+          "title": "Recyclebaar",
+          "description": "Een duurzaam mineraal materiaal, herbruikbaar afhankelijk van de toepassing en afgestemd op een slankere aanpak.",
+          "icon": "recycle"
+        }
+      ]
+    },
+    "technicalProfile": {
+      "eyebrow": "Materiaalgegevens",
+      "title": "Minerale samenstelling, fysieke eigenschappen en granulometrie.",
+      "description": "Barakah geëxpandeerd perliet is gepositioneerd als een technisch mineraal materiaal: lichtgewicht, poreus, stabiel en aanpasbaar aan landbouw-, industriële en filtratietoepassingen.",
+      "groups": [
+        {
+          "title": "Indicatieve samenstelling",
+          "description": "Vulkanisch materiaal dat voornamelijk bestaat uit silica en aluminiumoxide, met een chemisch stabiele structuur.",
+          "rows": [
+            {
+              "label": "Siliciumdioxide (SiO₂)",
+              "value": "74 – 76 %",
+              "note": "Belangrijkste minerale component."
+            },
+            {
+              "label": "Aluminiumoxide (Al₂O₃)",
+              "value": "12 – 13 %",
+              "note": "Draagt bij aan de materiaalstabiliteit."
+            },
+            {
+              "label": "Alkalioxiden (Na₂O, K₂O)",
+              "value": "6 – 8 %",
+              "note": "Van nature aanwezig in de vulkanische matrix."
+            },
+            {
+              "label": "IJzeroxide (Fe₂O₃)",
+              "value": "< 1.5 %",
+              "note": "Indicatieve inhoud per batch."
+            },
+            {
+              "label": "Andere mineralen",
+              "value": "Sporen",
+              "note": "Te kwalificeren door batchanalyse."
+            }
+          ]
+        },
+        {
+          "title": "Fysieke eigenschappen",
+          "description": "De thermische expansie door hete lucht creëert een witte, lichtgewicht, poreuze en resistente structuur.",
+          "rows": [
+            {
+              "label": "Bulkdichtheid",
+              "value": "60 – 100 kg/m³",
+              "note": "Afhankelijk van deeltjesgrootte en expansieniveau."
+            },
+            {
+              "label": "pH",
+              "value": "Neutraal (6 – 8)",
+              "note": "Geschikt voor substraten en technische formuleringen."
+            },
+            {
+              "label": "Thermische geleidbaarheid",
+              "value": "0.04 – 0.06 W/mK",
+              "note": "Indicatief bereik voor isolatietoepassingen."
+            },
+            {
+              "label": "Gedrag",
+              "value": "Inert, duurzaam, niet brandbaar",
+              "note": "Stabiel in veeleisende omgevingen."
+            },
+            {
+              "label": "Materiaalcyclus",
+              "value": "Recyclebaar",
+              "note": "Draagt bij aan lichtere, duurzamere oplossingen."
+            }
+          ]
+        },
+        {
+          "title": "Typische deeltjesgrootte",
+          "description": "De deeltjesgroottecontrole past de prestaties aan aan substraten, drainage, constructie of filtratie.",
+          "rows": [
+            {
+              "label": "1 – 4 mm",
+              "value": "Landbouwsubstraten en tuinbouw",
+              "note": "Beluchting, drainage en nuttige retentie."
+            },
+            {
+              "label": "3 – 6 mm",
+              "value": "Afwatering en isolatie",
+              "note": "Meer open kwaliteiten voor doorstroming en gewichtsreductie."
+            },
+            {
+              "label": "< 1.5 mm",
+              "value": "Technische toepassingen en constructie",
+              "note": "Fijne formuleringen, mortels en minerale vulstoffen."
+            },
+            {
+              "label": "50 – 100 microns",
+              "value": "Industriële filtratie",
+              "note": "Rang die moet worden gekwalificeerd via het proces."
+            }
+          ]
+        }
+      ]
+    },
+    "specs": {
+      "eyebrow": "Specificaties",
+      "title": "Technische fiche",
+      "description": "De waarden zullen worden geconsolideerd met officiële laboratoriumresultaten en technische bladen van Barakah Perlite.",
+      "download": "Technische fiche",
+      "msdsDownload": "Veiligheidsinformatieblad MSDS"
+    },
+    "packaging": {
+      "visualTitle": "Professionele verpakking",
+      "visualCaption": "Professionele formaten ontworpen om transport, opslag, handling en ordervoorbereiding te vereenvoudigen.",
+      "eyebrow": "Verpakking",
+      "title": "Zakken, big bags en bulk klaar voor professionele kanalen.",
+      "description": "De site-architectuur is klaar voor een productcatalogus, PDF-sheets, varianten op deeltjesgrootte en logistieke formaten voor snelle offertes.",
+      "formatsTitle": "Beschikbare formaten",
+      "formats": [
+        "Zakken van 100 liter",
+        "Bigbags van 1 m³",
+        "Bulk"
+      ],
+      "formatsNote": "De verpakking is ontworpen om transport, opslag en gebruik ter plaatse te vereenvoudigen, afhankelijk van de bestelde volumes."
+    },
+    "techniqueTrust": {
+      "eyebrow": "Veiligheid en stabiliteit",
+      "title": "Een natuurlijk veilig materiaal om te hanteren.",
+      "description": "Perliet is een stabiel, niet-reactief mineraal materiaal dat geschikt is voor zowel agrarische als industriële omgevingen.",
+      "features": [
+        {
+          "title": "Niet giftig en geurloos",
+          "description": "Een mineraal materiaal zonder geur, ontworpen voor gecontroleerd professioneel gebruik.",
+          "icon": "shield"
+        },
+        {
+          "title": "Onoplosbaar in water",
+          "description": "De stabiliteit beperkt ongewenste interacties met voedingsoplossingen of industriële processen.",
+          "icon": "droplets"
+        },
+        {
+          "title": "Lagere logistieke impact",
+          "description": "Zijn lichtheid vermindert de getransporteerde lasten en maakt het hanteren op locatie eenvoudiger.",
+          "icon": "feather"
+        }
+      ]
+    }
+  },
+  "productDetails": {
+    "naturelle": {
+      "backLabel": "Terug naar product",
+      "hero": {
+        "eyebrow": "Natuurlijk perliet",
+        "title": "Een vulkanisch gesteente dat is getransformeerd door thermische expansie, zonder kunstgrepen.",
+        "description": "Perliet is een natuurlijk vulkanisch gesteente dat gebonden water bevat. Door thermische expansie verdampt dit water, zet de korrel uit en wordt wit, lichtgewicht en poreus: een schone minerale basis voor landbouwsubstraten en industriële formuleringen.",
+        "visualTitle": "Gecontroleerde minerale oorsprong",
+        "visualCaption": "Een natuurlijk vulkanisch materiaal dat door thermische expansie wordt omgezet in witte, lichtgewicht en poreuze korrels."
+      },
+      "technical": {
+        "eyebrow": "Technische uitleg",
+        "title": "Warmte verandert gesteente in een bruikbare structuur.",
+        "description": "Door thermische expansie ontstaan microholtes in de korrel. Deze architectuur geeft perliet zijn lichtheid, witheid, porositeit en neutraal gedrag in zeer verschillende omgevingen.",
+        "points": [
+          {
+            "title": "Vulkanisch glas",
+            "description": "Een natuurlijk mineraal materiaal geselecteerd vanwege zijn vermogen om uit te zetten.",
+            "icon": "mountain"
+          },
+          {
+            "title": "Thermische expansie",
+            "description": "Interne stoom vergroot het volume en creëert een veel lichtere witte korrel.",
+            "icon": "flame"
+          },
+          {
+            "title": "Open porositeit",
+            "description": "Holtes ondersteunen lucht, water, isolatie en absorptie, afhankelijk van de deeltjesgrootte.",
+            "icon": "sparkles"
+          }
+        ]
+      },
+      "agriculture": {
+        "eyebrow": "Landbouw",
+        "title": "Een natuurlijke minerale basis voor actieve wortels.",
+        "description": "Bij de gewasproductie verbetert perliet de beluchting, drainage, nuttige waterretentie en oxygenatie rond de wortels. Het helpt de verdichting te verminderen en stabiliseert de lucht/waterbalans in moderne substraten.",
+        "useCases": [
+          {
+            "title": "Hydrocultuur",
+            "description": "Een lichtgewicht ondersteuning voor grondloze systemen waarbij irrigatie en fertigatie overzichtelijk en controleerbaar moeten blijven.",
+            "metric": "lucht + water"
+          },
+          {
+            "title": "Kassen en kinderdagverblijven",
+            "description": "Een component in tuinbouwmengsels om de drainage te verbeteren en verzadigde zones te verminderen.",
+            "metric": "zuurstofrijke wortels"
+          },
+          {
+            "title": "Zaadkieming en bodemverbetering",
+            "description": "Vermindert verdichting, ondersteunt de wortelvorming en maakt substraten gemakkelijker te hanteren.",
+            "metric": "duurzame structuur"
+          }
+        ]
+      },
+      "industry": {
+        "eyebrow": "Industrie",
+        "title": "Een veelzijdig mineraal materiaal voor technische specificaties.",
+        "description": "Natuurlijk geëxpandeerd perliet wordt gebruikt als lichtgewicht vulmiddel, isolatiemateriaal, filterhulpmiddel of absorberend materiaal in de bouw, filtratie, chemische, cryogene en hoge temperatuuromgevingen.",
+        "useCases": [
+          {
+            "title": "Isolatie en constructie",
+            "description": "Lichtgewicht aggregaat voor het verbeteren van de thermische prestaties en het verminderen van het gewicht van de minerale formulering.",
+            "metric": "lage dichtheid"
+          },
+          {
+            "title": "Filtratie",
+            "description": "Poreuze structuur geschikt voor gebruik als filterhulpmiddel in veeleisende industriële processen.",
+            "metric": "poreus oppervlak"
+          },
+          {
+            "title": "Absorptie en processen",
+            "description": "Een niet-giftige minerale ondersteuning voor absorptie, thermische toepassingen en lichtgewicht formuleringen.",
+            "metric": "schoon mineraal"
+          }
+        ]
+      },
+      "specs": {
+        "eyebrow": "Indicatieve gegevens",
+        "title": "Parameters die bij eindgebruik in aanmerking komen.",
+        "description": "De onderstaande waarden structureren de toekomstige technische fiche van Barakah Perlite. Ze zullen worden vervangen door officiële resultaten per deeltjesgrootte, batch en toepassing.",
+        "rows": [
+          {
+            "label": "Natuur",
+            "value": "Thermische expansie",
+            "note": "Natuurlijk mineraal materiaal getransformeerd door thermische expansie."
+          },
+          {
+            "label": "Kleur na expansie",
+            "value": "Wit tot gebroken wit",
+            "note": "Visuele indicator van expansie en reinheid."
+          },
+          {
+            "label": "Structuur",
+            "value": "Lichtgewicht en poreus",
+            "note": "Draagt bij aan beluchting, isolatie en nuttige retentie."
+          },
+          {
+            "label": "Domeinen",
+            "value": "Landbouw, filtratie, isolatie, industrie",
+            "note": "Te specificeren op soort en deeltjesgrootte."
+          }
+        ],
+        "cards": [
+          {
+            "title": "Geen additief",
+            "description": "Prestaties komen voort uit fysieke expansie van vulkanisch gesteente.",
+            "icon": "check"
+          },
+          {
+            "title": "Gemakkelijk te hanteren",
+            "description": "Lichtheid vereenvoudigt het mengen, doseren en logistiek.",
+            "icon": "feather"
+          },
+          {
+            "title": "Multi-markt",
+            "description": "Eén minerale basis kan worden gekalibreerd voor landbouw of industrie.",
+            "icon": "globe"
+          }
+        ]
+      },
+      "comparisons": {
+        "eyebrow": "Vergelijkingen",
+        "title": "Welke natuurlijke minerale structuur verandert in formuleringen.",
+        "description": "Perliet is geen onstabiele organische input: het is een neutrale minerale matrix waarvan de rol fysiek en voorspelbaar is.",
+        "cards": [
+          {
+            "title": "Perliet versus organisch materiaal",
+            "leftLabel": "Biologisch",
+            "left": "Kan het medium ontbinden, evolueren en compacteren.",
+            "rightLabel": "Perliet",
+            "right": "Ontleedt niet en behoudt een structurele functie."
+          },
+          {
+            "title": "Perliet versus compacte grond",
+            "leftLabel": "Alleen grond",
+            "left": "Risico op lage oxygenatie en ongelijkmatige drainage.",
+            "rightLabel": "Perliet mengsel",
+            "right": "Verbetert de lucht/waterbalans rond de wortels."
+          },
+          {
+            "title": "Perliet versus zwaar vulmiddel",
+            "leftLabel": "Dichte vulling",
+            "left": "Verhoogt het gewicht en bemoeilijkt het hanteren.",
+            "rightLabel": "Uitgebreid perliet",
+            "right": "Verlicht formuleringen en voegt porositeit toe."
+          }
+        ]
+      },
+      "why": {
+        "eyebrow": "Waarom het ertoe doet",
+        "title": "Een natuurlijke hulpbron met professioneel gedrag.",
+        "description": "Voor telers, formuleerders en industriële kopers komt de waarde van perliet voort uit een zeldzame combinatie: minerale oorsprong, neutraliteit, laag gewicht en nuttige porositeit.",
+        "cards": [
+          {
+            "title": "Technisch vertrouwen",
+            "body": "De stof is gemakkelijk uit te leggen aan kwaliteitsteams en internationale klanten."
+          },
+          {
+            "title": "Flexibiliteit in toepassingen",
+            "body": "Landbouw, isolatie, filtratie en absorptie gebruiken dezelfde fysieke logica: een poreuze, lichtgewicht korrel."
+          },
+          {
+            "title": "Afbeelding exporteren",
+            "body": "Goed gekarakteriseerd Marokkaans perliet kan voldoen aan de verwachtingen op het gebied van consistentie en traceerbaarheid."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Specificeer natuurlijk perliet voor uw gebruiksscenario.",
+        "description": "Deel uw sector, beoogde deeltjesgrootte en verpakkingsbeperkingen. Wij zullen een gestructureerd technisch antwoord voorbereiden."
+      }
+    },
+    "stable": {
+      "backLabel": "Terug naar product",
+      "hero": {
+        "eyebrow": "Stabiel perliet",
+        "title": "Inert, steriel, niet giftig en niet afbreekbaar.",
+        "description": "Geëxpandeerd perliet biedt de fysische en chemische stabiliteit die nodig is in landbouwsubstraten, hydrocultuursystemen, filtratie, constructie en industriële toepassingen waarbij het materiaal het proces niet mag verstoren.",
+        "visualTitle": "Uitgebreide graanstabiliteit",
+        "visualCaption": "Gekalibreerde kwaliteit, stabiel gedrag en hoogwaardige leesbaarheid geschikt voor professioneel gebruik."
+      },
+      "technical": {
+        "eyebrow": "Technische uitleg",
+        "title": "Een neutraal materiaal dat het systeem het werk laat doen.",
+        "description": "Perliet is chemisch stabiel, inert, steriel na expansie, niet giftig en niet afbreekbaar. Het voegt geen onnodige biologische of chemische variabelen toe aan gewasprotocollen of industriële formuleringen.",
+        "points": [
+          {
+            "title": "Chemische inertie",
+            "description": "Geeft geen onverwachte voedingsstoffen vrij en ondersteunt een nauwkeurige bemestingscontrole.",
+            "icon": "beaker"
+          },
+          {
+            "title": "Steriel medium",
+            "description": "Uitzetting bij hoge temperaturen creëert een schone ondersteuning voor het starten van gewassen en veeleisende toepassingen.",
+            "icon": "shield"
+          },
+          {
+            "title": "Niet-afbreekbaar",
+            "description": "De minerale structuur valt niet uiteen zoals bij een klassieke organische fractie.",
+            "icon": "recycle"
+          }
+        ]
+      },
+      "agriculture": {
+        "eyebrow": "Landbouw",
+        "title": "Meer controle in substraten en irrigatie.",
+        "description": "In kassen, kwekerijen, hydrocultuur en tuinbouwmengsels vermindert de stabiliteit van perliet de onzekerheid: de toevoer van lucht, water en voedingsstoffen blijft gemakkelijker te beheren.",
+        "useCases": [
+          {
+            "title": "Gecontroleerde hydrocultuur",
+            "description": "Een inerte ondersteuning die het voedingsmanagement scheidt van de fysieke substraatstructuur.",
+            "metric": "nauwkeurige controle"
+          },
+          {
+            "title": "Kwekerijen",
+            "description": "Een schoon medium voor jonge planten, kieming en beworteling in reproduceerbare protocollen.",
+            "metric": "schoon begin"
+          },
+          {
+            "title": "Substraatmengsels",
+            "description": "Vermindert verdichting en stabiliseert de lucht/waterbalans zonder te ontbinden.",
+            "metric": "minder bezinking"
+          }
+        ]
+      },
+      "industry": {
+        "eyebrow": "Industrie",
+        "title": "Nuttige stabiliteit wanneer het proces geen verrassingen kan tolereren.",
+        "description": "In isolatie-, filtratie-, absorptie- en lichtgewichtaggregaten fungeert perliet als een stabiele minerale matrix: lichtgewicht, poreus en compatibel met vele formuleringen.",
+        "useCases": [
+          {
+            "title": "Industriële filtratie",
+            "description": "Mineraal filterhulpmiddel voor processen waarbij zuiverheid en consistentie essentieel zijn.",
+            "metric": "regelmatig gedrag"
+          },
+          {
+            "title": "Bouw",
+            "description": "Niet-afbreekbaar lichtgewicht vulmiddel voor mortels, pleisterwerk en lichtgewicht beton.",
+            "metric": "minerale duurzaamheid"
+          },
+          {
+            "title": "Cryogenica en temperatuur",
+            "description": "Stabiele minerale isolatie voor veeleisende thermische omgevingen, afhankelijk van de kwaliteit.",
+            "metric": "stabiele isolatie"
+          }
+        ]
+      },
+      "specs": {
+        "eyebrow": "Indicatieve gegevens",
+        "title": "Stabiliteit bij het documenteren dankzij kwaliteitscontrole.",
+        "description": "Deze parameters structureren de toekomstige technische fiche voor klanten die herhaalbaarheid, traceerbaarheid en procescompatibiliteit vereisen.",
+        "rows": [
+          {
+            "label": "Chemisch gedrag",
+            "value": "Stabiel / inert",
+            "note": "Te documenteren met kwaliteitsbladen en batchanalyses."
+          },
+          {
+            "label": "Toxiciteit",
+            "value": "Niet giftig",
+            "note": "Mineraal materiaal te gebruiken bij stofbestrijding en PBM-richtlijnen."
+          },
+          {
+            "label": "Ontleding",
+            "value": "Niet-afbreekbaar",
+            "note": "Vormt geen organische stof in het substraat."
+          },
+          {
+            "label": "Indicatieve pH",
+            "value": "Neutraal",
+            "note": "Bereik gekwalificeerd op basis van cijfer en officiële analyse."
+          }
+        ],
+        "cards": [
+          {
+            "title": "Herhaalbaar",
+            "description": "Helpt bij het handhaven van vergelijkbaar gedrag van de ene mix tot de andere.",
+            "icon": "gauge"
+          },
+          {
+            "title": "Compatibel",
+            "description": "Kan worden geïntegreerd in fertigatieprogramma's en mineraalformuleringen.",
+            "icon": "flask"
+          },
+          {
+            "title": "Opbergbaar",
+            "description": "Een mineraal materiaal dat, mits beschermd en verpakt, gemakkelijk op te bergen is.",
+            "icon": "packageCheck"
+          }
+        ]
+      },
+      "comparisons": {
+        "eyebrow": "Vergelijkingen",
+        "title": "Waarom stabiliteit het operationele risico verlaagt.",
+        "description": "Een stabiel materiaal helpt boerderijen en industriële activiteiten parasitaire variabelen in hun systemen te beperken.",
+        "cards": [
+          {
+            "title": "Perliet versus organische dragers",
+            "leftLabel": "Biologisch",
+            "left": "Kan in de loop van de tijd evolueren, fermenteren of compacteren.",
+            "rightLabel": "Perliet",
+            "right": "Blijft mineraal, inert en structureel."
+          },
+          {
+            "title": "Perliet versus slecht gedraineerd medium",
+            "leftLabel": "Zwakke afwatering",
+            "left": "Risico op wortelverstikking en moeilijke irrigatie.",
+            "rightLabel": "Stabiel perliet",
+            "right": "Onderhoudt luchtholtes en vermindert verdichting."
+          },
+          {
+            "title": "Perliet versus reactief vulmiddel",
+            "leftLabel": "Reactieve vulstof",
+            "left": "Kan het proces of de formulering wijzigen.",
+            "rightLabel": "Inerte vulstof",
+            "right": "Voegt een lager gewicht en porositeit toe zonder het systeem te verstoren."
+          }
+        ]
+      },
+      "why": {
+        "eyebrow": "Waarom het ertoe doet",
+        "title": "Stabiliteit schept industrieel vertrouwen.",
+        "description": "Naarmate de volumes groeien, willen klanten voorspelbaar materiaal. Perlite beantwoordt aan die verwachting met een duidelijke fysieke rol en brede compatibiliteit.",
+        "cards": [
+          {
+            "title": "Minder onzekerheid",
+            "body": "Telers kunnen irrigatie, zuurstof en voeding nauwkeuriger beheren."
+          },
+          {
+            "title": "Duidelijkere processen",
+            "body": "Industriële gebruikers integreren een lichtgewicht vulmiddel zonder een ongewenste actieve variabele toe te voegen."
+          },
+          {
+            "title": "Exportkwaliteit",
+            "body": "Stabiliteit ondersteunt datasheets, kwaliteitsaudits en terugkerende contracten."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Heeft u stabiel perliet nodig voor uw formulering?",
+        "description": "Stuur uw toepassing, pH, deeltjesgrootte, dichtheid en verpakkingsbeperkingen. Wij zullen een specificatiebasis voorbereiden."
+      }
+    },
+    "technique": {
+      "backLabel": "Terug naar product",
+      "hero": {
+        "eyebrow": "Technisch perliet",
+        "title": "Lichtheid, porositeit en kalibratie voor veeleisende toepassingen.",
+        "description": "De technische waarde van geëxpandeerd perliet komt voort uit de witte, lichtgewicht en zeer poreuze structuur. Het verbetert de beluchting, drainage, waterretentie en zuurstofvoorziening van de wortels, terwijl het isolatie, filtratie, cryogene werking, absorptie en lichtgewicht aggregaten ten goede komt.",
+        "visualTitle": "Deeltjesgrootte en porositeit",
+        "visualCaption": "Verschillende deeltjesgroottes helpen bij het afstemmen van beluchting, drainage, filtratie, isolatie en lichtheid."
+      },
+      "technical": {
+        "eyebrow": "Technische uitleg",
+        "title": "De korrelstructuur bepaalt de prestaties.",
+        "description": "Na expansie fungeert elke korrel als een poreuze microstructuur. Afhankelijk van de deeltjesgrootte kan het lucht toevoegen aan een substraat, bruikbaar water vasthouden, een formulering lichter maken of bijdragen aan thermische isolatie.",
+        "points": [
+          {
+            "title": "Zeer lichtgewicht",
+            "description": "Een lage bulkdichtheid vermindert het gewicht en maakt het hanteren eenvoudiger.",
+            "icon": "feather"
+          },
+          {
+            "title": "Zeer poreus",
+            "description": "Een spouwnetwerk dat nuttig is voor lucht, water, filtratie en isolatie.",
+            "icon": "wind"
+          },
+          {
+            "title": "Kalibreerbaar",
+            "description": "Deeltjesgroottes aangepast aan zaailingen, substraten, industriële mengsels en filterhulpmiddelen.",
+            "icon": "barChart"
+          }
+        ]
+      },
+      "agriculture": {
+        "eyebrow": "Landbouw",
+        "title": "Een lucht/water-architectuur voor wortels.",
+        "description": "In hydrocultuur, kassen, kwekerijen, ontkieming en bodemverbetering helpt perliet een zuurstofrijk, doorlatend en minder compact wortelmilieu te behouden.",
+        "useCases": [
+          {
+            "title": "Kassubstraten",
+            "description": "Verbetert de mengselstructuur en ondersteunt een regelmatigere irrigatie.",
+            "metric": "lucht/waterbalans"
+          },
+          {
+            "title": "Kieming",
+            "description": "Een lichtgewicht en schoon medium ter ondersteuning van de vestiging van jonge wortels.",
+            "metric": "fijne ondersteuning"
+          },
+          {
+            "title": "Bodemverbetering",
+            "description": "Vermindert verdichting en creëert lucht- en waterwegen rond het wortelsysteem.",
+            "metric": "beter ademende grond"
+          }
+        ]
+      },
+      "industry": {
+        "eyebrow": "Industrie",
+        "title": "Porositeit die verder reikt dan de landbouw.",
+        "description": "Dezelfde fysieke eigenschappen verklaren industriële toepassingen: thermische isolatie, constructie, filtratie, toepassingen bij hoge temperaturen, cryogene techniek, absorptie en lichtgewicht aggregaten.",
+        "useCases": [
+          {
+            "title": "Thermische isolatie",
+            "description": "Licht geëxpandeerde korrel voor isolatiesystemen, vullingen en minerale formuleringen.",
+            "metric": "verminderde geleidbaarheid"
+          },
+          {
+            "title": "Filtratie en absorptie",
+            "description": "Korrelporositeit en oppervlak ondersteunen scheidings- en absorptieprocessen.",
+            "metric": "actieve microstructuur"
+          },
+          {
+            "title": "Lichtgewicht aggregaten",
+            "description": "Verlicht mortels, pleisterwerk en technisch beton met behoud van een minerale basis.",
+            "metric": "lager gewicht"
+          }
+        ]
+      },
+      "specs": {
+        "eyebrow": "Indicatieve gegevens",
+        "title": "De deeltjesgrootte bepaalt het gebruik.",
+        "description": "Toekomstige platen moeten elke kwaliteit verbinden met een deeltjesgroottebereik, bulkdichtheid en verwachte prestaties.",
+        "rows": [
+          {
+            "label": "Bulkdichtheid",
+            "value": "60 – 120 kg/m³",
+            "note": "Afhankelijk van expansie en deeltjesgrootte."
+          },
+          {
+            "label": "Deeltjesgrootte",
+            "value": "0-1 / 1-3 / 3-6 mm",
+            "note": "Indicatieve kwaliteiten aangepast aan de productie."
+          },
+          {
+            "label": "Belangrijkste functies",
+            "value": "Beluchting, drainage, retentie, isolatie",
+            "note": "Dominante functie is afhankelijk van de rang."
+          },
+          {
+            "label": "Formaten",
+            "value": "Zakken, bigbags, bulk",
+            "note": "specificeer gewichten, pallets en PDF-vellen."
+          }
+        ],
+        "cards": [
+          {
+            "title": "Wortel lucht",
+            "description": "Porositeit handhaaft luchtruimten rond de wortels.",
+            "icon": "wind"
+          },
+          {
+            "title": "Nuttige retentie",
+            "description": "Een deel van het water blijft beschikbaar zonder dat het medium verzadigd raakt.",
+            "icon": "droplets"
+          },
+          {
+            "title": "Lichte isolatie",
+            "description": "Uitgebreide korrel verlaagt de massa en draagt bij aan de thermische isolatie.",
+            "icon": "thermometer"
+          }
+        ]
+      },
+      "comparisons": {
+        "eyebrow": "Vergelijkingen",
+        "title": "Prestaties komen van het juiste cijfer op de juiste plaats.",
+        "description": "Technisch perliet moet worden gespecificeerd als een gekalibreerde component en mag niet worden behandeld als een generiek poeder.",
+        "cards": [
+          {
+            "title": "Fijn versus grof perliet",
+            "leftLabel": "Fijn",
+            "left": "Handig voor zaailingen, fijne mengsels en sommige filtratietoepassingen.",
+            "rightLabel": "Grof",
+            "right": "Voegt meer macroporositeit, drainage en lichtheid toe."
+          },
+          {
+            "title": "Perliet versus dichte grond",
+            "leftLabel": "Dichte grond",
+            "left": "Kan te veel water vasthouden en zuurstof beperken.",
+            "rightLabel": "Perliet mengsel",
+            "right": "Verbetert de ademhaling en waterverdeling."
+          },
+          {
+            "title": "Perliet versus zwaar aggregaat",
+            "leftLabel": "Zwaar aggregaat",
+            "left": "Verhoogt de lading en vermindert de logistieke efficiëntie.",
+            "rightLabel": "Licht aggregaat",
+            "right": "Verlicht de formulering en verbetert de hantering."
+          }
+        ]
+      },
+      "why": {
+        "eyebrow": "Waarom het ertoe doet",
+        "title": "Een goed gespecificeerd technisch materiaal verkoopt beter.",
+        "description": "Om boerderijen, ingenieursbureaus, industriële kopers en distributeurs te overtuigen, moet Barakah Perlite elke kwaliteit koppelen aan een meetbaar voordeel en een duidelijk gebruik.",
+        "cards": [
+          {
+            "title": "Snellere beslissingen",
+            "body": "Klanten begrijpen welk cijfer ze moeten aanvragen en waarom."
+          },
+          {
+            "title": "Minder gebruiksfouten",
+            "body": "De juiste deeltjesgrootte vermijdt mengsels die te drainerend, te fijn of te zwaar zijn."
+          },
+          {
+            "title": "Premium positionering",
+            "body": "Technische gegevens maken van een mineraalproduct een professionele oplossing."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Laten we de technische fiche voor uw gebruik samenstellen.",
+        "description": "Beschrijf uw agrarische of industriële toepassing. Wij helpen u bij het kiezen van de deeltjesgrootte, het formaat en de te documenteren gegevens."
+      }
+    }
+  },
+  "agriculture": {
+    "header": {
+      "eyebrow": "Agritech-toepassingen",
+      "title": "Een substraat ontworpen voor gezonde wortels, efficiënte irrigatie en stabiele teeltprestaties.",
+      "description": "Barakah Perlite ondersteunt moderne telers, kassen, kwekerijen en hydrocultuursystemen met een natuurlijke, inerte en lichte oplossing."
+    },
+    "intro": {
+      "visualTitle": "Kassen en grondloze gewassen",
+      "visualCaption": "Moderne substraten voor kassen, hydrocultuur, kwekerijen en gewassen onder gecontroleerde irrigatie.",
+      "eyebrow": "Agrarisch gebruik",
+      "title": "Perliet geeft structuur aan moderne teeltsystemen.",
+      "description": "Hydrocultuur, kwekerijen, kasgroenten of tuinbouwmengsels: Barakah-perliet helpt de drainage, lucht en retentie af te stemmen op de doelstellingen van de teler.",
+      "checklist": [
+        "Hydrocultuur en fertigatie",
+        "Groentenkassen",
+        "Kwekerijen en jonge planten",
+        "Zware bodemverbetering",
+        "Kieming en stekken",
+        "Professionele tuinbouw"
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Gebruiksgevallen",
+      "title": "Landbouwtoepassingen: substraat, amendement en mengsels.",
+      "description": "In de landbouw verbetert perliet de bodem- en substraatstructuur: wortelbeluchting, drainage, evenwichtige waterretentie en stabiele ondersteuning voor moderne gewassen.",
+      "features": [
+        {
+          "title": "Hydrocultuur",
+          "description": "Schone minerale ondersteuning voor hydrocultuurgewassen, geïrrigeerde systemen en gecontroleerde nutriëntencycli.",
+          "icon": "droplets"
+        },
+        {
+          "title": "Kassen",
+          "description": "Licht substraat voor beschermde gewassen met betere drainage en worteloxygenatie.",
+          "icon": "leaf"
+        },
+        {
+          "title": "Kwekerijen",
+          "description": "Bevordert een snelle beworteling en beperkt verdichting tijdens gevoelige fasen.",
+          "icon": "sprout"
+        },
+        {
+          "title": "Bodemverbetering",
+          "description": "Maakt zware grond lichter, vermindert verdichting en verbetert het vochtbeheer.",
+          "icon": "mountain"
+        },
+        {
+          "title": "Kieming",
+          "description": "Fijne, stabiele structuur voor een uniforme opkomst van zaailingen en jonge planten.",
+          "icon": "shield"
+        },
+        {
+          "title": "Substraatmengsels",
+          "description": "Stabiele component voor premium mengsels: bloemen, bessen, kruiden en sierplanten.",
+          "icon": "flask"
+        }
+      ]
+    },
+    "benefits": {
+      "eyebrow": "Voordelen voor de teler",
+      "title": "Duidelijkere gewassen, beter bediende wortels.",
+      "description": "In een goed beheerd systeem wordt perliet een consistentiemiddel: schonere irrigatie, gezondere beworteling en een stabieler medium.",
+      "features": [
+        {
+          "title": "Actievere wortels",
+          "description": "Een betere toegang tot zuurstof ondersteunt de wortelkracht en versnelt de herstelfasen.",
+          "icon": "sprout"
+        },
+        {
+          "title": "Minder verdichting",
+          "description": "De minerale structuur houdt de mengsels opener, zelfs bij herhaalde irrigatiecycli.",
+          "icon": "wind"
+        },
+        {
+          "title": "Efficiëntere irrigatie",
+          "description": "Perliet houdt nuttig vocht vast terwijl overtollig water wordt afgevoerd, waardoor waterstress wordt verminderd.",
+          "icon": "droplets"
+        },
+        {
+          "title": "Regelmatige oxygenatie",
+          "description": "Een beter ademend substraat vermindert omstandigheden die wortelstress bevorderen.",
+          "icon": "leaf"
+        }
+      ]
+    },
+    "comparisons": {
+      "eyebrow": "Vergelijkingen",
+      "title": "Kies om de juiste reden voor perliet.",
+      "description": "Perliet is geen magische belofte: het is een fysiek materiaal dat bij juiste dosering het substraatgedrag verbetert.",
+      "cards": [
+        {
+          "title": "Perliet versus aarde",
+          "body": "Perliet vervangt niet altijd de grond: het transformeert deze. Het vermindert de verdichting, voegt lucht toe en stabiliseert vocht rond de wortels."
+        },
+        {
+          "title": "Perliet versus kokos",
+          "body": "Kokospeat houdt water sterk vast. Perliet zorgt voor meer beluchting en helpt bij het afstemmen van de porositeit in professionele mengsels."
+        },
+        {
+          "title": "Perliet in mengsels",
+          "body": "Gecombineerd met turf, kokos, compost of minerale media wordt het een precisiehefboom voor drainage, zuurstof en irrigatie."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Kassen, boerderijen en kwekerijen: vraag een deeltjesgrootteadvies aan.",
+      "description": "Deel uw gewas, irrigatiesysteem, volumes en doelstellingen. Barakah Perlite zal een gebruiksgericht antwoord opstellen, niet alleen een zakprijs."
+    }
+  },
+  "industry": {
+    "header": {
+      "eyebrow": "Industriële toepassingen",
+      "title": "Lichte, poreuze en chemisch stabiele perliet voor veeleisende technische toepassingen.",
+      "description": "Van isolatie tot filtratie: geëxpandeerde perliet biedt prestaties, lage massa en minerale stabiliteit voor industriële processen."
+    },
+    "intro": {
+      "eyebrow": "Industriële toepassingen",
+      "title": "Een discreet materiaal, essentieel in veeleisende systemen.",
+      "description": "De industriële waarde van Perliet komt voort uit de combinatie van lage dichtheid, stabiliteit, porositeit, isolatie en compatibiliteit met veel matrices.",
+      "checklist": [
+        "Thermische en akoestische isolatie",
+        "Filterhulpmiddel voor industriële vloeistoffen",
+        "Vuurvaste materialen en materialen voor hoge temperaturen",
+        "Absorptie van olie en chemicaliën",
+        "Cryogene isolatie",
+        "Lichtgewicht aggregaten en minerale formuleringen"
+      ],
+      "visualTitle": "Perliet voor industriële systemen",
+      "visualCaption": "Een lichtgewicht en stabiel materiaal voor isolatie, filtratie, technische mengsels en bouwtoepassingen."
+    },
+    "domains": {
+      "eyebrow": "Velden",
+      "title": "Zeven industriële toepassingen, één prestatielogica.",
+      "description": "De poreuze structuur, lichtheid en chemische stabiliteit maken het geschikt voor veeleisende industriële specificaties.",
+      "features": [
+        {
+          "title": "Bouw isolatie",
+          "description": "Vulstoffen, technische mortels en lichtgewicht beton om het thermisch en akoestisch comfort te verbeteren.",
+          "icon": "building"
+        },
+        {
+          "title": "Filtratie",
+          "description": "Mineraal filterhulpmiddel voor het zuiveren van vloeistoffen, oliën en industriële stromen.",
+          "icon": "waves"
+        },
+        {
+          "title": "Chemische industrie",
+          "description": "Inerte ondersteuning voor formuleringen, technische vulstoffen en processen die stabiliteit vereisen.",
+          "icon": "beaker"
+        },
+        {
+          "title": "Hoge temperatuur",
+          "description": "Technische materialen voor hoge temperaturen, vuurvaste componenten en thermische beveiligingen.",
+          "icon": "thermometer"
+        },
+        {
+          "title": "Absorptie",
+          "description": "Poreus granulaat voor het absorberen van oliën, vloeistoffen en industriële lekkages.",
+          "icon": "packageCheck"
+        },
+        {
+          "title": "Cryogenen",
+          "description": "Isolatie van tanks en omgevingen bij zeer lage temperaturen dankzij de lichtgewicht structuur.",
+          "icon": "snowflake"
+        },
+        {
+          "title": "Lichtgewicht aggregaten",
+          "description": "Gewichtsreductie voor minerale formuleringen, mortels, panelen en technische systemen.",
+          "icon": "boxes"
+        },
+        {
+          "title": "Visie exporteren",
+          "description": "Kwaliteitspositionering voor industriële partners in Marokko, Afrika en Europa.",
+          "icon": "globe"
+        }
+      ]
+    },
+    "technical": {
+      "eyebrow": "Technische aanpak",
+      "title": "De juiste gegevens vóór de juiste bestelling.",
+      "description": "Het industriële aanbod moet de deeltjesgrootte, dichtheid, vocht, zuiverheid, thermische geleidbaarheid, verpakking, transport en kwaliteitsdocumentatie specificeren.",
+      "cta": "Praat met het team"
+    },
+    "cta": {
+      "title": "Heeft u een industriële specificatie?",
+      "description": "Stuur uw beperkingen: deeltjesgrootte, dichtheid, volume, land van levering, eindgebruik en kwaliteitseisen. Het team zal een duidelijk technisch antwoord voorbereiden."
+    }
+  },
+  "about": {
+    "header": {
+      "eyebrow": "Over",
+      "title": "Een Marokkaans merk dat is gebouwd om vertrouwen te wekken op technische markten.",
+      "description": "Barakah Perlite heeft tot doel Marokkaans perliet te verheffen van mineraalproduct tot gedocumenteerde, betrouwbare en exportklare professionele oplossing."
+    },
+    "story": {
+      "eyebrow": "Merk verhaal",
+      "title": "Van Marokkaans mineraalgebied naar een vertrouwde industrie.",
+      "description": "Barakah Perlite is een Marokkaans bedrijf gespecialiseerd in de productie en commercialisering van perliet. Het is haar rol om de agrarische en industriële sectoren te voorzien van stabiel, schoon en hoogwaardig materiaal, ondersteund door leesbare kwaliteit en serieuze commerciële relaties.",
+      "body": "De ambitie gaat verder dan een commerciële brochure: Barakah Perlite is gestructureerd als een platform dat morgen een productcatalogus, klantenportaal, offertetracking en volledige technische documentatie kan hosten.",
+      "visualTitle": "Team, fabriek en grondstof",
+      "visualCaption": "Een organisatie opgebouwd rond de industriële site, grondstoffen, kwaliteitscontrole en technische documentatie."
+    },
+    "values": {
+      "eyebrow": "Toezeggingen",
+      "title": "Kwaliteit, betrouwbaarheid, duurzaamheid: de drie proofs to build.",
+      "description": "De site bereidt een internationale aanwezigheid voor waar elke belofte kan worden ondersteund door gegevensbladen, foto's, certificeringen, analyses en processen.",
+      "features": [
+        {
+          "title": "Natuurlijke hulpbron",
+          "description": "Een materiaal van vulkanische oorsprong dat gewaardeerd wordt door een technische en verantwoorde aanpak.",
+          "icon": "mountain"
+        },
+        {
+          "title": "Betrouwbare kwaliteit",
+          "description": "Een ambitie voor batchconsistentie, traceerbaarheid en duidelijke documentatie voor klanten.",
+          "icon": "shield"
+        },
+        {
+          "title": "Duurzame landbouw",
+          "description": "Substraten die helpen om water, lucht en wortels beter te beheren in moderne gewassen.",
+          "icon": "leaf"
+        },
+        {
+          "title": "Visie exporteren",
+          "description": "Een Marokkaanse positionering die klaar is om de Afrikaanse, Europese en internationale markten te betreden.",
+          "icon": "globe"
+        }
+      ]
+    },
+    "focusCards": [
+      {
+        "title": "Landbouw",
+        "body": "Bedien telers, kassen, kwekerijen en distributeurs met een meer technisch natuurlijk substraat."
+      },
+      {
+        "title": "Industrie",
+        "body": "Pak isolatie, filtratie, absorptie en toepassingen bij hoge temperaturen aan met duidelijke productgegevens."
+      },
+      {
+        "title": "Duurzaamheid",
+        "body": "Promoot een duurzame minerale hulpbron en ondersteun klanten in de richting van efficiëntere oplossingen."
+      }
+    ]
+  },
+  "contactPage": {
+    "header": {
+      "eyebrow": "Contact",
+      "title": "Bespreek uw perlietbehoefte met het Barakah Perlite-team.",
+      "description": "Vraag een offerte, technische fiche of toepassingsadvies aan voor landbouw, industrie, filtratie of distributie."
+    },
+    "formIntro": {
+      "eyebrow": "Professionele vorm",
+      "title": "Vertel ons over uw behoefte.",
+      "description": "Het formulier is klaar voor toekomstige CRM-integratie, offertebeheer en admin-tracking."
+    },
+    "detailsHeading": "Contactgegevens",
+    "whatsapp": "Verkoop WhatsApp",
+    "mapTitle": "Kaart & toegang",
+    "mapCaption": "Kantoor: N°5 ET.3 Imm. El Khiati, Avenue Hassan II, Taroudant. Fabrieksproject: Zone industrielle Ahl Rmel, Oulad Teima, Taroudant.",
+    "form": {
+      "name": "Naam",
+      "company": "Bedrijf",
+      "phone": "Telefoon",
+      "email": "E-mail",
+      "sector": "Sector",
+      "quantity": "Benodigde hoeveelheid",
+      "message": "Bericht",
+      "requiredMark": "*",
+      "sectorPlaceholder": "Selecteer",
+      "quantityPlaceholder": "Voorbeeld: 10 ton, 500 zakken, 2 bigbags",
+      "messagePlaceholder": "Beschrijf uw toepassing, gewenste granulometrie, leveringsland of technische vereisten.",
+      "note": "Commerciële reactie binnen 24-48 werkuren na interne validatie.",
+      "submit": "Aanvraag verzenden",
+      "loading": "Verzenden...",
+      "success": "Aanvraag ontvangen",
+      "error": "De aanvraag kan momenteel niet worden verzonden. Probeer WhatsApp of e-mail.",
+      "errors": {
+        "name": "Naam is verplicht.",
+        "email": "E-mail is verplicht.",
+        "invalidEmail": "Ongeldig e-mailadres.",
+        "phone": "Telefoon is verplicht.",
+        "sector": "Sector is verplicht.",
+        "message": "Bericht is verplicht."
+      },
+      "sectors": [
+        "Landbouw",
+        "Industrie",
+        "Bouw",
+        "Filtratie",
+        "Distributie / export"
+      ]
+    }
+  },
+  "gallery": {
+    "header": {
+      "eyebrow": "Galerij",
+      "title": "Beelden van product, toepassingen en toekomstige industriële referenties.",
+      "description": "Een premium ruimte voor toekomstige Barakah Perlite-fotografie: materiaal, kassen, fabrieken, verpakkingen en industriële toepassingen met duidelijke, op categorieën gebaseerde navigatie."
+    },
+    "categories": [
+      "Landbouw",
+      "Industrie",
+      "Product",
+      "Fabriek"
+    ],
+    "items": [
+      {
+        "category": "Landbouw",
+        "title": "Wortels in perlietsubstraat",
+        "caption": "Kas-, hydrocultuur- en kweektoepassingen die de lucht/waterbalans rond de wortels verbeteren."
+      },
+      {
+        "category": "Product",
+        "title": "Gekalibreerde witte korrels",
+        "caption": "Geëxpandeerde korrels met poreuze structuur voor substraten, technische blends en industriële toepassingen."
+      },
+      {
+        "category": "Industrie",
+        "title": "Technische toepassingen",
+        "caption": "Isolatie-, filtratie-, absorptie- en lichtgewicht aggregaten voor veeleisende technische omgevingen."
+      },
+      {
+        "category": "Fabriek",
+        "title": "Transformatie lijn",
+        "caption": "Transformatie, kwaliteitscontrole, opslag en verpakking ontworpen voor professionele klanten."
+      },
+      {
+        "category": "Landbouw",
+        "title": "Proeven en veldresultaten",
+        "caption": "Monitoring van wortelontwikkeling, irrigatieprotocollen en veldresultaten."
+      },
+      {
+        "category": "Product",
+        "title": "Exportverpakkingen",
+        "caption": "Zakken, bigbags, pallets en productmarkeringen voor agrarische, industriële en exportkanalen."
+      }
+    ],
+    "noteTitle": "Professionele fotobibliotheek",
+    "noteBody": "De slots zijn klaar voor geoptimaliseerde afbeeldingen, goedgekeurde bijschriften, SEO-tags en meertalige inhoud."
+  },
+  "experience": {
+    "header": {
+      "eyebrow": "Ervaring",
+      "title": "Resultaten uit het veld, samenwerkingen en technische toepassingen.",
+      "description": "Een pagina die is ontworpen om samenwerkingen, landbouwproeven, klantverhalen en industriële toepassingen op een gestructureerde, geloofwaardige manier te presenteren aan internationale kopers."
+    },
+    "cards": [
+      {
+        "kicker": "Samenwerkingen",
+        "title": "Agrarische en industriële partners",
+        "body": "voeg goedgekeurde samenwerkingen toe met boerderijen, distributeurs, laboratoria, ingenieursbureaus of industriële exploitanten.",
+        "metric": "netwerk"
+      },
+      {
+        "kicker": "Veldresultaten",
+        "title": "Gewas- en wortelmonitoring",
+        "body": "integreer echte metingen voor beluchting, irrigatie, verdichting en wortelontwikkeling.",
+        "metric": "bewijs"
+      },
+      {
+        "kicker": "Klanten",
+        "title": "Verifieerbare gebruiksverhalen",
+        "body": "bereid goedgekeurde klantcases voor met sector, volume, uitdaging en waargenomen resultaat.",
+        "metric": "vertrouwen"
+      },
+      {
+        "kicker": "Landbouwproeven",
+        "title": "Hydrocultuur, kassen en kwekerijen",
+        "body": "documenteer gewasprotocollen, gemengde substraten, kiemkracht en irrigatie-efficiëntie.",
+        "metric": "agritech"
+      },
+      {
+        "kicker": "Industrie",
+        "title": "Isolatie, filtratie en absorptie",
+        "body": "voeg gekwalificeerde industriële toepassingen toe met technische beperkingen, kwaliteiten en verpakkingen.",
+        "metric": "technisch"
+      }
+    ]
+  },
+  "adminContent": {
+    "eyebrow": "Intern prototype",
+    "title": "Barakah Perlite inhoudbeheerder.",
+    "description": "Niet-functionele interface om toekomstig contentbeheer in te kaderen. Er zijn geen echte toegang, bewerkingen of gevoelige gegevens aan verbonden.",
+    "securityNote": "Alleen visueel prototype: de toekomstige versie moet vóór productie op de server worden beveiligd.",
+    "login": {
+      "title": "Login-mockup",
+      "email": "E-mailadres van beheerder",
+      "password": "Wachtwoord",
+      "button": "Inloggen uitgeschakeld"
+    },
+    "dashboard": {
+      "title": "Inhoudsdashboard",
+      "stats": [
+        "Galerijafbeeldingen",
+        "Onderschriften",
+        "Ervaringen",
+        "Samenwerkingen"
+      ]
+    },
+    "managers": [
+      {
+        "title": "Galerijafbeeldingsbeheerder",
+        "description": "Mockup voor het uploaden, categoriseren en goedkeuren van toekomstige landbouw-, industrie-, product- en fabrieksafbeeldingen.",
+        "items": [
+          "Afbeelding uploaden",
+          "Categorieën",
+          "Publicatiestatus"
+        ]
+      },
+      {
+        "title": "Ondertitelingsbeheerder",
+        "description": "Mockup voor het voorbereiden van meertalige bijschriften, SEO-beschrijvingen en korte teksten.",
+        "items": [
+          "FR / EN / AR",
+          "Afbeelding-SEO",
+          "Goedkeuring van inhoud"
+        ]
+      },
+      {
+        "title": "Ervaringsmanager",
+        "description": "Mockup voor het structureren van veldproeven, klantresultaten en technische toepassingen.",
+        "items": [
+          "Landbouwproeven",
+          "Klantgevallen",
+          "Industrieel gebruik"
+        ]
+      },
+      {
+        "title": "Samenwerkingsmanager",
+        "description": "Mockup voor partners, toestemmingsstatus en publiceerbare bewijspunten.",
+        "items": [
+          "Partners",
+          "Machtigingen",
+          "Documenten"
+        ]
+      }
+    ],
+    "todos": [
+      "echte server-side authenticatie",
+      "beschermde middleware",
+      "database",
+      "opslag voor het uploaden van afbeeldingen",
+      "autorisatie van de beheerdersrol",
+      "API-bescherming",
+      "echte KRUI"
+    ]
+  },
+  "admin": {
+    "header": {
+      "eyebrow": "Beheerder",
+      "title": "Barakah Perlite-dashboard.",
+      "description": "Basis klaar voor de toekomstige toepassing: offertes, producten, content, CRM en meertalige administratie."
+    },
+    "modules": [
+      {
+        "title": "Offertebeheer",
+        "description": "connect formulieren, verkooppijplijn, statussen, meldingen en CRM-export.",
+        "icon": "fileText"
+      },
+      {
+        "title": "Productcatalogus",
+        "description": "beheer deeltjesgroottes, PDF-vellen, verpakkingen, voorraad en afbeeldingen.",
+        "icon": "barChart"
+      },
+      {
+        "title": "Veilige toegang",
+        "description": "voeg authenticatie, rollen, activiteitenlogboek en beheerdersrechten toe.",
+        "icon": "lock"
+      },
+      {
+        "title": "Klanten",
+        "description": "houd accounts, verzoeken, documenten, contracten en contactgeschiedenis bij.",
+        "icon": "users"
+      }
+    ]
+  },
+  "client": {
+    "header": {
+      "eyebrow": "Klantenportaal",
+      "title": "Een toekomstige ruimte voor klanten, distributeurs en partners.",
+      "description": "De site is opgezet als een evolutieve applicatie: documenten, offertes, bestellingen, support en meldingen kunnen later worden toegevoegd zonder de basis opnieuw op te bouwen."
+    },
+    "modules": [
+      {
+        "title": "Het bijhouden van offertes",
+        "description": "verzoeken, aanbiedingen, statussen, volumes, data en contacten weergeven.",
+        "icon": "fileCheck"
+      },
+      {
+        "title": "Documenten",
+        "description": "download technische fiches, certificaten, facturen en kwaliteitsdocumenten.",
+        "icon": "download"
+      },
+      {
+        "title": "Bestellingen",
+        "description": "volg verpakkingen, verzendingen, geschiedenis en nabestellingen.",
+        "icon": "packageSearch"
+      },
+      {
+        "title": "Toegang voor klanten",
+        "description": "voeg authenticatie, bedrijfsprofielen, machtigingen en meldingen toe.",
+        "icon": "lock"
+      }
+    ]
+  }
+},
   ar: {
     localeName: "العربية",
     direction: "rtl",

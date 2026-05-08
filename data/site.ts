@@ -32,6 +32,7 @@ export const locales = [
   { code: "fr", label: "FR", name: "Français" },
   { code: "ar", label: "AR", name: "العربية" },
   { code: "en", label: "EN", name: "English" },
+  { code: "nl", label: "NL", name: "Nederlands" },
 ] as const;
 
 export const navItems: NavItem[] = [
