@@ -67,7 +67,7 @@ export default function RootLayout({
 
   return (
     <html lang="fr" dir="ltr" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <body className={dmSans.variable}>
+      <body className={`${dmSans.variable} overflow-x-hidden`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

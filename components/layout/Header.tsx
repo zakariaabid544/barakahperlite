@@ -15,8 +15,8 @@ export function Header() {
   const navItems = t.nav.items;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-lg border border-white/10 bg-basalt-950/70 px-4 py-3 shadow-glass backdrop-blur-2xl">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6 lg:px-8 lg:pt-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-xl border border-white/10 bg-basalt-950/76 px-3 py-2.5 shadow-glass backdrop-blur-2xl sm:rounded-lg sm:px-4 sm:py-3">
         <Link
           href="/"
           aria-label={t.nav.homeLabel}
@@ -30,7 +30,7 @@ export function Header() {
             loading="eager"
             alt=""
             aria-hidden="true"
-            className="h-10 w-10 shrink-0 object-contain sm:hidden"
+            className="h-10 w-10 shrink-0 object-contain min-[380px]:h-11 min-[380px]:w-11 sm:hidden"
           />
           <Image
             src="/brand/barakah-perlite-logo-transparent.png"
@@ -40,7 +40,7 @@ export function Header() {
             aria-hidden="true"
             className="hidden h-10 w-10 shrink-0 object-contain sm:block"
           />
-          <span className="hidden text-left font-display text-base font-bold uppercase leading-[0.95] tracking-wide sm:block">
+          <span className="block min-w-0 text-left font-display text-sm font-bold uppercase leading-[0.95] tracking-wide min-[380px]:text-base">
             <span className="block text-agritech-emerald">Barakah</span>
             <span className="block text-perlite-50">Perlite</span>
           </span>

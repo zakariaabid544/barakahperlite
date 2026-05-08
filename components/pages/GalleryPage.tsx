@@ -11,7 +11,7 @@ export function GalleryPageContent() {
   return (
     <>
       <PageHeader {...t.gallery.header} />
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-wrap gap-2">
             {t.gallery.categories.map((category) => (
@@ -24,12 +24,12 @@ export function GalleryPageContent() {
             ))}
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-2 md:gap-5 xl:grid-cols-3">
             {t.gallery.items.map((item, index) => (
               <article
                 key={`${item.category}-${item.title}`}
                 className={cn(
-                  "group relative flex min-h-[320px] overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] p-6 shadow-glass transition duration-300 hover:-translate-y-1 hover:border-agritech-emerald/40 hover:bg-white/[0.065]",
+                  "group relative flex min-h-[260px] overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] p-5 shadow-glass transition duration-300 hover:-translate-y-1 hover:border-agritech-emerald/40 hover:bg-white/[0.065] md:min-h-[320px] md:p-6",
                   index === 0 && "md:col-span-2",
                 )}
               >

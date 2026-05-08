@@ -55,17 +55,17 @@ export function PortalLoginPage({ nextPath }: PortalLoginPageProps) {
   }
 
   return (
-    <main className="relative min-h-[78vh] overflow-hidden px-4 py-28 sm:px-6 lg:px-8">
+    <main className="relative min-h-[78vh] overflow-hidden px-4 py-24 sm:px-6 md:py-28 lg:px-8">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(22,214,111,0.12),transparent_26%),linear-gradient(135deg,rgba(8,10,8,0.98),rgba(20,24,19,0.96))]" />
-      <div className="relative mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1fr_0.78fr] lg:items-center">
+      <div className="relative mx-auto grid max-w-5xl gap-8 md:gap-10 lg:grid-cols-[1fr_0.78fr] lg:items-center">
         <section>
           <p className="text-xs font-semibold uppercase tracking-[0.32em] text-atlas-sand">
             Portail client
           </p>
-          <h1 className="mt-5 max-w-2xl font-display text-4xl leading-tight text-perlite-50 md:text-5xl">
+          <h1 className="mt-4 max-w-2xl font-display text-[2.15rem] leading-[1.08] text-perlite-50 md:mt-5 md:text-5xl">
             Connexion au portail
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-8 text-silver-200/68 md:text-lg">
+          <p className="mt-4 max-w-xl text-base leading-7 text-silver-200/68 md:mt-5 md:text-lg md:leading-8">
             Accédez à votre espace Barakah Perlite avec une connexion sécurisée.
             Les identifiants sont vérifiés côté serveur avant ouverture du portail.
           </p>
@@ -73,7 +73,7 @@ export function PortalLoginPage({ nextPath }: PortalLoginPageProps) {
 
         <form
           onSubmit={onSubmit}
-          className="rounded-lg border border-white/10 bg-white/[0.055] p-6 shadow-glass backdrop-blur-xl"
+          className="rounded-lg border border-white/10 bg-white/[0.055] p-5 shadow-glass backdrop-blur-xl md:p-6"
         >
           <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-md border border-atlas-sand/25 bg-basalt-950/70 text-atlas-sand">
             <Lock aria-hidden="true" className="h-5 w-5" />
@@ -138,7 +138,7 @@ export function PortalLoginPage({ nextPath }: PortalLoginPageProps) {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-agritech-emerald px-5 py-3 text-sm font-semibold text-basalt-950 transition hover:bg-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-agritech-emerald disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-agritech-emerald px-5 py-3 text-sm font-semibold text-basalt-950 transition hover:bg-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-agritech-emerald disabled:cursor-not-allowed disabled:opacity-60"
           >
             {status === "loading" ? (
               <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />

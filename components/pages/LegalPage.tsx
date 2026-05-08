@@ -17,7 +17,7 @@ export function LegalPageContent({ page }: LegalPageProps) {
     <>
       <PageHeader {...content.header} />
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-5xl">
           <div className="rounded-lg border border-atlas-sand/25 bg-atlas-sand/[0.07] p-5 text-sm leading-7 text-silver-200/75">
             <p>

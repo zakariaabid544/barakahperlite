@@ -40,7 +40,7 @@ export function ApplicationCard({
       <Link
         href={href}
         className={cn(
-          "group relative flex h-full min-h-[280px] overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br to-white/[0.04] p-7 shadow-glass backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-agritech-emerald",
+          "group relative flex h-full min-h-[220px] overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br to-white/[0.04] p-5 shadow-glass backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-agritech-emerald md:min-h-[280px] md:p-7",
           accentClasses[accent],
         )}
       >
@@ -49,8 +49,8 @@ export function ApplicationCard({
           <div className="absolute -right-16 top-10 h-44 w-44 rounded-full border border-current/20" />
         </div>
         <div className="relative flex h-full flex-col">
-          <div className="mb-8 flex items-center justify-between">
-            <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-current/25 bg-basalt-950/70">
+          <div className="mb-6 flex items-center justify-between md:mb-8">
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-current/25 bg-basalt-950/70 md:h-14 md:w-14">
               <Icon aria-hidden="true" className="h-6 w-6" />
             </div>
             <ArrowUpRight
@@ -61,7 +61,7 @@ export function ApplicationCard({
           <h3 className="font-display text-xl font-semibold leading-tight text-perlite-50 md:text-2xl">
             {title}
           </h3>
-          <p className="mt-4 text-sm leading-7 text-silver-200/70 md:text-base">
+          <p className="mt-3 text-sm leading-6 text-silver-200/70 md:mt-4 md:leading-7 md:text-base">
             {description}
           </p>
         </div>

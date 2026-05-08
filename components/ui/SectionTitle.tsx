@@ -30,11 +30,11 @@ export function SectionTitle({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-balance font-display text-3xl font-semibold leading-[1.14] text-perlite-50 md:text-4xl md:leading-[1.1]">
+      <h2 className="text-balance font-display text-[1.85rem] font-semibold leading-[1.12] text-perlite-50 md:text-4xl md:leading-[1.1]">
         {title}
       </h2>
       {description ? (
-        <p className="mt-5 text-pretty text-base leading-7 text-silver-200/75 md:text-lg md:leading-8">
+        <p className="mt-4 text-pretty text-base leading-7 text-silver-200/75 md:mt-5 md:text-lg md:leading-8">
           {description}
         </p>
       ) : null}

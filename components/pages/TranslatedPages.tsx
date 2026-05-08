@@ -64,7 +64,7 @@ export function HomePageContent() {
       <Hero />
       <StatsSection stats={t.home.stats} />
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow={t.home.why.eyebrow}
@@ -83,7 +83,7 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow={t.home.applications.eyebrow}
@@ -131,7 +131,7 @@ export function HomePageContent() {
         </div>
       </SplitVisualSection>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow={t.home.advantages.eyebrow}
@@ -150,7 +150,7 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow={t.home.process.eyebrow}
@@ -175,8 +175,8 @@ export function ProductPageContent() {
     <>
       <ProductHero />
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
           <div className="max-w-3xl">
             <SectionTitle
               eyebrow={t.product.what.eyebrow}
@@ -199,9 +199,9 @@ export function ProductPageContent() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="group relative flex h-full min-h-[260px] cursor-pointer flex-col overflow-hidden rounded-lg border border-white/10 bg-white/[0.055] p-7 shadow-glass transition duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:border-agritech-emerald/55 hover:bg-white/[0.075] hover:shadow-glow focus:outline-none focus-visible:ring-2 focus-visible:ring-agritech-emerald md:p-8"
+                className="group relative flex h-full min-h-[220px] cursor-pointer flex-col overflow-hidden rounded-lg border border-white/10 bg-white/[0.055] p-5 shadow-glass transition duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:border-agritech-emerald/55 hover:bg-white/[0.075] hover:shadow-glow focus:outline-none focus-visible:ring-2 focus-visible:ring-agritech-emerald md:min-h-[260px] md:p-8"
               >
-                <div className="mb-6 flex items-center justify-between">
+                <div className="mb-5 flex items-center justify-between md:mb-6">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-atlas-sand/25 bg-basalt-950/70 text-atlas-sand transition group-hover:border-agritech-emerald/45 group-hover:text-agritech-emerald">
                     <Icon aria-hidden="true" className="h-5 w-5" />
                   </div>
@@ -231,7 +231,7 @@ export function ProductPageContent() {
 
       <TechnicalProfileSection profile={t.product.technicalProfile} />
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow={t.product.benefits.eyebrow}
@@ -250,7 +250,7 @@ export function ProductPageContent() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <SectionTitle
@@ -263,7 +263,7 @@ export function ProductPageContent() {
                 href={technicalDocuments.datasheet}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-fit items-center gap-2 rounded-md border border-white/20 bg-white/[0.055] px-5 py-3 text-sm font-semibold text-silver-200/80 transition hover:border-atlas-sand/45 hover:bg-white/[0.08] hover:text-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-atlas-sand"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/20 bg-white/[0.055] px-5 py-3 text-sm font-semibold text-silver-200/80 transition hover:border-atlas-sand/45 hover:bg-white/[0.08] hover:text-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-atlas-sand sm:w-fit"
               >
                 <Download aria-hidden="true" className="h-4 w-4" />
                 {t.product.specs.download}
@@ -272,7 +272,7 @@ export function ProductPageContent() {
                 href={technicalDocuments.msds}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-fit items-center gap-2 rounded-md border border-white/20 bg-white/[0.055] px-5 py-3 text-sm font-semibold text-silver-200/80 transition hover:border-atlas-sand/45 hover:bg-white/[0.08] hover:text-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-atlas-sand"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/20 bg-white/[0.055] px-5 py-3 text-sm font-semibold text-silver-200/80 transition hover:border-atlas-sand/45 hover:bg-white/[0.08] hover:text-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-atlas-sand sm:w-fit"
               >
                 <Download aria-hidden="true" className="h-4 w-4" />
                 {t.product.specs.msdsDownload}
@@ -283,8 +283,8 @@ export function ProductPageContent() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
           <div className="max-w-3xl">
             <SectionTitle
               eyebrow={t.product.packaging.eyebrow}
@@ -339,7 +339,7 @@ export function ProductDetailPageContent({
       <section className="relative overflow-hidden border-b border-white/10 px-4 pb-16 pt-32 sm:px-6 lg:px-8 lg:pb-20 lg:pt-36">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(8,10,8,0.97),rgba(20,24,19,0.9),rgba(6,59,36,0.58))]" />
         <div className="absolute inset-0 bg-perlite-radial opacity-65" />
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
           <div className="max-w-3xl">
             <Link
               href="/produit"
@@ -367,7 +367,7 @@ export function ProductDetailPageContent({
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow={page.technical.eyebrow}
@@ -402,8 +402,8 @@ export function ProductDetailPageContent({
         tone="sand"
       />
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
           <div className="max-w-3xl">
             <SectionTitle
               eyebrow={page.specs.eyebrow}
@@ -415,7 +415,7 @@ export function ProductDetailPageContent({
                 href={technicalDocuments.datasheet}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-fit items-center gap-2 rounded-md border border-white/20 bg-white/[0.055] px-5 py-3 text-sm font-semibold text-silver-200/80 transition hover:border-atlas-sand/45 hover:bg-white/[0.08] hover:text-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-atlas-sand"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/20 bg-white/[0.055] px-5 py-3 text-sm font-semibold text-silver-200/80 transition hover:border-atlas-sand/45 hover:bg-white/[0.08] hover:text-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-atlas-sand sm:w-fit"
               >
                 <Download aria-hidden="true" className="h-4 w-4" />
                 {t.product.specs.download}
@@ -424,7 +424,7 @@ export function ProductDetailPageContent({
                 href={technicalDocuments.msds}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-fit items-center gap-2 rounded-md border border-white/20 bg-white/[0.055] px-5 py-3 text-sm font-semibold text-silver-200/80 transition hover:border-atlas-sand/45 hover:bg-white/[0.08] hover:text-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-atlas-sand"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/20 bg-white/[0.055] px-5 py-3 text-sm font-semibold text-silver-200/80 transition hover:border-atlas-sand/45 hover:bg-white/[0.08] hover:text-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-atlas-sand sm:w-fit"
               >
                 <Download aria-hidden="true" className="h-4 w-4" />
                 {t.product.specs.msdsDownload}
@@ -457,7 +457,7 @@ export function ProductDetailPageContent({
         </>
       ) : null}
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow={page.comparisons.eyebrow}
@@ -468,7 +468,7 @@ export function ProductDetailPageContent({
             {page.comparisons.cards.map((card) => (
               <article
                 key={card.title}
-                className="flex h-full flex-col rounded-lg border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.035] p-7 shadow-glass backdrop-blur-xl"
+                className="flex h-full flex-col rounded-lg border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.035] p-5 shadow-glass backdrop-blur-xl md:p-7"
               >
                 <h3 className="font-display text-xl font-semibold leading-tight text-perlite-50 md:text-2xl">
                   {card.title}
@@ -483,7 +483,7 @@ export function ProductDetailPageContent({
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow={page.why.eyebrow}
@@ -495,7 +495,7 @@ export function ProductDetailPageContent({
             {page.why.cards.map((card, index) => (
               <article
                 key={card.title}
-                className="h-full rounded-lg border border-white/10 bg-white/[0.055] p-7 shadow-glass backdrop-blur-xl"
+                className="h-full rounded-lg border border-white/10 bg-white/[0.055] p-5 shadow-glass backdrop-blur-xl md:p-7"
               >
                 <p className="mb-5 font-display text-4xl font-semibold text-white/10">
                   0{index + 1}
@@ -562,7 +562,7 @@ export function AgriculturePageContent() {
         features={t.agriculture.benefits.features}
       />
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow={t.agriculture.comparisons.eyebrow}
@@ -573,7 +573,7 @@ export function AgriculturePageContent() {
             {t.agriculture.comparisons.cards.map((card, index) => (
               <article
                 key={card.title}
-                className="h-full rounded-lg border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.035] p-7 shadow-glass"
+                className="h-full rounded-lg border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.035] p-5 shadow-glass md:p-7"
               >
                 <p className="mb-6 font-display text-4xl font-semibold text-white/10">
                   0{index + 1}
@@ -638,9 +638,9 @@ export function IndustryPageContent() {
         features={t.industry.domains.features}
       />
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
-          <div className="max-w-3xl rounded-lg border border-white/10 bg-white/[0.055] p-7 shadow-glass backdrop-blur-xl">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
+          <div className="max-w-3xl rounded-lg border border-white/10 bg-white/[0.055] p-5 shadow-glass backdrop-blur-xl md:p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-atlas-sand">
               {t.industry.technical.eyebrow}
             </p>
@@ -699,12 +699,12 @@ export function AboutPageContent() {
         features={t.about.values.features}
       />
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto grid max-w-7xl items-stretch gap-5 md:grid-cols-3">
           {t.about.focusCards.map((item) => (
             <article
               key={item.title}
-              className="h-full rounded-lg border border-white/10 bg-white/[0.055] p-7 shadow-glass"
+              className="h-full rounded-lg border border-white/10 bg-white/[0.055] p-5 shadow-glass md:p-7"
             >
               <h2 className="font-display text-xl font-semibold leading-tight text-perlite-50 md:text-2xl">
                 {item.title}
@@ -729,8 +729,8 @@ export function ContactPageContent() {
     <>
       <PageHeader {...t.contactPage.header} />
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+      <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
           <div className="max-w-3xl">
             <SectionTitle
               eyebrow={t.contactPage.formIntro.eyebrow}
@@ -839,9 +839,9 @@ function SplitVisualSection({
 }: SplitVisualSectionProps) {
   return (
     <section
-      className={cn("px-4 py-16 sm:px-6 lg:px-8 lg:py-20", className)}
+      className={cn("px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20", className)}
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
         <div className="max-w-3xl">{children}</div>
         <VisualPanel
           title={visualTitle}
@@ -856,7 +856,7 @@ function SplitVisualSection({
 
 function TechnicalProfileSection({ profile }: { profile: TechnicalProfileData }) {
   return (
-    <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+    <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
           eyebrow={profile.eyebrow}
@@ -876,7 +876,7 @@ function TechnicalProfileSection({ profile }: { profile: TechnicalProfileData })
 function TechnicalDataCard({ group }: { group: TechnicalDataGroup }) {
   return (
     <article className="h-full overflow-hidden rounded-lg border border-white/10 bg-basalt-900/70 shadow-glass backdrop-blur-xl">
-      <div className="border-b border-white/10 bg-white/[0.045] p-6">
+      <div className="border-b border-white/10 bg-white/[0.045] p-5 md:p-6">
         <h3 className="font-display text-xl font-semibold leading-tight text-perlite-50 md:text-2xl">
           {group.title}
         </h3>
@@ -933,7 +933,7 @@ function DetailUseSection({
     tone === "emerald" ? "border-agritech-emerald/25" : "border-atlas-sand/25";
 
   return (
-    <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+    <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <SectionTitle eyebrow={eyebrow} title={title} description={description} />
         <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-3">
@@ -941,7 +941,7 @@ function DetailUseSection({
             <article
               key={item.title}
               className={cn(
-                "h-full rounded-lg border bg-white/[0.055] p-7 shadow-glass backdrop-blur-xl",
+                "h-full rounded-lg border bg-white/[0.055] p-5 shadow-glass backdrop-blur-xl md:p-7",
                 border,
               )}
             >
@@ -1003,7 +1003,7 @@ function FeatureGrid({
   columns = "xl:grid-cols-4",
 }: FeatureGridProps) {
   return (
-    <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+    <section className="px-4 py-12 sm:px-6 md:py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
         {title ? (
           <SectionTitle eyebrow={eyebrow} title={title} description={description} />

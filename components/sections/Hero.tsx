@@ -14,20 +14,20 @@ export function Hero() {
   const hero = t.home.hero;
 
   return (
-    <section className="relative min-h-[88svh] overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8 lg:pt-40">
+    <section className="relative overflow-hidden px-4 pb-14 pt-28 sm:px-6 md:pb-20 lg:min-h-[88svh] lg:px-8 lg:pt-40">
       <div className="absolute inset-0 bg-[linear-gradient(125deg,#080a08_0%,#141813_46%,#063b24_100%)]" />
       <div className="absolute inset-0 bg-perlite-radial opacity-80" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-basalt-950 to-transparent" />
       <MoroccanPatternBackground density="medium" />
       <AnimatedParticles />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+      <div className="relative mx-auto grid max-w-7xl gap-8 md:gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
         <div>
           <motion.div
             initial={false}
             animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.055] px-3 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-atlas-sand backdrop-blur-xl"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.055] px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-atlas-sand backdrop-blur-xl md:mb-7 md:text-xs md:tracking-[0.24em]"
           >
             <Leaf aria-hidden="true" className="h-4 w-4 text-agritech-emerald" />
             {hero.eyebrow}
@@ -37,7 +37,7 @@ export function Hero() {
             initial={false}
             animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.08 }}
-            className="max-w-4xl text-balance font-display text-4xl font-semibold leading-[1.08] text-perlite-50 md:text-5xl md:leading-[1.06] lg:text-6xl"
+            className="max-w-4xl text-balance font-display text-[2.35rem] font-semibold leading-[1.04] text-perlite-50 md:text-5xl md:leading-[1.06] lg:text-6xl"
           >
             {hero.title}
           </motion.h1>
@@ -46,7 +46,7 @@ export function Hero() {
             initial={false}
             animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.16 }}
-            className="mt-6 max-w-2xl text-pretty text-base leading-7 text-silver-200/75 md:text-lg md:leading-8"
+            className="mt-5 max-w-2xl text-pretty text-base leading-7 text-silver-200/75 md:mt-6 md:text-lg md:leading-8"
           >
             {hero.subtitle}
           </motion.p>
@@ -55,7 +55,7 @@ export function Hero() {
             initial={false}
             animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.24 }}
-            className="mt-9 flex flex-col gap-3 sm:flex-row"
+            className="mt-8 flex flex-col gap-3 sm:flex-row md:mt-9"
           >
             <Link
               href="/contact"
@@ -78,9 +78,9 @@ export function Hero() {
           initial={false}
           animate={shouldReduceMotion ? undefined : { opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto w-full max-w-[560px]"
+          className="relative mx-auto w-full max-w-[520px] lg:max-w-[560px]"
         >
-          <div className="hero-mineral relative aspect-[0.86] overflow-hidden rounded-lg border border-white/10 bg-basalt-900/70 shadow-glass backdrop-blur-2xl">
+          <div className="hero-mineral relative aspect-[0.9] overflow-hidden rounded-xl border border-white/10 bg-basalt-900/70 shadow-glass backdrop-blur-2xl sm:aspect-[0.86] lg:rounded-lg">
             <div className="absolute inset-0 mineral-noise opacity-70" />
             <div className="absolute inset-0 hero-mineral__strata" />
             <div className="absolute left-6 top-6 rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-perlite-50/80">
