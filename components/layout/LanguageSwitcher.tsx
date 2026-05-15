@@ -60,7 +60,7 @@ export function LanguageSwitcher({
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
         className={cn(
-          "inline-flex h-11 items-center gap-2 rounded-md border border-white/10 bg-white/[0.045] px-3 text-silver-200/80 transition hover:border-agritech-emerald/45 hover:bg-white/[0.075] hover:text-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-agritech-emerald",
+          "inline-flex h-11 items-center gap-2 rounded-[0.35rem] border border-white/10 bg-white/[0.045] px-3 text-silver-200/80 transition hover:border-agritech-emerald/45 hover:bg-white/[0.075] hover:text-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-agritech-emerald",
           compact ? "w-full justify-between" : "min-w-[82px] justify-center",
         )}
       >
@@ -87,7 +87,7 @@ export function LanguageSwitcher({
             role="menu"
             aria-label={t.nav.language}
             className={cn(
-              "absolute right-0 z-[80] mt-2 min-w-36 overflow-hidden rounded-md border border-white/10 bg-basalt-950/95 p-1 shadow-glass backdrop-blur-2xl",
+              "absolute right-0 z-[80] mt-2 min-w-36 overflow-hidden rounded-[0.35rem] border border-white/10 bg-basalt-950/95 p-1 shadow-glass backdrop-blur-2xl",
               compact && "left-0 right-auto w-full",
             )}
           >

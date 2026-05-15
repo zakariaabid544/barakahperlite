@@ -2,11 +2,11 @@ import { ProductPageContent } from "@/components/pages/TranslatedPages";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Produit perlite expansée",
+  title: "Perlite expansée marocaine",
   description:
-    "Découvrez la perlite expansée Barakah Perlite: roche volcanique naturelle, légère, stérile, inerte, pH neutre, excellente aération et rétention d’eau.",
+    "Découvrez la perlite expansée Barakah Perlite pour agriculture, industrie et export: un produit naturel, léger, stable et disponible au Maroc.",
   path: "/produit",
-  keywords: ["perlite expansée Maroc", "fiche technique perlite"],
+  keywords: ["perlite expansée Maroc", "perlite agricole", "perlite industrielle"],
 });
 
 export default function ProductPage() {

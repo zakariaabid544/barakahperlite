@@ -1,112 +1,141 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Download } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { AnimatedParticles } from "@/components/ui/AnimatedParticles";
-import { MoroccanPatternBackground } from "@/components/ui/MoroccanPatternBackground";
-import { technicalDocuments } from "@/data/documents";
+import { contact } from "@/data/site";
 import { useI18n } from "@/lib/i18n";
+import type { Locale } from "@/types/i18n";
+
+const heroTaglines: Record<Locale, string> = {
+  fr: "Léger. Naturel. Performant.",
+  en: "Light. Natural. High-performing.",
+  nl: "Licht. Natuurlijk. Performant.",
+  ar: "خفيف. طبيعي. عالي الأداء.",
+};
+
+const heroTitleLines: Partial<Record<Locale, string[]>> = {
+  en: ["Moroccan expanded", "perlite for agriculture,", "industry and export."],
+  nl: ["Marokkaans geëxpandeerd", "perliet voor landbouw,", "industrie en export."],
+  ar: ["بيرلايت مغربي ممدد", "للزراعة والصناعة", "والتصدير."],
+};
 
 export function ProductHero() {
   const { locale, t } = useI18n();
-  const titleLines =
-    locale === "fr"
-      ? ["Perlite expansée naturelle,", "pour usages agricoles,", "et industriels."]
-      : [t.product.header.title];
-  const mobileTitleLines =
-    locale === "fr"
-      ? [
-          "Perlite expansée",
-          "naturelle,",
-          "pour usages agricoles,",
-          "et industriels.",
-        ]
-      : [t.product.header.title];
+  const isArabic = locale === "ar";
+  const heroTextDirection = isArabic ? "rtl" : "ltr";
+  const heroTextAlign = isArabic ? "text-right" : "text-left";
+  const titleLines = heroTitleLines[locale] ?? [t.product.header.title];
 
   return (
-    <section className="relative overflow-hidden border-b border-white/10 px-4 pb-12 pt-28 sm:px-6 md:pb-16 lg:min-h-[680px] lg:px-8 lg:pb-20 lg:pt-36">
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(135deg,rgba(8,10,8,0.97),rgba(20,24,19,0.91),rgba(6,59,36,0.58))]" />
-      <MoroccanPatternBackground density="medium" className="z-[1]" />
-      <div className="absolute inset-y-0 right-0 z-[2] hidden w-[46%] overflow-hidden p-6 lg:block lg:p-10">
-        <Image
-          src="/images/hero-perlite-final.svg"
-          alt=""
-          aria-hidden="true"
-          fill
-          priority
-          unoptimized
-          sizes="46vw"
-          className="object-contain object-center"
-        />
+    <section
+      data-product-hero
+      className="relative flex overflow-hidden border-b border-white/10 bg-[#020806] pt-24 text-white sm:pt-28 md:min-h-[720px] lg:min-h-[760px] lg:pt-0 2xl:min-h-[820px]"
+    >
+      <div data-hero-image className="absolute inset-0 z-[2] will-change-transform">
+        <div
+          data-soft-parallax
+          className="pointer-events-none absolute bottom-[12%] right-[4%] top-[14%] hidden w-[44%] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[#07110E]/72 shadow-[0_42px_140px_rgba(0,0,0,0.46)] backdrop-blur-xl md:block lg:right-[5%] xl:right-[6%] xl:w-[42%]"
+        >
+          <Image
+            src="/images/barakah-hero-plant.jpg"
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            sizes="(min-width: 1280px) 46vw, (min-width: 768px) 50vw, 100vw"
+            className="object-cover object-center"
+          />
+        </div>
       </div>
-      <div className="pointer-events-none absolute inset-y-0 left-[39%] z-[3] hidden w-[25%] bg-[linear-gradient(90deg,rgba(8,10,8,0)_0%,rgba(8,10,8,0.6)_20%,rgba(8,10,8,0.96)_44%,rgba(8,10,8,0.78)_62%,rgba(8,10,8,0.28)_82%,rgba(8,10,8,0)_100%)] lg:block" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-[3] hidden w-[16%] bg-[linear-gradient(90deg,rgba(8,10,8,0)_0%,rgba(8,10,8,0.24)_34%,rgba(8,10,8,0.7)_72%,#080a08_100%)] lg:block" />
-      <AnimatedParticles className="z-[4] opacity-80" />
-      <div className="relative z-[5] mx-auto max-w-7xl">
-        <div className="flex w-full min-w-0 max-w-[640px] flex-col lg:min-h-[520px] lg:justify-between">
-          <div className="w-full min-w-0 max-w-[640px]">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-atlas-sand md:mb-5 md:tracking-[0.34em]">
+
+      <div className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgba(2,8,6,0.97)_0%,rgba(2,8,6,0.86)_33%,rgba(2,8,6,0.46)_64%,rgba(2,8,6,0.2)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 z-[1] h-64 bg-gradient-to-t from-[#020806] via-[#020806]/76 to-transparent" />
+      <div className="absolute inset-0 z-[1] bg-[radial-gradient(circle_at_86%_18%,rgba(22,200,95,0.12),transparent_24%),radial-gradient(circle_at_8%_48%,rgba(0,0,0,0.68),transparent_34%)]" />
+
+      <div
+        data-hero-particles
+        className="pointer-events-none absolute inset-0 z-[3] opacity-65 will-change-transform"
+      >
+        <AnimatedParticles />
+      </div>
+
+      <div
+        dir="ltr"
+        className="relative z-[4] mx-auto flex w-full max-w-[1500px] flex-col justify-end px-4 pb-0 sm:px-6 lg:px-[5%]"
+      >
+        <div className="flex flex-1 items-center py-10 md:py-12 lg:py-24">
+          <div
+            dir={heroTextDirection}
+            className={`min-w-0 max-w-[540px] ${heroTextAlign} md:max-w-[560px] lg:max-w-[500px] xl:max-w-[600px]`}
+          >
+            <div data-hero-eyebrow className="mb-7 h-0.5 w-12 bg-[#16C85F]" />
+            <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#16C85F]">
               {t.product.header.eyebrow}
             </p>
-            <h1 className="w-full max-w-[640px] font-display text-[1.82rem] font-normal leading-[1.06] tracking-normal text-perlite-50 min-[390px]:text-[1.9rem] sm:hidden">
-              {mobileTitleLines.map((line) => (
-                <span key={line} className="block max-w-full">
-                  {line}
+
+            {locale === "fr" ? (
+              <h1
+                data-hero-title
+                className="max-w-full break-words font-display text-[2.55rem] font-bold leading-[1.07] tracking-[-0.025em] text-white sm:text-[3.55rem] lg:text-[4.75rem] xl:text-[5.3rem]"
+              >
+                <span className="block">Perlite expansée</span>
+                <span className="block">
+                  premium du <span className="text-[#16C85F]">Maroc</span>
                 </span>
-              ))}
-            </h1>
-            <h1 className="hidden w-full max-w-[640px] font-display text-[2.25rem] font-normal leading-[1.08] tracking-normal text-perlite-50 sm:block md:text-[2.4rem] lg:text-5xl">
-              {titleLines.map((line) => (
-                <span key={line} className="block max-w-full">
-                  {line}
-                </span>
-              ))}
-            </h1>
-            <p className="mt-5 w-full max-w-[22rem] text-pretty text-base leading-7 text-silver-200/78 sm:max-w-[620px] md:mt-6 md:text-lg md:leading-8">
+              </h1>
+            ) : (
+              <h1
+                data-hero-title
+                className={`max-w-full break-words font-display font-bold leading-[1.08] text-white ${
+                  isArabic
+                    ? "text-[2.05rem] tracking-normal sm:text-[2.6rem] lg:text-[2.8rem] xl:text-[3.05rem]"
+                    : "text-[2.25rem] tracking-[-0.025em] sm:text-[2.85rem] lg:text-[3.05rem] xl:text-[3.45rem]"
+                }`}
+              >
+                {titleLines.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
+              </h1>
+            )}
+
+            <p
+              data-hero-subtitle
+              className="mt-5 text-xl font-semibold leading-snug tracking-[-0.01em] text-white md:text-2xl"
+            >
+              {heroTaglines[locale]}
+            </p>
+            <p
+              data-hero-subtitle
+              className={`mt-4 text-sm leading-7 text-[#B8C2BD] md:text-base md:leading-8 ${
+                isArabic ? "max-w-[36ch] md:max-w-[38ch]" : "max-w-[52ch]"
+              }`}
+            >
               {t.product.header.description}
             </p>
-          </div>
-          <div className="mt-8 flex w-full max-w-[22rem] flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap md:mt-10 lg:mt-auto">
-            <Link
-              href="/contact"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-agritech-emerald px-5 py-3.5 text-sm font-semibold text-basalt-950 transition hover:-translate-y-0.5 hover:bg-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-agritech-emerald focus-visible:ring-offset-2 focus-visible:ring-offset-basalt-950 sm:w-auto"
-            >
-              {t.common.quoteRequest}
-              <ArrowRight aria-hidden="true" className="h-4 w-4" />
-            </Link>
-            <a
-              href={technicalDocuments.datasheet}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/20 bg-white/[0.055] px-5 py-3.5 text-sm font-semibold text-silver-200/70 transition hover:border-atlas-sand/45 hover:bg-white/[0.08] hover:text-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-atlas-sand sm:w-auto"
-            >
-              <Download aria-hidden="true" className="h-4 w-4" />
-              {t.product.header.datasheetCta}
-            </a>
-            <a
-              href={technicalDocuments.msds}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/20 bg-white/[0.055] px-5 py-3.5 text-sm font-semibold text-silver-200/70 transition hover:border-atlas-sand/45 hover:bg-white/[0.08] hover:text-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-atlas-sand sm:w-auto"
-            >
-              <Download aria-hidden="true" className="h-4 w-4" />
-              {t.product.header.msdsCta}
-            </a>
-          </div>
-          <div className="mx-auto mt-7 w-full max-w-[24rem] overflow-hidden rounded-xl border border-white/10 bg-basalt-900/70 shadow-glass backdrop-blur-xl sm:max-w-none lg:hidden">
-            <div className="relative h-[300px] min-[390px]:h-[320px] sm:h-[360px] md:h-[420px]">
-              <Image
-                src="/images/hero-perlite-final.svg"
-                alt=""
-                aria-hidden="true"
-                fill
-                priority
-                unoptimized
-                sizes="(max-width: 1023px) 100vw"
-                className="object-cover object-center"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(255,255,255,0.02),transparent_46%),linear-gradient(180deg,rgba(8,10,8,0.04),rgba(8,10,8,0.22))]" />
+
+            <div dir="ltr" className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                data-hero-cta
+                href="/contact"
+                className="bp-glass-cta bp-glass-cta--primary"
+              >
+                {t.common.quoteRequest}
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </Link>
+              <a
+                data-hero-cta
+                href={contact.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bp-glass-cta bp-glass-cta--secondary"
+              >
+                {t.contactPage.whatsapp}
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </div>

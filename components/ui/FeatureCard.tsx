@@ -25,16 +25,16 @@ export function FeatureCard({
   return (
     <Reveal
       className={cn(
-        "group relative h-full overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.035] p-5 shadow-glass backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-agritech-emerald/40 hover:bg-white/[0.075] md:p-6",
+        "group relative h-full overflow-hidden rounded-[0.55rem] border border-white/10 bg-[#07110E]/82 p-5 shadow-[0_26px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#16C85F]/45 hover:bg-[#0B1712] md:p-7",
         className,
       )}
       delay={index * 0.04}
     >
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition group-hover:opacity-100" />
-      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg border border-atlas-sand/25 bg-basalt-950/70 text-atlas-sand shadow-bronze md:mb-5 md:h-12 md:w-12">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-[0.4rem] border border-[#16C85F]/35 bg-[#16C85F]/10 text-[#16C85F] shadow-[0_0_34px_rgba(22,200,95,0.18)] md:mb-6 md:h-14 md:w-14">
         <Icon aria-hidden="true" className="h-5 w-5" />
       </div>
-      <h3 className="font-display text-xl font-semibold leading-tight text-perlite-50 md:text-2xl">
+      <h3 className="font-display text-xl font-bold leading-snug tracking-[-0.01em] text-perlite-50 md:text-2xl">
         {title}
       </h3>
       <p className="mt-3 text-sm leading-6 text-silver-200/70 md:leading-7 md:text-base">

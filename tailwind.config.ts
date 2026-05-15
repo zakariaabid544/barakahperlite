@@ -52,7 +52,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
-          "Inter",
+          "var(--font-dm-sans)",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",

@@ -6,6 +6,7 @@ import { AnalyticsTracker } from "@/components/analytics/AnalyticsTracker";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { I18nProvider } from "@/components/layout/I18nProvider";
+import { MotionProvider } from "@/components/layout/MotionProvider";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 
 const dmSans = DM_Sans({
@@ -67,19 +68,21 @@ export default function RootLayout({
 
   return (
     <html lang="fr" dir="ltr" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <body className={`${dmSans.variable} overflow-x-hidden`}>
+      <body className={`${dmSans.variable} overflow-x-hidden font-sans`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <I18nProvider>
-          <div className="site-shell min-h-screen">
-            <Header />
-            <main>{children}</main>
-            <Footer />
-            <WhatsAppButton />
-            <AnalyticsTracker />
-          </div>
+          <MotionProvider>
+            <div className="site-shell min-h-screen">
+              <Header />
+              <main>{children}</main>
+              <Footer />
+              <WhatsAppButton />
+              <AnalyticsTracker />
+            </div>
+          </MotionProvider>
         </I18nProvider>
       </body>
     </html>

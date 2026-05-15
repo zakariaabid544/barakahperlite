@@ -14,7 +14,7 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
         <Reveal
           key={item.step}
           delay={index * 0.06}
-          className="relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/[0.055] p-5 backdrop-blur-xl md:p-7"
+          className="relative h-full overflow-hidden rounded-[0.45rem] border border-white/10 bg-white/[0.055] p-5 backdrop-blur-xl md:p-7"
         >
           <div className="mb-6 flex items-center justify-between md:mb-8">
             <span className="font-display text-4xl font-semibold text-white/10 md:text-5xl">

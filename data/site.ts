@@ -38,6 +38,7 @@ export const locales = [
 export const navItems: NavItem[] = [
   { label: "Produit", href: "/produit" },
   { label: "Agriculture", href: "/agriculture" },
+  { label: "Green Space", href: "/green-space" },
   { label: "Industrie", href: "/industrie" },
   { label: "À propos", href: "/a-propos" },
   { label: "Contact", href: "/contact" },

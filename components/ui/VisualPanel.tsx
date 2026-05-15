@@ -19,13 +19,23 @@ export function VisualPanel({
   return (
     <figure
       className={cn(
-        "placeholder-visual relative min-h-[300px] w-full self-start overflow-hidden rounded-lg border border-white/10 bg-basalt-900 shadow-glass md:min-h-[340px] lg:min-h-[380px]",
+        "placeholder-visual relative min-h-[300px] w-full self-start overflow-hidden rounded-[0.65rem] border border-white/10 bg-[#07110E] shadow-[0_30px_100px_rgba(0,0,0,0.32)] md:min-h-[340px] lg:min-h-[380px]",
         `placeholder-visual--${variant}`,
         className,
       )}
     >
       {/* TODO: Replace this stylized placeholder with real Barakah Perlite photography. */}
-      <div className="absolute inset-0 mineral-noise opacity-65" />
+      {variant === "factory" ? (
+        <Image
+          src="/images/barakah-factory-3d.png"
+          alt=""
+          aria-hidden="true"
+          fill
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="object-contain object-center p-4 md:p-8"
+        />
+      ) : null}
+      <div className={cn("absolute inset-0 mineral-noise opacity-65", variant === "factory" && "opacity-25")} />
       <div className="absolute inset-0 placeholder-visual__light" />
       <div className="absolute left-5 top-5 flex items-center gap-3 md:left-6 md:top-6">
         <Image
@@ -36,7 +46,7 @@ export function VisualPanel({
           aria-hidden="true"
           className="h-10 w-10 object-contain"
         />
-        <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-perlite-50/80 backdrop-blur-md">
+        <span className="rounded-[0.35rem] border border-white/10 bg-black/20 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-perlite-50/80 backdrop-blur-md">
           Barakah Perlite
         </span>
       </div>

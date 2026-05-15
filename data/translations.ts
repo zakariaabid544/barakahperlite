@@ -35,7 +35,6 @@ type ProductFactTranslation = {
   label: string;
   value: string;
   description: string;
-  href: RouteKey;
   icon: IconKey;
 };
 
@@ -168,40 +167,20 @@ const metaFr: LocalizedMeta = {
     description:
       "Découvrez la perlite expansée Barakah Perlite: roche volcanique naturelle, légère, stérile, inerte, pH neutre, excellente aération et rétention d’eau.",
   },
-  "/produit/naturelle": {
-    title: "Perlite naturelle volcanique | Barakah Perlite",
-    description:
-      "Comprendre l’origine naturelle de la perlite: une roche volcanique transformée par expansion thermique pour l’agriculture, l’horticulture, l’isolation, la filtration et l’industrie.",
-  },
-  "/produit/stable": {
-    title: "Perlite stable, inerte et durable | Barakah Perlite",
-    description:
-      "Perlite expansée chimiquement stable, stérile, non toxique et non décomposable pour substrats agricoles, hydroponie, construction, filtration et usages industriels.",
-  },
-  "/produit/technique": {
-    title: "Perlite technique poreuse et légère | Barakah Perlite",
-    description:
-      "Perlite expansée blanche, légère et hautement poreuse pour aération racinaire, drainage, rétention d’eau, isolation thermique, cryogénie et granulats légers.",
-  },
   "/agriculture": {
     title: "Perlite agricole et horticole | Barakah Perlite",
     description:
       "Perlite agricole au Maroc pour hydroponie, serres, pépinières, germination, horticulture et amélioration des sols.",
   },
+  "/green-space": {
+    title: "Perlite pour espaces verts | Barakah Perlite",
+    description:
+      "Perlite expansée Barakah pour jardins, pépinières, espaces verts, sols urbains, terrains sportifs et substrats paysagers.",
+  },
   "/industrie": {
     title: "Perlite industrielle | Barakah Perlite",
     description:
       "Perlite industrielle au Maroc pour isolation, filtration, industrie chimique, haute température, absorption, cryogénie et granulats légers.",
-  },
-  "/galerie": {
-    title: "Galerie perlite, agriculture et industrie | Barakah Perlite",
-    description:
-      "Galerie Barakah Perlite pour futures photos de perlite agricole, usine, applications industrielles, serres, produits et conditionnements au Maroc.",
-  },
-  "/experience": {
-    title: "Expérience terrain et collaborations | Barakah Perlite",
-    description:
-      "Expériences, collaborations, essais agricoles et applications industrielles autour de la perlite Barakah pour clients marocains et internationaux.",
   },
   "/a-propos": {
     title: "À propos | Barakah Perlite",
@@ -266,9 +245,8 @@ export const translations = {
       items: [
         { label: "Produit", href: "/produit" },
         { label: "Agriculture", href: "/agriculture" },
+        { label: "Green Space", href: "/green-space" },
         { label: "Industrie", href: "/industrie" },
-        { label: "Galerie", href: "/galerie" },
-        { label: "Expérience", href: "/experience" },
         { label: "À propos", href: "/a-propos" },
         { label: "Contact", href: "/contact" },
       ] as Array<{ label: string; href: RouteKey }>,
@@ -300,9 +278,8 @@ export const translations = {
       links: [
         { label: "Produit", href: "/produit" },
         { label: "Agriculture", href: "/agriculture" },
+        { label: "Green Space", href: "/green-space" },
         { label: "Industrie", href: "/industrie" },
-        { label: "Galerie", href: "/galerie" },
-        { label: "Expérience", href: "/experience" },
         { label: "Contact", href: "/contact" },
         { label: "Portail client", href: "/portal/login" },
         { label: "Politique de confidentialité", href: "/privacy-policy" },
@@ -664,9 +641,11 @@ export const translations = {
     product: {
       header: {
         eyebrow: "Notre produit",
-        title: "Perlite expansée naturelle pour usages agricoles et industriels.",
+        title: "Perlite expansée marocaine pour agriculture, industrie et export.",
         description:
-          "Une roche volcanique transformée par expansion thermique en granulats blancs, légers et poreux, conçus pour apporter aération, stabilité et performance.",
+          "Un matériau naturel, léger et stable pour améliorer les substrats agricoles, répondre aux besoins industriels et sécuriser vos approvisionnements.",
+        sampleCta: "Demander un échantillon",
+        technicalCenterCta: "Centre technique",
         datasheetCta: "Fiche technique",
         msdsCta: "Fiche de sécurité MSDS",
       },
@@ -682,7 +661,6 @@ export const translations = {
             value: "par expansion thermique",
             description:
               "Origine minérale, sans additif, transformée par expansion thermique.",
-            href: "/produit/naturelle",
             icon: "mountain",
           },
           {
@@ -690,7 +668,6 @@ export const translations = {
             value: "inerte et non décomposable",
             description:
               "Comportement régulier en substrat, filtration, isolation et mélanges techniques.",
-            href: "/produit/stable",
             icon: "shield",
           },
           {
@@ -698,7 +675,6 @@ export const translations = {
             value: "poreuse, légère, calibrée",
             description:
               "Structure blanche expansée pour piloter air, eau, masse et isolation.",
-            href: "/produit/technique",
             icon: "gauge",
           },
         ] satisfies ProductFactTranslation[],
@@ -871,7 +847,7 @@ export const translations = {
         eyebrow: "Packaging",
         title: "Sacs, big bags et vrac prêts pour les circuits professionnels.",
         description:
-          "L’architecture du site prévoit l’ajout d’un catalogue produit, de fiches PDF, de variantes granulométriques et de formats logistiques pour devis rapides.",
+          "Choisissez le format adapté à votre chantier, serre, pépinière ou ligne industrielle. Barakah prépare une réponse claire selon volume, usage et destination.",
         formatsTitle: "Formats disponibles",
         formats: ["Sacs 100 L", "Big bags 1 m³", "Vrac"],
         formatsNote:
@@ -1722,7 +1698,7 @@ export const translations = {
         description:
           "Barakah Perlite est une entreprise marocaine spécialisée dans la production et la commercialisation de perlite. Son rôle est de fournir aux secteurs agricoles et industriels une matière stable, propre et performante, avec une qualité lisible et une relation commerciale sérieuse.",
         body:
-          "L’ambition dépasse la brochure commerciale: Barakah Perlite se structure comme une plateforme capable d’accueillir demain un catalogue produit, un portail client, un suivi des devis et une documentation technique complète.",
+          "L’ambition est simple: offrir aux producteurs, paysagistes, distributeurs et industriels un partenaire marocain fiable, réactif et capable d’accompagner les demandes locales comme export.",
         visualTitle: "Équipe, usine et matière première",
         visualCaption:
           "Une organisation construite autour du site industriel, de la matière première, du contrôle qualité et de la documentation technique.",
@@ -1788,7 +1764,7 @@ export const translations = {
         eyebrow: "Formulaire professionnel",
         title: "Parlez-nous de votre besoin.",
         description:
-          "Le formulaire est prêt pour une future intégration CRM, gestion de devis et suivi admin.",
+          "Indiquez votre secteur, la quantité souhaitée, le format recherché et le pays de livraison. Nous vous orientons rapidement vers la bonne solution.",
       },
       detailsHeading: "Coordonnées",
       whatsapp: "WhatsApp commercial",
@@ -2062,40 +2038,20 @@ export const translations = {
         description:
           "Discover Barakah expanded perlite: natural volcanic rock, lightweight, sterile, inert, neutral pH, excellent aeration and water retention.",
       },
-      "/produit/naturelle": {
-        title: "Natural volcanic perlite | Barakah Perlite",
-        description:
-          "Understand natural perlite: a volcanic rock transformed by thermal expansion for agriculture, horticulture, insulation, filtration and industrial applications.",
-      },
-      "/produit/stable": {
-        title: "Stable, inert and durable perlite | Barakah Perlite",
-        description:
-          "Chemically stable expanded perlite: sterile, non-toxic and non-decomposable for agricultural substrates, hydroponics, construction, filtration and industry.",
-      },
-      "/produit/technique": {
-        title: "Technical porous lightweight perlite | Barakah Perlite",
-        description:
-          "White, lightweight and highly porous expanded perlite for root aeration, drainage, water retention, thermal insulation, cryogenics and lightweight aggregates.",
-      },
       "/agriculture": {
         title: "Agricultural and horticultural perlite | Barakah Perlite",
         description:
           "Agricultural perlite in Morocco for hydroponics, greenhouses, nurseries, germination, horticulture and soil improvement.",
       },
+      "/green-space": {
+        title: "Perlite for green spaces | Barakah Perlite",
+        description:
+          "Barakah expanded perlite for gardens, nurseries, public green areas, urban planting, sports fields and landscaping substrates.",
+      },
       "/industrie": {
         title: "Industrial perlite | Barakah Perlite",
         description:
           "Industrial perlite in Morocco for insulation, filtration, chemical industry, high-temperature use, absorption, cryogenics and lightweight aggregates.",
-      },
-      "/galerie": {
-        title: "Perlite gallery, agriculture and industry | Barakah Perlite",
-        description:
-          "Barakah Perlite gallery for future photos of agricultural perlite, factory operations, industrial applications, greenhouses, products and packaging in Morocco.",
-      },
-      "/experience": {
-        title: "Field experience and collaborations | Barakah Perlite",
-        description:
-          "Experiences, collaborations, agricultural trials and industrial applications around Barakah perlite for Moroccan and international customers.",
       },
       "/a-propos": {
         title: "About | Barakah Perlite",
@@ -2154,9 +2110,8 @@ export const translations = {
       items: [
         { label: "Product", href: "/produit" },
         { label: "Agriculture", href: "/agriculture" },
+        { label: "Green Space", href: "/green-space" },
         { label: "Industry", href: "/industrie" },
-        { label: "Gallery", href: "/galerie" },
-        { label: "Experience", href: "/experience" },
         { label: "About", href: "/a-propos" },
         { label: "Contact", href: "/contact" },
       ] as Array<{ label: string; href: RouteKey }>,
@@ -2216,9 +2171,8 @@ export const translations = {
       links: [
         { label: "Product", href: "/produit" },
         { label: "Agriculture", href: "/agriculture" },
+        { label: "Green Space", href: "/green-space" },
         { label: "Industry", href: "/industrie" },
-        { label: "Gallery", href: "/galerie" },
-        { label: "Experience", href: "/experience" },
         { label: "Contact", href: "/contact" },
         { label: "Client portal", href: "/portal/login" },
         { label: "Privacy Policy", href: "/privacy-policy" },
@@ -2578,9 +2532,11 @@ export const translations = {
     product: {
       header: {
         eyebrow: "Our product",
-        title: "Natural expanded perlite for agricultural and industrial uses.",
+        title: "Moroccan expanded perlite for agriculture, industry and export.",
         description:
-          "A volcanic rock transformed by thermal expansion into white, lightweight and porous granules designed for aeration, stability and performance.",
+          "A natural, lightweight and stable material for agricultural substrates, industrial needs and reliable supply.",
+        sampleCta: "Request a sample",
+        technicalCenterCta: "Technical center",
         datasheetCta: "Technical sheet",
         msdsCta: "Safety data sheet MSDS",
       },
@@ -2595,7 +2551,6 @@ export const translations = {
             value: "thermal expansion",
             description:
               "Mineral origin, no additive, transformed by thermal expansion.",
-            href: "/produit/naturelle",
             icon: "mountain",
           },
           {
@@ -2603,7 +2558,6 @@ export const translations = {
             value: "inert and non-decomposable",
             description:
               "Consistent behavior in substrates, filtration, insulation and technical blends.",
-            href: "/produit/stable",
             icon: "shield",
           },
           {
@@ -2611,7 +2565,6 @@ export const translations = {
             value: "porous, light, calibrated",
             description:
               "White expanded structure for controlling air, water, weight and insulation.",
-            href: "/produit/technique",
             icon: "gauge",
           },
         ] satisfies ProductFactTranslation[],
@@ -2784,7 +2737,7 @@ export const translations = {
         eyebrow: "Packaging",
         title: "Bags, big bags and bulk ready for professional channels.",
         description:
-          "The site architecture is ready for a product catalog, PDF sheets, particle-size variants and logistics formats for fast quoting.",
+          "Choose the format that fits your greenhouse, site, nursery or industrial line. Barakah prepares a clear answer based on volume, use and destination.",
         formatsTitle: "Available formats",
         formats: ["100 L bags", "1 m³ big bags", "Bulk"],
         formatsNote:
@@ -3633,7 +3586,7 @@ export const translations = {
         description:
           "Barakah Perlite is a Moroccan company specialized in producing and commercializing perlite. Its role is to provide agricultural and industrial sectors with a stable, clean and high-performance material, backed by readable quality and serious commercial relationships.",
         body:
-          "The ambition goes beyond a commercial brochure: Barakah Perlite is structured as a platform that can host a product catalog, client portal, quote tracking and complete technical documentation tomorrow.",
+          "The ambition is straightforward: provide growers, landscapers, distributors and industrial buyers with a reliable Moroccan partner for local supply and export projects.",
         visualTitle: "Team, factory and raw material",
         visualCaption:
           "An organization built around the industrial site, raw material, quality control and technical documentation.",
@@ -3699,7 +3652,7 @@ export const translations = {
         eyebrow: "Professional form",
         title: "Tell us about your need.",
         description:
-          "The form is ready for future CRM integration, quote management and admin tracking.",
+          "Share your sector, target quantity, preferred format and delivery country. We will guide you quickly toward the right solution.",
       },
       detailsHeading: "Contact details",
       whatsapp: "Sales WhatsApp",
@@ -3971,33 +3924,17 @@ export const translations = {
       "title": "Geëxpandeerd perlietproduct | Barakah Perlite",
       "description": "Ontdek Barakah geëxpandeerd perliet: natuurlijk vulkanisch gesteente, lichtgewicht, steriel, inert, neutrale pH, uitstekende beluchting en waterretentie."
     },
-    "/produit/naturelle": {
-      "title": "Natuurlijk vulkanisch perliet | Barakah Perlite",
-      "description": "Begrijp natuurlijk perliet: een vulkanisch gesteente dat is getransformeerd door thermische expansie voor landbouw, tuinbouw, isolatie, filtratie en industriële toepassingen."
-    },
-    "/produit/stable": {
-      "title": "Stabiel, inert en duurzaam perliet | Barakah Perlite",
-      "description": "Chemisch stabiel geëxpandeerd perliet: steriel, niet-giftig en niet-afbreekbaar voor landbouwsubstraten, hydrocultuur, bouw, filtratie en industrie."
-    },
-    "/produit/technique": {
-      "title": "Technisch poreus lichtgewicht perliet | Barakah Perlite",
-      "description": "Wit, lichtgewicht en zeer poreus geëxpandeerd perliet voor wortelbeluchting, drainage, waterretentie, thermische isolatie, cryogenie en lichtgewicht aggregaten."
-    },
     "/agriculture": {
       "title": "Perliet voor land- en tuinbouw | Barakah Perlite",
       "description": "Landbouwperliet in Marokko voor hydrocultuur, kassen, kwekerijen, kiemkracht, tuinbouw en bodemverbetering."
     },
+    "/green-space": {
+      "title": "Perliet voor groene ruimtes | Barakah Perlite",
+      "description": "Barakah geëxpandeerd perliet voor tuinen, kwekerijen, openbare groenzones, stedelijke aanplant, sportvelden en landschappelijke substraten."
+    },
     "/industrie": {
       "title": "Industrieel perliet | Barakah Perlite",
       "description": "Industrieel perliet in Marokko voor isolatie, filtratie, chemische industrie, gebruik bij hoge temperaturen, absorptie, cryogene en lichtgewicht aggregaten."
-    },
-    "/galerie": {
-      "title": "Perlietgalerij, landbouw en industrie | Barakah Perlite",
-      "description": "Barakah Perlite-galerij voor toekomstige foto's van landbouwperliet, fabrieksactiviteiten, industriële toepassingen, kassen, producten en verpakkingen in Marokko."
-    },
-    "/experience": {
-      "title": "Veldervaring en samenwerkingen | Barakah Perlite",
-      "description": "Ervaringen, samenwerkingen, landbouwproeven en industriële toepassingen rond Barakah Perlite voor Marokkaanse en internationale klanten."
     },
     "/a-propos": {
       "title": "Over | Barakah Perlite",
@@ -4054,16 +3991,12 @@ export const translations = {
         "href": "/agriculture"
       },
       {
+        "label": "Green Space",
+        "href": "/green-space"
+      },
+      {
         "label": "Industrie",
         "href": "/industrie"
-      },
-      {
-        "label": "Galerij",
-        "href": "/galerie"
-      },
-      {
-        "label": "Ervaring",
-        "href": "/experience"
       },
       {
         "label": "Over ons",
@@ -4133,16 +4066,12 @@ export const translations = {
         "href": "/agriculture"
       },
       {
+        "label": "Green Space",
+        "href": "/green-space"
+      },
+      {
         "label": "Industrie",
         "href": "/industrie"
-      },
-      {
-        "label": "Galerij",
-        "href": "/galerie"
-      },
-      {
-        "label": "Ervaring",
-        "href": "/experience"
       },
       {
         "label": "Contact",
@@ -4475,8 +4404,10 @@ export const translations = {
   "product": {
     "header": {
       "eyebrow": "Ons product",
-      "title": "Natuurlijk geëxpandeerde perliet voor landbouw- en industriële toepassingen.",
-      "description": "Een vulkanisch gesteente dat door thermische expansie wordt omgezet in witte, lichte en poreuze korrels voor beluchting, stabiliteit en prestaties.",
+      "title": "Marokkaans geëxpandeerd perliet voor landbouw, industrie en export.",
+      "description": "Een natuurlijk, licht en stabiel materiaal voor landbouwsubstraten, industriële toepassingen en betrouwbare bevoorrading.",
+      "sampleCta": "Monster aanvragen",
+      "technicalCenterCta": "Technisch centrum",
       "datasheetCta": "Technische fiche",
       "msdsCta": "Veiligheidsfiche MSDS"
     },
@@ -4489,21 +4420,18 @@ export const translations = {
           "label": "Natuurlijk",
           "value": "thermische expansie",
           "description": "Minerale oorsprong, geen additief, getransformeerd door thermische expansie.",
-          "href": "/produit/naturelle",
           "icon": "mountain"
         },
         {
           "label": "Stabiel",
           "value": "inert en niet-afbreekbaar",
           "description": "Consistent gedrag in substraten, filtratie, isolatie en technische mengsels.",
-          "href": "/produit/stable",
           "icon": "shield"
         },
         {
           "label": "Technisch",
           "value": "poreus, licht, gekalibreerd",
           "description": "Witte geëxpandeerde structuur voor het regelen van lucht, water, gewicht en isolatie.",
-          "href": "/produit/technique",
           "icon": "gauge"
         }
       ],
@@ -4660,7 +4588,7 @@ export const translations = {
       "visualCaption": "Professionele formaten ontworpen om transport, opslag, handling en ordervoorbereiding te vereenvoudigen.",
       "eyebrow": "Verpakking",
       "title": "Zakken, big bags en bulk klaar voor professionele kanalen.",
-      "description": "De site-architectuur is klaar voor een productcatalogus, PDF-sheets, varianten op deeltjesgrootte en logistieke formaten voor snelle offertes.",
+      "description": "Kies het formaat dat past bij uw kas, project, kwekerij of industriële lijn. Barakah geeft een duidelijk antwoord volgens volume, toepassing en bestemming.",
       "formatsTitle": "Beschikbare formaten",
       "formats": [
         "Zakken van 100 liter",
@@ -5405,7 +5333,7 @@ export const translations = {
       "eyebrow": "Merk verhaal",
       "title": "Van Marokkaans mineraalgebied naar een vertrouwde industrie.",
       "description": "Barakah Perlite is een Marokkaans bedrijf gespecialiseerd in de productie en commercialisering van perliet. Het is haar rol om de agrarische en industriële sectoren te voorzien van stabiel, schoon en hoogwaardig materiaal, ondersteund door leesbare kwaliteit en serieuze commerciële relaties.",
-      "body": "De ambitie gaat verder dan een commerciële brochure: Barakah Perlite is gestructureerd als een platform dat morgen een productcatalogus, klantenportaal, offertetracking en volledige technische documentatie kan hosten.",
+      "body": "De ambitie is duidelijk: telers, landschapsbedrijven, distributeurs en industriële kopers een betrouwbare Marokkaanse partner bieden voor lokale levering en exportprojecten.",
       "visualTitle": "Team, fabriek en grondstof",
       "visualCaption": "Een organisatie opgebouwd rond de industriële site, grondstoffen, kwaliteitscontrole en technische documentatie."
     },
@@ -5460,7 +5388,7 @@ export const translations = {
     "formIntro": {
       "eyebrow": "Professionele vorm",
       "title": "Vertel ons over uw behoefte.",
-      "description": "Het formulier is klaar voor toekomstige CRM-integratie, offertebeheer en admin-tracking."
+      "description": "Deel uw sector, gewenste hoeveelheid, voorkeursformaat en leveringsland. Wij begeleiden u snel naar de juiste oplossing."
     },
     "detailsHeading": "Contactgegevens",
     "whatsapp": "Verkoop WhatsApp",
@@ -5727,40 +5655,20 @@ export const translations = {
         description:
           "اكتشف البيرلايت الممدد من Barakah: صخر بركاني طبيعي، خفيف، معقم، خامل، pH متعادل، بتهوية ممتازة واحتفاظ جيد بالماء.",
       },
-      "/produit/naturelle": {
-        title: "بيرلايت بركاني طبيعي | Barakah Perlite",
-        description:
-          "فهم أصل البيرلايت الطبيعي: صخر بركاني يتحول بالتمدد الحراري للزراعة والبستنة والعزل والترشيح والتطبيقات الصناعية.",
-      },
-      "/produit/stable": {
-        title: "بيرلايت ثابت وخامل ومتين | Barakah Perlite",
-        description:
-          "بيرلايت ممدد مستقر كيميائيا، معقم، غير سام وغير قابل للتحلل لركائز الزراعة والهيدروبونيك والبناء والترشيح والصناعة.",
-      },
-      "/produit/technique": {
-        title: "بيرلايت تقني مسامي وخفيف | Barakah Perlite",
-        description:
-          "بيرلايت ممدد أبيض وخفيف وعالي المسامية لتهوية الجذور والتصريف واحتفاظ الماء والعزل الحراري والتبريد والركام الخفيف.",
-      },
       "/agriculture": {
         title: "بيرلايت زراعي وبستاني | Barakah Perlite",
         description:
           "بيرلايت زراعي في المغرب للهيدروبونيك، البيوت المحمية، المشاتل، الإنبات، البستنة وتحسين التربة.",
       },
+      "/green-space": {
+        title: "بيرلايت للمساحات الخضراء | Barakah Perlite",
+        description:
+          "بيرلايت Barakah الممدد للحدائق والمشاتل والمساحات الخضراء العامة والتشجير الحضري والملاعب والخلطات الزراعية التجميلية.",
+      },
       "/industrie": {
         title: "بيرلايت صناعي | Barakah Perlite",
         description:
           "بيرلايت صناعي في المغرب للعزل، الترشيح، الصناعة الكيميائية، الحرارة العالية، الامتصاص، التطبيقات المبردة والركام الخفيف.",
-      },
-      "/galerie": {
-        title: "معرض البيرلايت والزراعة والصناعة | Barakah Perlite",
-        description:
-          "معرض Barakah Perlite للصور المستقبلية للبيرلايت الزراعي والمصنع والتطبيقات الصناعية والبيوت المحمية والمنتجات والتعبئة في المغرب.",
-      },
-      "/experience": {
-        title: "الخبرة الميدانية والتعاونات | Barakah Perlite",
-        description:
-          "خبرات وتعاونات وتجارب زراعية وتطبيقات صناعية حول بيرلايت Barakah للعملاء في المغرب والأسواق الدولية.",
       },
       "/a-propos": {
         title: "من نحن | Barakah Perlite",
@@ -5819,9 +5727,8 @@ export const translations = {
       items: [
         { label: "المنتج", href: "/produit" },
         { label: "الزراعة", href: "/agriculture" },
+        { label: "المساحات الخضراء", href: "/green-space" },
         { label: "الصناعة", href: "/industrie" },
-        { label: "المعرض", href: "/galerie" },
-        { label: "الخبرة", href: "/experience" },
         { label: "من نحن", href: "/a-propos" },
         { label: "اتصال", href: "/contact" },
       ] as Array<{ label: string; href: RouteKey }>,
@@ -5881,9 +5788,8 @@ export const translations = {
       links: [
         { label: "المنتج", href: "/produit" },
         { label: "الزراعة", href: "/agriculture" },
+        { label: "المساحات الخضراء", href: "/green-space" },
         { label: "الصناعة", href: "/industrie" },
-        { label: "المعرض", href: "/galerie" },
-        { label: "الخبرة", href: "/experience" },
         { label: "اتصال", href: "/contact" },
         { label: "بوابة العميل", href: "/portal/login" },
         { label: "سياسة الخصوصية", href: "/privacy-policy" },
@@ -6243,9 +6149,11 @@ export const translations = {
     product: {
       header: {
         eyebrow: "منتجنا",
-        title: "بيرلايت ممدد طبيعي للاستخدامات الزراعية والصناعية.",
+        title: "بيرلايت مغربي ممدد للزراعة والصناعة والتصدير.",
         description:
-          "صخر بركاني يتحول بالتمدد الحراري إلى حبيبات بيضاء وخفيفة ومسامية، مصممة للتهوية والثبات والأداء.",
+          "مادة طبيعية وخفيفة وثابتة للركائز الزراعية والاحتياجات الصناعية وسلاسل التوريد الموثوقة.",
+        sampleCta: "طلب عينة",
+        technicalCenterCta: "المركز التقني",
         datasheetCta: "الورقة التقنية",
         msdsCta: "ورقة بيانات السلامة MSDS",
       },
@@ -6260,7 +6168,6 @@ export const translations = {
             value: "بالتمدد الحراري",
             description:
               "أصل معدني بدون إضافات، يتحول بالتمدد الحراري.",
-            href: "/produit/naturelle",
             icon: "mountain",
           },
           {
@@ -6268,7 +6175,6 @@ export const translations = {
             value: "خامل وغير قابل للتحلل",
             description:
               "سلوك منتظم في الركائز والترشيح والعزل والخلطات التقنية.",
-            href: "/produit/stable",
             icon: "shield",
           },
           {
@@ -6276,7 +6182,6 @@ export const translations = {
             value: "مسامي وخفيف ومعاير",
             description:
               "بنية بيضاء ممددة للتحكم في الهواء والماء والوزن والعزل.",
-            href: "/produit/technique",
             icon: "gauge",
           },
         ] satisfies ProductFactTranslation[],
@@ -6449,7 +6354,7 @@ export const translations = {
         eyebrow: "التعبئة",
         title: "أكياس وبيغ باغ وسائب جاهزة للقنوات المهنية.",
         description:
-          "بنية الموقع جاهزة لإضافة كتالوج منتجات وأوراق PDF وأنواع مقاسات حبيبية وصيغ لوجستية لعروض أسعار سريعة.",
+          "اختر الصيغة المناسبة للبيت المحمي أو المشروع أو المشتل أو الخط الصناعي. تعد Barakah إجابة واضحة حسب الحجم والاستخدام والوجهة.",
         formatsTitle: "الصيغ المتاحة",
         formats: ["أكياس 100 لتر", "بيغ باغ 1 م³", "سائب"],
         formatsNote:
@@ -7296,7 +7201,7 @@ export const translations = {
         description:
           "Barakah Perlite شركة مغربية متخصصة في إنتاج وتسويق البيرلايت. دورها هو تزويد القطاعين الزراعي والصناعي بمادة ثابتة ونظيفة وعالية الأداء، مع جودة واضحة وعلاقة تجارية جدية.",
         body:
-          "الطموح يتجاوز الكتيب التجاري: تتم هيكلة Barakah Perlite كمنصة يمكن أن تستقبل مستقبلا كتالوج منتجات وبوابة عملاء وتتبع عروض ووثائق تقنية كاملة.",
+          "الطموح واضح: توفير شريك مغربي موثوق للمنتجين ومهنيي المساحات الخضراء والموزعين والمشترين الصناعيين في مشاريع التوريد المحلي والتصدير.",
         visualTitle: "الفريق والمصنع والمادة الخام",
         visualCaption:
           "تنظيم مبني حول الموقع الصناعي والمادة الخام ومراقبة الجودة والوثائق التقنية.",
@@ -7362,7 +7267,7 @@ export const translations = {
         eyebrow: "نموذج مهني",
         title: "حدثنا عن حاجتك.",
         description:
-          "النموذج جاهز لتكامل مستقبلي مع CRM وإدارة عروض وتتبع إداري.",
+          "شاركنا قطاعك والكمية المطلوبة والصيغة المفضلة وبلد التسليم. سنوجهك بسرعة نحو الحل المناسب.",
       },
       detailsHeading: "بيانات الاتصال",
       whatsapp: "واتساب التجاري",

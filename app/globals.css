@@ -4,8 +4,15 @@
 
 :root {
   color-scheme: dark;
-  --background: #080a08;
+  --background: #020806;
   --foreground: #faf8ef;
+  --bg-base: #020806;
+  --bg-surface: #050b09;
+  --bg-card: #07110e;
+  --brand: #16c85f;
+  --brand-light: #18d46b;
+  --text-secondary: #b8c2bd;
+  --bg-light: #f5f1ea;
 }
 
 * {
@@ -14,6 +21,23 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -25,6 +49,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
     linear-gradient(180deg, rgba(8, 10, 8, 0.96), rgba(16, 19, 17, 0.98)),
     var(--background);
@@ -42,6 +67,11 @@ a {
   text-decoration: none;
 }
 
+a,
+button {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 h1,
 h2,
 h3,
@@ -49,14 +79,10 @@ h4,
 h5,
 h6 {
   font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-  font-weight: 400 !important;
-  letter-spacing: 0 !important;
 }
 
 .font-display {
   font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-  font-weight: 400 !important;
-  letter-spacing: 0 !important;
 }
 
 .whatsapp-button {
@@ -92,6 +118,95 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+.bp-glass-cta {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  border-radius: 0.35rem;
+  padding: 0.75rem 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.035) 42%, rgba(22, 200, 95, 0.08)),
+    rgba(5, 11, 9, 0.66);
+  color: #faf8ef;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -1px 0 rgba(22, 200, 95, 0.08),
+    0 18px 60px rgba(0, 0, 0, 0.32);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.085em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.18;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition:
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 640px) {
+  .bp-glass-cta {
+    white-space: nowrap;
+  }
+}
+
+.bp-glass-cta::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  border-radius: 0.28rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.13), transparent 46%);
+  opacity: 0.7;
+}
+
+.bp-glass-cta:hover {
+  transform: translateY(-1px);
+  border-color: rgba(22, 200, 95, 0.62);
+  background:
+    linear-gradient(145deg, rgba(22, 200, 95, 0.2), rgba(255, 255, 255, 0.07) 44%, rgba(214, 184, 122, 0.1)),
+    rgba(5, 11, 9, 0.78);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 20px 70px rgba(0, 0, 0, 0.38),
+    0 0 34px rgba(22, 200, 95, 0.18);
+}
+
+.bp-glass-cta:focus-visible {
+  outline: 2px solid rgba(22, 200, 95, 0.9);
+  outline-offset: 3px;
+}
+
+.bp-glass-cta--primary {
+  border-color: rgba(22, 200, 95, 0.58);
+  background:
+    linear-gradient(145deg, rgba(22, 200, 95, 0.26), rgba(255, 255, 255, 0.07) 45%, rgba(214, 184, 122, 0.12)),
+    rgba(5, 11, 9, 0.72);
+  color: #f7fff9;
+}
+
+.bp-glass-cta--secondary {
+  border-color: rgba(214, 184, 122, 0.36);
+}
+
+.bp-glass-cta--secondary:hover {
+  border-color: rgba(214, 184, 122, 0.66);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 20px 70px rgba(0, 0, 0, 0.38),
+    0 0 32px rgba(214, 184, 122, 0.13);
 }
 
 .site-shell {

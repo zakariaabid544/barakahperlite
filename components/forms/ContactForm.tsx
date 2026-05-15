@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import type { ContactPayload } from "@/types/site";
 import type { Translation } from "@/data/translations";
 import { useI18n } from "@/lib/i18n";
+import type { Locale } from "@/types/i18n";
 
 const initialForm: ContactPayload = {
   name: "",
@@ -23,6 +24,20 @@ const initialForm: ContactPayload = {
 type Errors = Partial<Record<keyof ContactPayload, string>>;
 type FormCopy = Translation["contactPage"]["form"];
 
+const countryLabels: Record<Locale, string> = {
+  fr: "Pays / destination",
+  en: "Country / destination",
+  nl: "Land / bestemming",
+  ar: "البلد / الوجهة",
+};
+
+const countryPlaceholders: Record<Locale, string> = {
+  fr: "Ex: Maroc, Espagne, Sénégal...",
+  en: "Example: Morocco, Spain, Senegal...",
+  nl: "Bijv.: Marokko, Spanje, Senegal...",
+  ar: "مثال: المغرب، إسبانيا، السنغال...",
+};
+
 function validate(form: ContactPayload, formCopy: FormCopy) {
   const errors: Errors = {};
   if (!form.name.trim()) errors.name = formCopy.errors.name;
@@ -36,7 +51,7 @@ function validate(form: ContactPayload, formCopy: FormCopy) {
 }
 
 export function ContactForm() {
-  const { t } = useI18n();
+  const { locale, t } = useI18n();
   const formCopy = t.contactPage.form;
   const [form, setForm] = useState<ContactPayload>(initialForm);
   const [errors, setErrors] = useState<Errors>({});
@@ -83,7 +98,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-lg border border-white/10 bg-white/[0.055] p-4 shadow-glass backdrop-blur-xl sm:p-5 md:p-7"
+      className="rounded-[0.45rem] border border-white/10 bg-white/[0.055] p-4 shadow-glass backdrop-blur-xl sm:p-5 md:p-7"
       noValidate
     >
       <label className="hidden" aria-hidden="true">
@@ -139,7 +154,7 @@ export function ContactForm() {
             value={form.sector}
             onChange={(event) => updateField("sector", event.target.value)}
             aria-invalid={Boolean(errors.sector)}
-            className="h-12 rounded-md border border-white/10 bg-basalt-950/70 px-3 text-sm text-perlite-50 outline-none transition focus:border-agritech-emerald focus:ring-2 focus:ring-agritech-emerald/30"
+            className="h-12 rounded-[0.35rem] border border-white/10 bg-basalt-950/70 px-3 text-sm text-perlite-50 outline-none transition focus:border-agritech-emerald focus:ring-2 focus:ring-agritech-emerald/30"
           >
             <option value="">{formCopy.sectorPlaceholder}</option>
             {formCopy.sectors.map((sector) => (
@@ -160,6 +175,14 @@ export function ContactForm() {
           onChange={(value) => updateField("quantity", value)}
           placeholder={formCopy.quantityPlaceholder}
         />
+        <Field
+          label={countryLabels[locale]}
+          name="country"
+          value={form.country ?? ""}
+          error={errors.country}
+          onChange={(value) => updateField("country", value)}
+          placeholder={countryPlaceholders[locale]}
+        />
       </div>
 
       <label className="mt-4 grid gap-2">
@@ -175,7 +198,7 @@ export function ContactForm() {
           required
           aria-invalid={Boolean(errors.message)}
           placeholder={formCopy.messagePlaceholder}
-          className="rounded-md border border-white/10 bg-basalt-950/70 px-3 py-3 text-sm leading-7 text-perlite-50 outline-none transition placeholder:text-silver-200/30 focus:border-agritech-emerald focus:ring-2 focus:ring-agritech-emerald/30"
+          className="rounded-[0.35rem] border border-white/10 bg-basalt-950/70 px-3 py-3 text-sm leading-7 text-perlite-50 outline-none transition placeholder:text-silver-200/30 focus:border-agritech-emerald focus:ring-2 focus:ring-agritech-emerald/30"
         />
         {errors.message ? (
           <span className="text-xs text-atlas-copper">{errors.message}</span>
@@ -187,7 +210,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={!canSubmit}
-          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-agritech-emerald px-5 py-3 text-sm font-semibold text-basalt-950 transition hover:bg-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-agritech-emerald disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+          className="bp-glass-cta bp-glass-cta--primary w-full text-sm disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
         >
           {status === "loading" ? (
             <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />
@@ -204,7 +227,7 @@ export function ContactForm() {
       </div>
 
       {status === "error" ? (
-        <p className="mt-4 rounded-md border border-atlas-copper/40 bg-atlas-clay/10 px-3 py-2 text-sm text-atlas-sand">
+        <p className="mt-4 rounded-[0.35rem] border border-atlas-copper/40 bg-atlas-clay/10 px-3 py-2 text-sm text-atlas-sand">
           {formCopy.error}
         </p>
       ) : null}
@@ -249,7 +272,7 @@ function Field({
         aria-invalid={Boolean(error)}
         placeholder={placeholder}
         inputMode={inputMode}
-        className="h-12 rounded-md border border-white/10 bg-basalt-950/70 px-3 text-sm text-perlite-50 outline-none transition placeholder:text-silver-200/30 focus:border-agritech-emerald focus:ring-2 focus:ring-agritech-emerald/30"
+        className="h-12 rounded-[0.35rem] border border-white/10 bg-basalt-950/70 px-3 text-sm text-perlite-50 outline-none transition placeholder:text-silver-200/30 focus:border-agritech-emerald focus:ring-2 focus:ring-agritech-emerald/30"
       />
       {error ? <span className="text-xs text-atlas-copper">{error}</span> : null}
     </label>

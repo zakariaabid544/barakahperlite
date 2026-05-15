@@ -19,7 +19,7 @@ export function TechnicalSpecsTable({
   return (
     <Reveal
       className={cn(
-        "self-start overflow-hidden rounded-lg border border-white/10 bg-basalt-900/70 shadow-glass backdrop-blur-xl",
+        "self-start overflow-hidden rounded-[0.45rem] border border-white/10 bg-basalt-900/70 shadow-glass backdrop-blur-xl",
         className,
       )}
     >

@@ -59,14 +59,14 @@ export function Hero() {
           >
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-agritech-emerald px-6 py-4 text-sm font-semibold text-basalt-950 transition hover:bg-perlite-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-agritech-emerald focus-visible:ring-offset-2 focus-visible:ring-offset-basalt-950"
+              className="bp-glass-cta bp-glass-cta--primary"
             >
               {hero.ctaPrimary}
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>
             <Link
               href="/produit"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-white/20 bg-white/[0.055] px-6 py-4 text-sm font-semibold text-perlite-50 backdrop-blur-xl transition hover:border-atlas-sand/50 hover:bg-white/[0.08] focus:outline-none focus-visible:ring-2 focus-visible:ring-atlas-sand"
+              className="bp-glass-cta bp-glass-cta--secondary"
             >
               <PlayCircle aria-hidden="true" className="h-4 w-4" />
               {hero.ctaSecondary}
@@ -80,7 +80,7 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto w-full max-w-[520px] lg:max-w-[560px]"
         >
-          <div className="hero-mineral relative aspect-[0.9] overflow-hidden rounded-xl border border-white/10 bg-basalt-900/70 shadow-glass backdrop-blur-2xl sm:aspect-[0.86] lg:rounded-lg">
+          <div className="hero-mineral relative aspect-[0.9] overflow-hidden rounded-[0.55rem] border border-white/10 bg-basalt-900/70 shadow-glass backdrop-blur-2xl sm:aspect-[0.86] lg:rounded-[0.45rem]">
             <div className="absolute inset-0 mineral-noise opacity-70" />
             <div className="absolute inset-0 hero-mineral__strata" />
             <div className="absolute left-6 top-6 rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-perlite-50/80">
@@ -100,7 +100,7 @@ export function Hero() {
             </div>
             <div className="perlite-cluster absolute inset-x-10 bottom-28 h-40" />
             <div className="absolute bottom-6 left-6 right-6 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-lg border border-white/10 bg-white/[0.065] p-4 backdrop-blur-xl">
+              <div className="rounded-[0.45rem] border border-white/10 bg-white/[0.065] p-4 backdrop-blur-xl">
                 <Beaker aria-hidden="true" className="mb-3 h-5 w-5 text-atlas-sand" />
                 <p className="text-xs uppercase tracking-[0.22em] text-silver-200/50">
                   {hero.cardOneKicker}
@@ -109,7 +109,7 @@ export function Hero() {
                   {hero.cardOneTitle}
                 </p>
               </div>
-              <div className="rounded-lg border border-white/10 bg-white/[0.065] p-4 backdrop-blur-xl">
+              <div className="rounded-[0.45rem] border border-white/10 bg-white/[0.065] p-4 backdrop-blur-xl">
                 <Leaf aria-hidden="true" className="mb-3 h-5 w-5 text-agritech-emerald" />
                 <p className="text-xs uppercase tracking-[0.22em] text-silver-200/50">
                   {hero.cardTwoKicker}

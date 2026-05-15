@@ -28,13 +28,9 @@ export function normalizeRoute(pathname: string | null | undefined): RouteKey {
   if (
     path === "/" ||
     path === "/produit" ||
-    path === "/produit/naturelle" ||
-    path === "/produit/stable" ||
-    path === "/produit/technique" ||
     path === "/agriculture" ||
+    path === "/green-space" ||
     path === "/industrie" ||
-    path === "/galerie" ||
-    path === "/experience" ||
     path === "/a-propos" ||
     path === "/contact" ||
     path === "/privacy-policy" ||
