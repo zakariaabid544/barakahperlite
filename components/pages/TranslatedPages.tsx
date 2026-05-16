@@ -1906,7 +1906,7 @@ export function ProductPageContent() {
       <ProductCommercialIntro />
       <ProductApplicationsShowcase />
       <ProductProductionShowcase />
-      <ProductTechnicalTeaser />
+      <ProductMobileFinalCta />
     </div>
   );
 }
@@ -1917,11 +1917,11 @@ function ProductCommercialIntro() {
   return (
     <section
       data-gsap-section
-      className="relative overflow-hidden bg-[#020806] px-4 py-16 sm:px-6 md:py-20 lg:px-8 lg:py-24"
+      className="relative overflow-hidden bg-[#020806] px-4 py-12 sm:px-6 md:py-20 lg:px-8 lg:py-24"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(22,200,95,0.12),transparent_34%),radial-gradient(circle_at_82%_30%,rgba(213,185,122,0.12),transparent_32%)]" />
-      <div className="relative mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start lg:gap-16">
-        <div data-gsap-section-title className="max-w-2xl">
+      <div className="relative mx-auto grid max-w-[1500px] gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start lg:gap-16">
+        <div data-gsap-section-title className="max-w-xl md:max-w-2xl">
           <SectionTitle
             eyebrow={t.product.what.eyebrow}
             title={t.product.what.title}
@@ -1929,7 +1929,7 @@ function ProductCommercialIntro() {
           />
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-3 md:grid-cols-3 md:gap-4">
           {t.product.what.facts.map((item) => {
             const Icon = iconMap[item.icon];
 
@@ -1937,24 +1937,24 @@ function ProductCommercialIntro() {
               <article
                 data-gsap-card
                 key={item.label}
-                className="group relative flex min-h-[250px] flex-col overflow-hidden rounded-[0.55rem] border border-white/10 bg-[#07110E]/85 p-6 shadow-[0_28px_90px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-[#16C85F]/50 hover:bg-[#0B1712] md:p-7"
+                className="group relative flex min-h-[168px] flex-col overflow-hidden rounded-[0.45rem] border border-white/10 bg-[#07110E]/78 p-5 shadow-[0_22px_70px_rgba(0,0,0,0.24)] transition duration-300 hover:-translate-y-1 hover:border-[#16C85F]/50 hover:bg-[#0B1712] md:min-h-[250px] md:rounded-[0.55rem] md:p-7"
               >
-                <div className="mb-7 flex items-center justify-between">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#16C85F]/35 bg-[#16C85F]/10 text-[#16C85F] shadow-[0_0_34px_rgba(22,200,95,0.16)]">
-                    <Icon aria-hidden="true" className="h-6 w-6" />
+                <div className="mb-5 flex items-center justify-between md:mb-7">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#16C85F]/35 bg-[#16C85F]/10 text-[#16C85F] shadow-[0_0_34px_rgba(22,200,95,0.16)] md:h-14 md:w-14">
+                    <Icon aria-hidden="true" className="h-5 w-5 md:h-6 md:w-6" />
                   </div>
                   <ArrowUpRight
                     aria-hidden="true"
                     className="h-5 w-5 text-silver-200/45 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#16C85F]"
                   />
                 </div>
-                <p className="font-display text-xl font-bold leading-tight text-perlite-50 md:text-2xl">
+                <p className="font-display text-lg font-bold leading-tight text-perlite-50 md:text-2xl">
                   {item.label}
                 </p>
-                <p className="mt-4 text-sm leading-7 text-silver-200/70 md:text-base">
+                <p className="mt-3 text-sm leading-6 text-silver-200/68 md:mt-4 md:text-base md:leading-7">
                   {item.description}
                 </p>
-                <span className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-bold uppercase tracking-[0.08em] text-[#16C85F]">
+                <span className="mt-auto hidden items-center gap-2 pt-8 text-sm font-bold uppercase tracking-[0.08em] text-[#16C85F] md:inline-flex">
                   {t.product.what.moreLabel}
                   <ArrowRight
                     aria-hidden="true"
@@ -1976,7 +1976,7 @@ function ProductApplicationsShowcase() {
   return (
     <section
       data-gsap-section
-      className="relative overflow-hidden bg-[#F5F1EA] px-4 py-16 text-[#07110E] sm:px-6 md:py-20 lg:px-8 lg:py-24"
+      className="relative overflow-hidden bg-[#F5F1EA] px-4 py-14 text-[#07110E] sm:px-6 md:py-20 lg:px-8 lg:py-24"
     >
       <div className="absolute -bottom-16 -left-12 h-56 w-56 rounded-full bg-[#16C85F]/12 blur-3xl" />
       <div className="absolute bottom-0 left-0 h-32 w-72 bg-[radial-gradient(circle_at_20%_80%,rgba(22,200,95,0.22),transparent_55%)]" />
@@ -1985,7 +1985,7 @@ function ProductApplicationsShowcase() {
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.28em] text-[#16A34A]">
             {t.home.applications.eyebrow}
           </p>
-          <h2 className="font-display text-[2.15rem] font-bold leading-[1.02] text-[#06110D] md:text-5xl">
+          <h2 className="font-display text-[2rem] font-bold leading-[1.05] text-[#06110D] md:text-5xl">
             {t.home.applications.title}
           </h2>
           <p className="mt-5 text-base leading-8 text-[#20312B]/78 md:text-lg">
@@ -1993,7 +1993,7 @@ function ProductApplicationsShowcase() {
           </p>
           <Link
             href="/agriculture"
-            className="bp-glass-cta bp-glass-cta--primary mt-8 text-sm"
+            className="bp-glass-cta bp-glass-cta--primary mt-8 hidden text-sm md:inline-flex"
           >
             {t.nav.items.find((item) => item.href === "/agriculture")?.label}
             <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -2001,7 +2001,7 @@ function ProductApplicationsShowcase() {
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2">
-          {t.applications.map((application) => {
+          {t.applications.map((application, index) => {
             const Icon = iconMap[application.icon];
 
             return (
@@ -2009,17 +2009,20 @@ function ProductApplicationsShowcase() {
                 data-gsap-card
                 key={application.title}
                 href={application.href}
-                className="group rounded-[0.55rem] border border-black/5 bg-white/72 p-6 shadow-[0_22px_70px_rgba(5,11,9,0.08)] backdrop-blur transition hover:-translate-y-1 hover:bg-white"
+                className={cn(
+                  "group rounded-[0.45rem] border border-black/5 bg-white/72 p-5 shadow-[0_22px_70px_rgba(5,11,9,0.08)] backdrop-blur transition hover:-translate-y-1 hover:bg-white md:rounded-[0.55rem] md:p-6",
+                  index >= 3 && "hidden md:block",
+                )}
               >
                 <div className="flex items-start gap-5">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#16C85F]/12 text-[#149447]">
-                    <Icon aria-hidden="true" className="h-8 w-8" />
+                  <div className="flex h-[3.25rem] w-[3.25rem] shrink-0 items-center justify-center rounded-full bg-[#16C85F]/12 text-[#149447] md:h-16 md:w-16">
+                    <Icon aria-hidden="true" className="h-7 w-7 md:h-8 md:w-8" />
                   </div>
                   <div>
-                    <h3 className="font-display text-xl font-bold leading-tight text-[#06110D]">
+                    <h3 className="font-display text-lg font-bold leading-tight text-[#06110D] md:text-xl">
                       {application.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-7 text-[#20312B]/72">
+                    <p className="mt-3 text-sm leading-6 text-[#20312B]/72 md:leading-7">
                       {application.description}
                     </p>
                     <span className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.1em] text-[#16A34A]">
@@ -2046,7 +2049,7 @@ function ProductProductionShowcase() {
   return (
     <section
       data-gsap-section
-      className="relative overflow-hidden bg-[#020806] px-4 py-16 sm:px-6 md:py-20 lg:px-8 lg:py-24"
+      className="relative hidden overflow-hidden bg-[#020806] px-4 py-16 sm:px-6 md:block md:py-20 lg:px-8 lg:py-24"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_15%,rgba(22,200,95,0.14),transparent_36%),linear-gradient(180deg,#020806,#050B09)]" />
       <div className="relative mx-auto max-w-[1500px]">
@@ -2078,7 +2081,7 @@ function ProductProductionShowcase() {
             </div>
             <Link
               href="/contact"
-              className="bp-glass-cta bp-glass-cta--primary mt-8 text-sm"
+              className="bp-glass-cta bp-glass-cta--primary mt-8 hidden text-sm md:inline-flex"
             >
               {t.common.quoteRequest}
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -2106,7 +2109,10 @@ function ProductProductionShowcase() {
             <div
               data-gsap-card
               key={step.step}
-              className="flex items-start gap-3 text-sm font-semibold leading-6 text-silver-200/78"
+              className={cn(
+                "flex items-start gap-3 text-sm font-semibold leading-6 text-silver-200/78",
+                index >= 3 && "hidden md:flex",
+              )}
             >
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#16C85F] text-xs font-bold text-[#020806]">
                 {index + 1}
@@ -2125,24 +2131,42 @@ function ProductProductionShowcase() {
   );
 }
 
-function ProductTechnicalTeaser() {
+function ProductMobileFinalCta() {
   const { t } = useI18n();
 
   return (
     <section
       data-gsap-section
-      className="relative overflow-hidden bg-[#020806] px-4 pb-8 pt-12 sm:px-6 md:pb-10 md:pt-14 lg:px-8"
+      className="relative overflow-hidden bg-[#020806] px-4 pb-16 pt-8 sm:px-6 md:hidden"
     >
-      <div className="relative mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-16">
-        <div data-gsap-section-title>
-          <SectionTitle
-            eyebrow={t.product.packaging.eyebrow}
-            title={t.product.packaging.title}
-            description={t.product.packaging.description}
-          />
-        </div>
-        <div data-gsap-card>
-          <TechnicalCenterTeaser />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(22,200,95,0.12),transparent_35%),linear-gradient(180deg,rgba(2,8,6,0)_0%,#020806_62%)]" />
+      <div
+        data-gsap-card
+        className="relative rounded-[0.55rem] border border-white/10 bg-white/[0.045] p-6 shadow-[0_28px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl"
+      >
+        <p className="text-[0.65rem] font-bold uppercase tracking-[0.26em] text-atlas-sand">
+          Barakah Perlite
+        </p>
+        <h2 className="mt-4 font-display text-[1.85rem] font-bold leading-[1.06] tracking-[-0.02em] text-perlite-50">
+          {t.product.packaging.title}
+        </h2>
+        <p className="mt-4 text-sm leading-7 text-silver-200/72">
+          {t.product.packaging.description}
+        </p>
+        <div className="mt-7 grid gap-3">
+          <Link href="/contact" className="bp-glass-cta bp-glass-cta--primary w-full">
+            {t.common.quoteRequest}
+            <ArrowRight aria-hidden="true" className="h-4 w-4" />
+          </Link>
+          <a
+            href={contact.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bp-glass-cta bp-glass-cta--secondary w-full"
+          >
+            {t.contactPage.whatsapp}
+            <ArrowRight aria-hidden="true" className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
@@ -2374,7 +2398,7 @@ function CommercialHeroCtas({
         isArabic && "sm:ml-0 sm:mr-auto",
       )}
     >
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid gap-3 md:grid-cols-2">
         <Link
           data-hero-cta
           href="/contact"
@@ -2386,7 +2410,7 @@ function CommercialHeroCtas({
         <Link
           data-hero-cta
           href="/contact"
-          className="bp-glass-cta bp-glass-cta--secondary w-full min-w-0"
+          className="bp-glass-cta bp-glass-cta--secondary hidden w-full min-w-0 md:inline-flex"
         >
           {sample}
           <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
@@ -2398,7 +2422,7 @@ function CommercialHeroCtas({
           href={contact.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="bp-glass-cta bp-glass-cta--secondary w-full min-w-0 sm:w-[calc(50%-0.375rem)]"
+          className="bp-glass-cta bp-glass-cta--secondary w-full min-w-0 md:w-[calc(50%-0.375rem)]"
         >
           {whatsapp}
           <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
@@ -2518,6 +2542,7 @@ function AgricultureBenefits({ copy }: { copy: AgricultureCommercialCopy }) {
               key={feature.title}
               {...featureProps(feature)}
               index={index}
+              className={index >= 3 ? "hidden md:block" : undefined}
             />
           ))}
         </div>
@@ -2554,7 +2579,10 @@ function AgricultureUseCases({ copy }: { copy: AgricultureCommercialCopy }) {
               <article
                 data-gsap-card
                 key={item.title}
-                className="group rounded-[0.55rem] border border-black/5 bg-white/78 p-6 shadow-[0_24px_80px_rgba(5,11,9,0.08)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(5,11,9,0.14)]"
+                className={cn(
+                  "group rounded-[0.55rem] border border-black/5 bg-white/78 p-6 shadow-[0_24px_80px_rgba(5,11,9,0.08)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(5,11,9,0.14)]",
+                  index >= 2 && "hidden md:block",
+                )}
               >
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#16C85F]/12 text-[#129B4A]">
                   <Icon aria-hidden="true" className="h-6 w-6" />
@@ -2595,11 +2623,14 @@ function AgricultureTrust({ copy }: { copy: AgricultureCommercialCopy }) {
           />
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
-          {copy.trust.items.map((item) => (
+          {copy.trust.items.map((item, index) => (
             <article
               data-gsap-card
               key={item.title}
-              className="rounded-[0.55rem] border border-white/10 bg-white/[0.055] p-6 shadow-glass backdrop-blur-xl"
+              className={cn(
+                "rounded-[0.55rem] border border-white/10 bg-white/[0.055] p-6 shadow-glass backdrop-blur-xl",
+                index >= 2 && "hidden md:block",
+              )}
             >
               <p className="font-display text-3xl font-bold text-[#16C85F]">
                 {item.metric}
@@ -2644,7 +2675,7 @@ function AgricultureFinalCta({ copy }: { copy: AgricultureCommercialCopy }) {
             </Link>
             <Link
               href="/contact"
-              className="bp-glass-cta bp-glass-cta--secondary text-sm"
+              className="bp-glass-cta bp-glass-cta--secondary hidden text-sm md:inline-flex"
             >
               {copy.cta.sample}
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -2791,6 +2822,7 @@ function GreenSpaceBenefits({ copy }: { copy: GreenSpaceCopy }) {
               key={feature.title}
               {...featureProps(feature)}
               index={index}
+              className={index >= 3 ? "hidden md:block" : undefined}
             />
           ))}
         </div>
@@ -2825,7 +2857,10 @@ function GreenSpaceUseCases({ copy }: { copy: GreenSpaceCopy }) {
             <article
               data-gsap-card
               key={item.title}
-              className="group rounded-[0.55rem] border border-black/5 bg-white/78 p-6 shadow-[0_24px_80px_rgba(5,11,9,0.08)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(5,11,9,0.14)]"
+              className={cn(
+                "group rounded-[0.55rem] border border-black/5 bg-white/78 p-6 shadow-[0_24px_80px_rgba(5,11,9,0.08)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(5,11,9,0.14)]",
+                index >= 2 && "hidden md:block",
+              )}
             >
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#16C85F]/12 text-sm font-bold text-[#129B4A]">
                 {String(index + 1).padStart(2, "0")}
@@ -2876,7 +2911,7 @@ function GreenSpaceFinalCta({
             </Link>
             <Link
               href="/contact"
-              className="bp-glass-cta bp-glass-cta--secondary text-sm"
+              className="bp-glass-cta bp-glass-cta--secondary hidden text-sm md:inline-flex"
             >
               {copy.cta.sample}
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -3043,6 +3078,7 @@ function IndustryApplications({ copy }: { copy: IndustryCommercialCopy }) {
               key={feature.title}
               {...featureProps(feature)}
               index={index}
+              className={index >= 3 ? "hidden md:block" : undefined}
             />
           ))}
         </div>
@@ -3072,11 +3108,14 @@ function IndustryLogistics({ copy }: { copy: IndustryCommercialCopy }) {
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2">
-          {copy.logistics.items.map((item) => (
+          {copy.logistics.items.map((item, index) => (
             <article
               data-gsap-card
               key={item.title}
-              className="rounded-[0.55rem] border border-black/5 bg-white/78 p-6 shadow-[0_24px_80px_rgba(5,11,9,0.08)] backdrop-blur"
+              className={cn(
+                "rounded-[0.55rem] border border-black/5 bg-white/78 p-6 shadow-[0_24px_80px_rgba(5,11,9,0.08)] backdrop-blur",
+                index >= 2 && "hidden md:block",
+              )}
             >
               <p className="font-display text-3xl font-bold text-[#16A34A]">
                 {item.metric}
@@ -3166,7 +3205,7 @@ function IndustryFinalCta({ copy }: { copy: IndustryCommercialCopy }) {
             </Link>
             <Link
               href="/contact"
-              className="bp-glass-cta bp-glass-cta--secondary text-sm"
+              className="bp-glass-cta bp-glass-cta--secondary hidden text-sm md:inline-flex"
             >
               {copy.cta.sample}
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -3318,6 +3357,7 @@ function AboutPositioning({ copy }: { copy: AboutCommercialCopy }) {
               key={feature.title}
               {...featureProps(feature)}
               index={index}
+              className={index >= 3 ? "hidden md:block" : undefined}
             />
           ))}
         </div>
@@ -3375,7 +3415,10 @@ function AboutSupply({ copy }: { copy: AboutCommercialCopy }) {
               <article
                 data-gsap-card
                 key={item.title}
-                className="rounded-[0.55rem] border border-black/5 bg-white/72 p-6 shadow-[0_24px_80px_rgba(5,11,9,0.07)] backdrop-blur"
+                className={cn(
+                  "rounded-[0.55rem] border border-black/5 bg-white/72 p-6 shadow-[0_24px_80px_rgba(5,11,9,0.07)] backdrop-blur",
+                  index >= 2 && "hidden md:block",
+                )}
               >
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#16C85F]/12 text-sm font-bold text-[#129B4A]">
                   {String(index + 1).padStart(2, "0")}
@@ -3461,7 +3504,7 @@ function AboutFinalCta({ copy }: { copy: AboutCommercialCopy }) {
             </Link>
             <Link
               href="/contact"
-              className="bp-glass-cta bp-glass-cta--secondary text-sm"
+              className="bp-glass-cta bp-glass-cta--secondary hidden text-sm md:inline-flex"
             >
               {copy.cta.sample}
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -3689,82 +3732,6 @@ function TechnicalProfileSection({ profile }: { profile: TechnicalProfileData })
         </div>
       </div>
     </section>
-  );
-}
-
-function TechnicalCenterTeaser() {
-  const { t } = useI18n();
-
-  return (
-    <article className="overflow-hidden rounded-[0.45rem] border border-atlas-sand/20 bg-gradient-to-br from-white/[0.07] via-white/[0.04] to-agritech-emerald/[0.08] shadow-glass backdrop-blur-xl">
-      <div className="grid gap-8 p-5 md:p-7 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:p-8">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-atlas-sand">
-            {t.product.specs.eyebrow}
-          </p>
-          <h2 className="mt-4 font-display text-2xl font-normal leading-tight text-perlite-50 md:text-3xl">
-            {t.product.header.technicalCenterCta}
-          </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-silver-200/72 md:text-base">
-            {t.product.specs.description}
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <a
-              href={technicalDocuments.datasheet}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bp-glass-cta bp-glass-cta--secondary w-full sm:w-fit"
-            >
-              <Download aria-hidden="true" className="h-4 w-4" />
-              {t.product.specs.download}
-            </a>
-            <a
-              href={technicalDocuments.msds}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bp-glass-cta bp-glass-cta--secondary w-full sm:w-fit"
-            >
-              <Download aria-hidden="true" className="h-4 w-4" />
-              {t.product.specs.msdsDownload}
-            </a>
-          </div>
-        </div>
-        <div className="grid gap-3">
-          <a
-            href={technicalDocuments.datasheet}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group rounded-[0.35rem] border border-white/10 bg-basalt-950/45 px-4 py-4 transition hover:border-agritech-emerald/45 hover:bg-white/[0.055]"
-          >
-            <p className="text-sm font-semibold text-perlite-50">
-              {t.product.specs.download}
-            </p>
-            <p className="mt-1 line-clamp-2 text-xs leading-5 text-silver-200/55">
-              {t.product.specs.description}
-            </p>
-          </a>
-          <a
-            href={technicalDocuments.msds}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group rounded-[0.35rem] border border-white/10 bg-basalt-950/45 px-4 py-4 transition hover:border-atlas-sand/45 hover:bg-white/[0.055]"
-          >
-            <p className="text-sm font-semibold text-perlite-50">
-              {t.product.specs.msdsDownload}
-            </p>
-            <p className="mt-1 line-clamp-2 text-xs leading-5 text-silver-200/55">
-              {t.product.techniqueTrust.description}
-            </p>
-          </a>
-          <Link
-            href="/contact"
-            className="bp-glass-cta bp-glass-cta--primary w-full text-sm sm:w-fit"
-          >
-            {t.common.quoteRequest}
-          </Link>
-        </div>
-      </div>
-    </article>
   );
 }
 

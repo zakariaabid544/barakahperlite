@@ -31,7 +31,7 @@ export function ProductHero() {
   return (
     <section
       data-product-hero
-      className="relative flex overflow-hidden border-b border-white/10 bg-[#020806] pt-24 text-white sm:pt-28 md:min-h-[720px] lg:min-h-[760px] lg:pt-0 2xl:min-h-[820px]"
+      className="relative flex min-h-[92svh] overflow-hidden border-b border-white/10 bg-[#020806] pt-24 text-white sm:pt-28 md:min-h-[720px] lg:min-h-[760px] lg:pt-0 2xl:min-h-[820px]"
     >
       <div data-hero-image className="absolute inset-0 z-[2] will-change-transform">
         <div
@@ -63,9 +63,9 @@ export function ProductHero() {
 
       <div
         dir="ltr"
-        className="relative z-[4] mx-auto flex w-full max-w-[1500px] flex-col justify-end px-4 pb-0 sm:px-6 lg:px-[5%]"
+        className="relative z-[4] mx-auto flex w-full max-w-[1500px] flex-col justify-end px-5 pb-0 sm:px-6 lg:px-[5%]"
       >
-        <div className="flex flex-1 items-center py-10 md:py-12 lg:py-24">
+        <div className="flex flex-1 items-center py-12 md:py-12 lg:py-24">
           <div
             dir={heroTextDirection}
             className={`min-w-0 max-w-[540px] ${heroTextAlign} md:max-w-[560px] lg:max-w-[500px] xl:max-w-[600px]`}
@@ -117,11 +117,11 @@ export function ProductHero() {
               {t.product.header.description}
             </p>
 
-            <div dir="ltr" className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div dir="ltr" className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 data-hero-cta
                 href="/contact"
-                className="bp-glass-cta bp-glass-cta--primary"
+                className="bp-glass-cta bp-glass-cta--primary w-full sm:w-auto"
               >
                 {t.common.quoteRequest}
                 <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -131,7 +131,7 @@ export function ProductHero() {
                 href={contact.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bp-glass-cta bp-glass-cta--secondary"
+                className="bp-glass-cta bp-glass-cta--secondary w-full sm:w-auto"
               >
                 {t.contactPage.whatsapp}
                 <ArrowRight aria-hidden="true" className="h-4 w-4" />

@@ -133,29 +133,40 @@ export function Footer() {
             </div>
           </div>
 
-          <nav aria-label={t.footer.navigation} className="mt-6 grid grid-cols-2 gap-2">
-            {mobilePrimaryLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-[0.45rem] border border-white/10 bg-white/[0.035] px-3 py-2.5 text-sm text-silver-200/75 transition hover:border-agritech-emerald/30 hover:text-perlite-50"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          <details className="mt-5 rounded-[0.4rem] border border-white/10 bg-white/[0.035] px-4 py-3">
+            <summary className="flex cursor-pointer list-none items-center justify-between text-xs font-bold uppercase tracking-[0.18em] text-atlas-sand">
+              {t.footer.navigation}
+              <ChevronRight aria-hidden="true" className="h-4 w-4 text-agritech-emerald" />
+            </summary>
+            <nav aria-label={t.footer.navigation} className="mt-4 grid grid-cols-2 gap-2">
+              {mobilePrimaryLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-[0.35rem] border border-white/10 bg-basalt-950/45 px-3 py-2.5 text-sm text-silver-200/75 transition hover:border-agritech-emerald/30 hover:text-perlite-50"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </details>
 
-          <div className="mt-6 border-t border-white/10 pt-4">
-            <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-silver-200/45">
+          <details className="mt-3 rounded-[0.4rem] border border-white/10 bg-white/[0.035] px-4 py-3">
+            <summary className="flex cursor-pointer list-none items-center justify-between text-xs font-bold uppercase tracking-[0.18em] text-atlas-sand">
+              {resourceTitles[locale]}
+              <ChevronRight aria-hidden="true" className="h-4 w-4 text-agritech-emerald" />
+            </summary>
+            <div className="mt-4 grid gap-2 text-sm text-silver-200/65">
               {legalLinks.map((link) => (
                 <Link key={link.href} href={link.href} className="hover:text-atlas-sand">
                   {link.label}
                 </Link>
               ))}
             </div>
-            <p className="mt-4 text-xs leading-6 text-silver-200/45">
-              {t.footer.copyright}
-            </p>
+          </details>
+
+          <div className="mt-5 border-t border-white/10 pt-4">
+            <p className="text-xs leading-6 text-silver-200/45">{t.footer.copyright}</p>
           </div>
         </div>
       </div>

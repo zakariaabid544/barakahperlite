@@ -65,16 +65,16 @@ export function MotionProvider({ children }: MotionProviderProps) {
     const context = gsap.context(() => {
       const revealFrom = {
         autoAlpha: 0,
-        y: isMobile ? 38 : 62,
-        filter: `blur(${isMobile ? 5 : 10}px)`,
-        clipPath: "inset(10% 0% 0% 0%)",
+        y: isMobile ? 22 : 62,
+        filter: `blur(${isMobile ? 2 : 10}px)`,
+        clipPath: isMobile ? "inset(0% 0% 0% 0%)" : "inset(10% 0% 0% 0%)",
       };
       const revealTo = {
         autoAlpha: 1,
         y: 0,
         filter: "blur(0px)",
         clipPath: "inset(0% 0% 0% 0%)",
-        duration: isMobile ? 0.72 : 1.04,
+        duration: isMobile ? 0.52 : 1.04,
         ease: "expo.out",
         force3D: true,
       };
@@ -113,17 +113,17 @@ export function MotionProvider({ children }: MotionProviderProps) {
             targets,
             {
               autoAlpha: 0,
-              y: isMobile ? 42 : 72,
-              filter: `blur(${isMobile ? 4 : 8}px)`,
-              clipPath: "inset(14% 0% 0% 0%)",
+              y: isMobile ? 24 : 72,
+              filter: `blur(${isMobile ? 2 : 8}px)`,
+              clipPath: isMobile ? "inset(0% 0% 0% 0%)" : "inset(14% 0% 0% 0%)",
             },
             {
               autoAlpha: 1,
               y: 0,
               filter: "blur(0px)",
               clipPath: "inset(0% 0% 0% 0%)",
-              duration: isMobile ? 0.78 : 1.08,
-              stagger: spans.length ? (isMobile ? 0.045 : 0.065) : 0,
+              duration: isMobile ? 0.56 : 1.08,
+              stagger: spans.length ? (isMobile ? 0.035 : 0.065) : 0,
               ease: "expo.out",
               force3D: true,
               onStart: () => setAnimating(targets),
@@ -146,9 +146,9 @@ export function MotionProvider({ children }: MotionProviderProps) {
       if (cards.length) {
         gsap.set(cards, {
           autoAlpha: 0,
-          y: isMobile ? 40 : 70,
-          scale: 0.955,
-          filter: `blur(${isMobile ? 5 : 10}px)`,
+          y: isMobile ? 24 : 70,
+          scale: isMobile ? 0.985 : 0.955,
+          filter: `blur(${isMobile ? 2 : 10}px)`,
         });
 
         ScrollTrigger.batch(cards, {
@@ -163,8 +163,8 @@ export function MotionProvider({ children }: MotionProviderProps) {
               y: 0,
               scale: 1,
               filter: "blur(0px)",
-              duration: isMobile ? 0.7 : 0.94,
-              stagger: isMobile ? 0.06 : 0.09,
+              duration: isMobile ? 0.52 : 0.94,
+              stagger: isMobile ? 0.035 : 0.09,
               ease: "expo.out",
               force3D: true,
               onComplete: () => clearAnimating(batch),
@@ -174,11 +174,11 @@ export function MotionProvider({ children }: MotionProviderProps) {
             setAnimating(batch);
             gsap.to(batch, {
               autoAlpha: 0,
-              y: isMobile ? 40 : 70,
-              scale: 0.955,
-              filter: `blur(${isMobile ? 5 : 10}px)`,
-              duration: isMobile ? 0.48 : 0.64,
-              stagger: isMobile ? 0.035 : 0.055,
+              y: isMobile ? 24 : 70,
+              scale: isMobile ? 0.985 : 0.955,
+              filter: `blur(${isMobile ? 2 : 10}px)`,
+              duration: isMobile ? 0.36 : 0.64,
+              stagger: isMobile ? 0.025 : 0.055,
               ease: "power2.out",
               onComplete: () => clearAnimating(batch),
             });
