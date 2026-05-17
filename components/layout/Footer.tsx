@@ -18,6 +18,9 @@ const footerAddressLines = [
   "N°5 ET.3 Imm. El Khiati, Avenue Hassan II",
 ];
 
+const footerMapsUrl =
+  "https://www.google.com/maps/search/?api=1&query=Zone%20industrielle%20Ahl%20Rmel%2C%20Oulad%20Teima%2C%20Taroudant%2C%20Maroc%20N%C2%B05%20ET.3%20Imm.%20El%20Khiati%2C%20Avenue%20Hassan%20II";
+
 const resourceTitles = {
   fr: "Ressources",
   en: "Resources",
@@ -72,27 +75,20 @@ export function Footer() {
 
           <div className="mt-6 h-px w-14 bg-white/10" />
 
-          <div className="mt-5 space-y-1 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-perlite-50">
-            <p className="flex items-center gap-2">
-              <span>Agriculture</span>
-              <span className="text-agritech-emerald">·</span>
-              <span>Industrie</span>
-            </p>
-            <p className="flex items-center gap-2">
-              <span>Construction</span>
-              <span className="text-agritech-emerald">·</span>
-              <span>Export</span>
-            </p>
-          </div>
-
-          <div className="mt-5 flex items-start gap-4 rounded-[0.3rem] border border-white/14 bg-basalt-950/50 px-4 py-4 shadow-[0_22px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl">
+          <a
+            href={footerMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ouvrir l’adresse Barakah Perlite dans Google Maps"
+            className="mt-5 flex items-start gap-4 rounded-[0.3rem] border border-white/14 bg-basalt-950/50 px-4 py-4 shadow-[0_22px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl transition hover:border-atlas-sand/45 hover:bg-basalt-950/65"
+          >
             <MapPin aria-hidden="true" className="mt-1 h-6 w-6 shrink-0 text-atlas-sand" />
             <div className="text-sm leading-7 text-silver-100/78">
               {footerAddressLines.map((line) => (
                 <p key={line}>{line}</p>
               ))}
             </div>
-          </div>
+          </a>
 
           <div className="mt-5 grid gap-2">
             <a
@@ -205,14 +201,20 @@ export function Footer() {
             <span>Export</span>
           </p>
 
-          <div className="mt-8 flex max-w-[520px] items-start gap-6 rounded-[0.32rem] border border-white/15 bg-basalt-950/48 px-7 py-6 shadow-[0_28px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl">
+          <a
+            href={footerMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ouvrir l’adresse Barakah Perlite dans Google Maps"
+            className="mt-8 flex max-w-[520px] items-start gap-6 rounded-[0.32rem] border border-white/15 bg-basalt-950/48 px-7 py-6 shadow-[0_28px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl transition hover:border-atlas-sand/45 hover:bg-basalt-950/62"
+          >
             <MapPin aria-hidden="true" className="mt-1 h-8 w-8 shrink-0 text-atlas-sand" />
             <div className="text-base leading-8 text-silver-100/78">
               {footerAddressLines.map((line) => (
                 <p key={line}>{line}</p>
               ))}
             </div>
-          </div>
+          </a>
         </div>
 
         <nav aria-label="Liens rapides" className="border-l border-white/10 pl-8">

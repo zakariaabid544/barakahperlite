@@ -195,12 +195,6 @@ type AboutCommercialCopy = {
     partnerCta: string;
     items: Array<{ title: string; body: string }>;
   };
-  roadmap: {
-    eyebrow: string;
-    title: string;
-    description: string;
-    items: Array<{ metric: string; title: string; body: string }>;
-  };
   cta: {
     eyebrow: string;
     title: string;
@@ -231,7 +225,7 @@ const agricultureCommercialContent: Record<Locale, AgricultureCommercialCopy> = 
     },
     benefits: {
       eyebrow: "Bénéfices grower",
-      title: "Une base plus propre pour des cultures plus régulières.",
+      title: "Une base plus propre pour des cultures plus performantes.",
       description:
         "Barakah Perlite aide les producteurs à garder un substrat léger, stable et facile à piloter.",
       features: [
@@ -328,7 +322,7 @@ const agricultureCommercialContent: Record<Locale, AgricultureCommercialCopy> = 
         "Envoyez le type de culture, le format souhaité et le volume estimé. Notre équipe revient vers vous avec une réponse commerciale claire.",
       quote: "Demander un devis agricole",
       sample: "Demander un échantillon",
-      whatsapp: "WhatsApp Ahmed",
+      whatsapp: "WhatsApp",
     },
   },
   en: {
@@ -447,7 +441,7 @@ const agricultureCommercialContent: Record<Locale, AgricultureCommercialCopy> = 
         "Send the crop type, target format and estimated volume. Our team will reply with clear commercial guidance.",
       quote: "Request an agricultural quote",
       sample: "Request a sample",
-      whatsapp: "WhatsApp Ahmed",
+      whatsapp: "WhatsApp",
     },
   },
   nl: {
@@ -566,7 +560,7 @@ const agricultureCommercialContent: Record<Locale, AgricultureCommercialCopy> = 
         "Stuur het gewastype, gewenst formaat en geschat volume. Ons team reageert met duidelijke commerciële informatie.",
       quote: "Landbouwofferte aanvragen",
       sample: "Monster aanvragen",
-      whatsapp: "WhatsApp Ahmed",
+      whatsapp: "WhatsApp",
     },
   },
   ar: {
@@ -685,7 +679,7 @@ const agricultureCommercialContent: Record<Locale, AgricultureCommercialCopy> = 
         "أرسل نوع المحصول والصيغة المطلوبة والحجم التقريبي. سيرد فريقنا بتوجيه تجاري واضح.",
       quote: "طلب عرض زراعي",
       sample: "طلب عينة",
-      whatsapp: "واتساب أحمد",
+      whatsapp: "واتساب",
     },
   },
 };
@@ -749,7 +743,7 @@ const industryCommercialContent: Record<Locale, IndustryCommercialCopy> = {
         {
           metric: "Maroc",
           title: "Production marocaine",
-          body: "Une origine claire pour servir construction, industrie, agriculture et espaces verts.",
+          body: "Une origine claire pour servir agriculture, industrie, espaces verts et construction.",
         },
         {
           metric: "3 formats",
@@ -784,7 +778,7 @@ const industryCommercialContent: Record<Locale, IndustryCommercialCopy> = {
         "Envoyez votre usage, volume estimé, format souhaité et pays de livraison. L’équipe Barakah vous répond avec une proposition claire.",
       quote: "Demander un devis",
       sample: "Demander un échantillon",
-      whatsapp: "WhatsApp Ahmed",
+      whatsapp: "WhatsApp",
     },
   },
   en: {
@@ -845,7 +839,7 @@ const industryCommercialContent: Record<Locale, IndustryCommercialCopy> = {
         {
           metric: "Morocco",
           title: "Moroccan production",
-          body: "A clear origin serving construction, industry, agriculture and green spaces.",
+          body: "A clear origin serving agriculture, industry, green spaces and construction.",
         },
         {
           metric: "3 formats",
@@ -880,7 +874,7 @@ const industryCommercialContent: Record<Locale, IndustryCommercialCopy> = {
         "Send your use case, estimated volume, required format and delivery country. Barakah will prepare a clear proposal.",
       quote: "Request a quote",
       sample: "Request a sample",
-      whatsapp: "WhatsApp Ahmed",
+      whatsapp: "WhatsApp",
     },
   },
   nl: {
@@ -941,7 +935,7 @@ const industryCommercialContent: Record<Locale, IndustryCommercialCopy> = {
         {
           metric: "Marokko",
           title: "Marokkaanse productie",
-          body: "Een duidelijke herkomst voor bouw, industrie, landbouw en groene ruimtes.",
+          body: "Een duidelijke herkomst voor landbouw, industrie, groene ruimtes en bouw.",
         },
         {
           metric: "3 formaten",
@@ -976,7 +970,7 @@ const industryCommercialContent: Record<Locale, IndustryCommercialCopy> = {
         "Stuur uw toepassing, geschat volume, gewenst formaat en land van levering. Barakah bereidt een duidelijke offerte voor.",
       quote: "Offerte aanvragen",
       sample: "Monster aanvragen",
-      whatsapp: "WhatsApp Ahmed",
+      whatsapp: "WhatsApp",
     },
   },
   ar: {
@@ -1037,7 +1031,7 @@ const industryCommercialContent: Record<Locale, IndustryCommercialCopy> = {
         {
           metric: "المغرب",
           title: "إنتاج مغربي",
-          body: "منشأ واضح لخدمة البناء والصناعة والزراعة والمساحات الخضراء.",
+          body: "منشأ واضح لخدمة الزراعة والصناعة والمساحات الخضراء والبناء.",
         },
         {
           metric: "3 صيغ",
@@ -1072,7 +1066,7 @@ const industryCommercialContent: Record<Locale, IndustryCommercialCopy> = {
         "أرسل الاستخدام والكمية المتوقعة والصيغة المطلوبة وبلد التسليم. سيحضر فريق Barakah عرضاً واضحاً.",
       quote: "طلب عرض سعر",
       sample: "طلب عينة",
-      whatsapp: "واتساب أحمد",
+      whatsapp: "واتساب",
     },
   },
 };
@@ -1155,29 +1149,6 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
         },
       ],
     },
-    roadmap: {
-      eyebrow: "Développement",
-      title: "Une trajectoire claire: servir maintenant, produire localement demain.",
-      description:
-        "Cette phase permet d’avancer commercialement sans perdre la transparence nécessaire à une marque industrielle sérieuse.",
-      items: [
-        {
-          metric: "01",
-          title: "Source fiable",
-          body: "Répondre aux demandes clients avec une perlite disponible via Willems Perlite.",
-        },
-        {
-          metric: "02",
-          title: "Plateforme marocaine",
-          body: "Construire la présence industrielle, les process, les formats et la qualité locale.",
-        },
-        {
-          metric: "03",
-          title: "Production future",
-          body: "Développer une capacité marocaine orientée agriculture, espaces verts, construction et industrie.",
-        },
-      ],
-    },
     cta: {
       eyebrow: "Contact commercial",
       title: "Parlez-nous de votre besoin en perlite expansée.",
@@ -1185,7 +1156,7 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
         "Indiquez votre secteur, volume estimé, format souhaité et destination. Barakah vous répondra avec une proposition claire.",
       quote: "Demander un devis",
       sample: "Demander un échantillon",
-      whatsapp: "WhatsApp Ahmed",
+      whatsapp: "WhatsApp",
     },
   },
   en: {
@@ -1265,29 +1236,6 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
         },
       ],
     },
-    roadmap: {
-      eyebrow: "Development",
-      title: "A clear path: supply now, local production tomorrow.",
-      description:
-        "This phase allows commercial progress without losing the transparency expected from a serious industrial brand.",
-      items: [
-        {
-          metric: "01",
-          title: "Reliable sourcing",
-          body: "Answer customer requests with perlite available through Willems Perlite.",
-        },
-        {
-          metric: "02",
-          title: "Moroccan platform",
-          body: "Build local industrial presence, processes, formats and quality systems.",
-        },
-        {
-          metric: "03",
-          title: "Future production",
-          body: "Develop Moroccan capacity for agriculture, green spaces, construction and industry.",
-        },
-      ],
-    },
     cta: {
       eyebrow: "Commercial contact",
       title: "Tell us what expanded perlite you need.",
@@ -1295,7 +1243,7 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
         "Share your sector, estimated volume, required format and destination. Barakah will reply with a clear proposal.",
       quote: "Request a quote",
       sample: "Request a sample",
-      whatsapp: "WhatsApp Ahmed",
+      whatsapp: "WhatsApp",
     },
   },
   nl: {
@@ -1375,29 +1323,6 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
         },
       ],
     },
-    roadmap: {
-      eyebrow: "Ontwikkeling",
-      title: "Een helder pad: nu leveren, morgen lokaal produceren.",
-      description:
-        "Deze fase maakt commerciële groei mogelijk met de transparantie die bij een serieus industrieel merk hoort.",
-      items: [
-        {
-          metric: "01",
-          title: "Betrouwbare levering",
-          body: "Klantvragen beantwoorden met perliet beschikbaar via Willems Perlite.",
-        },
-        {
-          metric: "02",
-          title: "Marokkaans platform",
-          body: "Lokale aanwezigheid, processen, formaten en kwaliteitssystemen opbouwen.",
-        },
-        {
-          metric: "03",
-          title: "Toekomstige productie",
-          body: "Marokkaanse capaciteit ontwikkelen voor landbouw, groene ruimtes, bouw en industrie.",
-        },
-      ],
-    },
     cta: {
       eyebrow: "Commercieel contact",
       title: "Vertel ons welke geëxpandeerde perliet u nodig heeft.",
@@ -1405,7 +1330,7 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
         "Deel uw sector, geschat volume, gewenst formaat en bestemming. Barakah antwoordt met een helder voorstel.",
       quote: "Offerte aanvragen",
       sample: "Monster aanvragen",
-      whatsapp: "WhatsApp Ahmed",
+      whatsapp: "WhatsApp",
     },
   },
   ar: {
@@ -1485,29 +1410,6 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
         },
       ],
     },
-    roadmap: {
-      eyebrow: "التطوير",
-      title: "مسار واضح: التوريد الآن، والإنتاج المحلي غداً.",
-      description:
-        "هذه المرحلة تسمح بالتقدم التجاري مع الشفافية المنتظرة من علامة صناعية جدية.",
-      items: [
-        {
-          metric: "01",
-          title: "توريد موثوق",
-          body: "الرد على طلبات العملاء ببيرلايت متوفر عبر Willems Perlite.",
-        },
-        {
-          metric: "02",
-          title: "منصة مغربية",
-          body: "بناء الحضور الصناعي المحلي والعمليات والصيغ وأنظمة الجودة.",
-        },
-        {
-          metric: "03",
-          title: "إنتاج مستقبلي",
-          body: "تطوير قدرة مغربية للزراعة والمساحات الخضراء والبناء والصناعة.",
-        },
-      ],
-    },
     cta: {
       eyebrow: "تواصل تجاري",
       title: "أخبرنا باحتياجك من البيرلايت الممدد.",
@@ -1515,7 +1417,7 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
         "أرسل القطاع والكمية المتوقعة والصيغة المطلوبة والوجهة. سترد Barakah بمقترح واضح.",
       quote: "طلب عرض سعر",
       sample: "طلب عينة",
-      whatsapp: "واتساب أحمد",
+      whatsapp: "واتساب",
     },
   },
 };
@@ -1905,23 +1807,162 @@ export function ProductPageContent() {
 
       <ProductCommercialIntro />
       <ProductApplicationsShowcase />
+      <ProductMobileFormats />
+      <ProductMobileTechnicalDocuments />
       <ProductProductionShowcase />
       <ProductMobileFinalCta />
     </div>
   );
 }
 
+type PackagingFormatCard = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  icon: "small-bags" | "bag" | "big-bag" | "bulk";
+};
+
+const packagingFormatCards: Record<Locale, PackagingFormatCard[]> = {
+  fr: [
+    {
+      eyebrow: "Formats disponibles",
+      title: "Sacs 20/24 L",
+      body: "Formats pratiques pour les cultures et jardins.",
+      icon: "small-bags",
+    },
+    {
+      eyebrow: "Formats disponibles",
+      title: "Sacs 100 L",
+      body: "Le format professionnel polyvalent et efficace.",
+      icon: "bag",
+    },
+    {
+      eyebrow: "Formats disponibles",
+      title: "Big bags 1 m³",
+      body: "Grand volume pour les besoins industriels et agricoles.",
+      icon: "big-bag",
+    },
+    {
+      eyebrow: "Formats disponibles",
+      title: "Vrac",
+      body: "Solution en vrac pour les gros volumes.",
+      icon: "bulk",
+    },
+  ],
+  en: [
+    {
+      eyebrow: "Available formats",
+      title: "20/24 L bags",
+      body: "Practical formats for crops and gardens.",
+      icon: "small-bags",
+    },
+    {
+      eyebrow: "Available formats",
+      title: "100 L bags",
+      body: "A versatile and efficient professional format.",
+      icon: "bag",
+    },
+    {
+      eyebrow: "Available formats",
+      title: "1 m³ big bags",
+      body: "Large volume for industrial and agricultural needs.",
+      icon: "big-bag",
+    },
+    {
+      eyebrow: "Available formats",
+      title: "Bulk",
+      body: "Bulk supply for large-volume projects.",
+      icon: "bulk",
+    },
+  ],
+  nl: [
+    {
+      eyebrow: "Beschikbare formaten",
+      title: "Zakken 20/24 L",
+      body: "Praktische formaten voor teelten en tuinen.",
+      icon: "small-bags",
+    },
+    {
+      eyebrow: "Beschikbare formaten",
+      title: "Zakken 100 L",
+      body: "Het veelzijdige en efficiënte professionele formaat.",
+      icon: "bag",
+    },
+    {
+      eyebrow: "Beschikbare formaten",
+      title: "Big bags 1 m³",
+      body: "Groot volume voor industriële en agrarische behoeften.",
+      icon: "big-bag",
+    },
+    {
+      eyebrow: "Beschikbare formaten",
+      title: "Bulk",
+      body: "Bulkoplossing voor grote volumes.",
+      icon: "bulk",
+    },
+  ],
+  ar: [
+    {
+      eyebrow: "الصيغ المتاحة",
+      title: "أكياس 20/24 لتر",
+      body: "صيغ عملية للزراعات والحدائق.",
+      icon: "small-bags",
+    },
+    {
+      eyebrow: "الصيغ المتاحة",
+      title: "أكياس 100 لتر",
+      body: "صيغة مهنية متعددة الاستخدامات وفعالة.",
+      icon: "bag",
+    },
+    {
+      eyebrow: "الصيغ المتاحة",
+      title: "بيغ باغ 1 م³",
+      body: "حجم كبير للاحتياجات الصناعية والزراعية.",
+      icon: "big-bag",
+    },
+    {
+      eyebrow: "الصيغ المتاحة",
+      title: "سائب",
+      body: "حل سائب للكميات الكبيرة.",
+      icon: "bulk",
+    },
+  ],
+};
+
+const productMobileIntroCopy: Record<Locale, string> = {
+  fr:
+    "Une roche volcanique légère, propre et stable pour les cultures, les espaces verts et les usages professionnels. Barakah Perlite aide à mieux gérer l’air, l’eau et la structure du substrat.",
+  en:
+    "A lightweight, clean and stable volcanic material for crops, green spaces and professional use. Barakah Perlite helps manage air, water and substrate structure with clarity.",
+  nl:
+    "Een licht, schoon en stabiel vulkanisch materiaal voor teelten, groenzones en professioneel gebruik. Barakah Perlite helpt lucht, water en substraatstructuur beter te sturen.",
+  ar:
+    "مادة بركانية خفيفة ونظيفة وثابتة للزراعة والمساحات الخضراء والاستخدامات المهنية. تساعد Barakah Perlite على تحسين الهواء والماء وبنية الوسط الزراعي.",
+};
+
 function ProductCommercialIntro() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   return (
     <section
       data-gsap-section
-      className="relative overflow-hidden bg-[#020806] px-4 py-12 sm:px-6 md:py-20 lg:px-8 lg:py-24"
+      className="relative overflow-hidden bg-[#020806] px-4 py-10 sm:px-6 md:py-20 lg:px-8 lg:py-24"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(22,200,95,0.12),transparent_34%),radial-gradient(circle_at_82%_30%,rgba(213,185,122,0.12),transparent_32%)]" />
-      <div className="relative mx-auto grid max-w-[1500px] gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start lg:gap-16">
-        <div data-gsap-section-title className="max-w-xl md:max-w-2xl">
+      <div className="relative mx-auto grid max-w-[1500px] gap-7 lg:grid-cols-[0.92fr_1.08fr] lg:items-start lg:gap-16">
+        <div data-gsap-section-title className="md:hidden">
+          <p className="mb-3 text-[0.65rem] font-semibold uppercase tracking-[0.26em] text-atlas-sand">
+            {t.product.what.eyebrow}
+          </p>
+          <h2 className="font-display text-[2.15rem] font-semibold leading-[1.04] tracking-[-0.025em] text-perlite-50">
+            {t.product.what.title}
+          </h2>
+          <p className="mt-5 text-sm leading-7 text-silver-200/72">
+            {productMobileIntroCopy[locale]}
+          </p>
+        </div>
+
+        <div data-gsap-section-title className="hidden max-w-xl md:block md:max-w-2xl">
           <SectionTitle
             eyebrow={t.product.what.eyebrow}
             title={t.product.what.title}
@@ -1937,30 +1978,21 @@ function ProductCommercialIntro() {
               <article
                 data-gsap-card
                 key={item.label}
-                className="group relative flex min-h-[168px] flex-col overflow-hidden rounded-[0.45rem] border border-white/10 bg-[#07110E]/78 p-5 shadow-[0_22px_70px_rgba(0,0,0,0.24)] transition duration-300 hover:-translate-y-1 hover:border-[#16C85F]/50 hover:bg-[#0B1712] md:min-h-[250px] md:rounded-[0.55rem] md:p-7"
+                className="group relative flex min-h-0 items-start gap-4 overflow-hidden rounded-[0.38rem] border border-white/10 bg-[#07110E]/62 p-4 shadow-[0_18px_56px_rgba(0,0,0,0.2)] transition duration-300 hover:-translate-y-1 hover:border-[#16C85F]/50 hover:bg-[#0B1712] md:min-h-[250px] md:flex-col md:gap-0 md:rounded-[0.55rem] md:bg-[#07110E]/78 md:p-7 md:shadow-[0_22px_70px_rgba(0,0,0,0.24)]"
               >
-                <div className="mb-5 flex items-center justify-between md:mb-7">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#16C85F]/35 bg-[#16C85F]/10 text-[#16C85F] shadow-[0_0_34px_rgba(22,200,95,0.16)] md:h-14 md:w-14">
+                <div className="shrink-0 md:mb-7">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#16C85F]/35 bg-[#16C85F]/10 text-[#16C85F] shadow-[0_0_28px_rgba(22,200,95,0.12)] md:h-14 md:w-14 md:shadow-[0_0_34px_rgba(22,200,95,0.16)]">
                     <Icon aria-hidden="true" className="h-5 w-5 md:h-6 md:w-6" />
                   </div>
-                  <ArrowUpRight
-                    aria-hidden="true"
-                    className="h-5 w-5 text-silver-200/45 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#16C85F]"
-                  />
                 </div>
-                <p className="font-display text-lg font-bold leading-tight text-perlite-50 md:text-2xl">
-                  {item.label}
-                </p>
-                <p className="mt-3 text-sm leading-6 text-silver-200/68 md:mt-4 md:text-base md:leading-7">
-                  {item.description}
-                </p>
-                <span className="mt-auto hidden items-center gap-2 pt-8 text-sm font-bold uppercase tracking-[0.08em] text-[#16C85F] md:inline-flex">
-                  {t.product.what.moreLabel}
-                  <ArrowRight
-                    aria-hidden="true"
-                    className="h-4 w-4 transition group-hover:translate-x-1"
-                  />
-                </span>
+                <div>
+                  <p className="font-display text-base font-semibold leading-tight text-perlite-50 md:text-2xl md:font-bold">
+                    {item.label}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-silver-200/64 md:mt-4 md:text-base md:leading-7 md:text-silver-200/68">
+                    {item.description}
+                  </p>
+                </div>
               </article>
             );
           })}
@@ -1976,7 +2008,7 @@ function ProductApplicationsShowcase() {
   return (
     <section
       data-gsap-section
-      className="relative overflow-hidden bg-[#F5F1EA] px-4 py-14 text-[#07110E] sm:px-6 md:py-20 lg:px-8 lg:py-24"
+      className="relative overflow-hidden bg-[#F5F1EA] px-4 py-12 text-[#07110E] sm:px-6 md:py-20 lg:px-8 lg:py-24"
     >
       <div className="absolute -bottom-16 -left-12 h-56 w-56 rounded-full bg-[#16C85F]/12 blur-3xl" />
       <div className="absolute bottom-0 left-0 h-32 w-72 bg-[radial-gradient(circle_at_20%_80%,rgba(22,200,95,0.22),transparent_55%)]" />
@@ -1985,7 +2017,7 @@ function ProductApplicationsShowcase() {
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.28em] text-[#16A34A]">
             {t.home.applications.eyebrow}
           </p>
-          <h2 className="font-display text-[2rem] font-bold leading-[1.05] text-[#06110D] md:text-5xl">
+          <h2 className="font-display text-[1.9rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#06110D] md:text-5xl md:font-bold">
             {t.home.applications.title}
           </h2>
           <p className="mt-5 text-base leading-8 text-[#20312B]/78 md:text-lg">
@@ -2010,22 +2042,23 @@ function ProductApplicationsShowcase() {
                 key={application.title}
                 href={application.href}
                 className={cn(
-                  "group rounded-[0.45rem] border border-black/5 bg-white/72 p-5 shadow-[0_22px_70px_rgba(5,11,9,0.08)] backdrop-blur transition hover:-translate-y-1 hover:bg-white md:rounded-[0.55rem] md:p-6",
+                  "group rounded-[0.42rem] border border-black/5 bg-white/72 p-4 shadow-[0_18px_58px_rgba(5,11,9,0.07)] backdrop-blur transition hover:-translate-y-1 hover:bg-white md:rounded-[0.55rem] md:p-6 md:shadow-[0_22px_70px_rgba(5,11,9,0.08)]",
+                  index === 2 && "sm:col-span-2",
                   index >= 3 && "hidden md:block",
                 )}
               >
-                <div className="flex items-start gap-5">
-                  <div className="flex h-[3.25rem] w-[3.25rem] shrink-0 items-center justify-center rounded-full bg-[#16C85F]/12 text-[#149447] md:h-16 md:w-16">
-                    <Icon aria-hidden="true" className="h-7 w-7 md:h-8 md:w-8" />
+                <div className="flex items-start gap-4 md:gap-5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#16C85F]/12 text-[#149447] md:h-16 md:w-16">
+                    <Icon aria-hidden="true" className="h-6 w-6 md:h-8 md:w-8" />
                   </div>
                   <div>
-                    <h3 className="font-display text-lg font-bold leading-tight text-[#06110D] md:text-xl">
+                    <h3 className="font-display text-base font-semibold leading-tight text-[#06110D] md:text-xl md:font-bold">
                       {application.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-6 text-[#20312B]/72 md:leading-7">
+                    <p className="mt-2 text-sm leading-6 text-[#20312B]/72 md:mt-3 md:leading-7">
                       {application.description}
                     </p>
-                    <span className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.1em] text-[#16A34A]">
+                    <span className="mt-5 hidden items-center gap-2 text-xs font-bold uppercase tracking-[0.1em] text-[#16A34A] md:inline-flex">
                       {t.product.what.moreLabel}
                       <ArrowRight
                         aria-hidden="true"
@@ -2043,8 +2076,156 @@ function ProductApplicationsShowcase() {
   );
 }
 
-function ProductProductionShowcase() {
+function PackagingLineIcon({ type }: { type: PackagingFormatCard["icon"] }) {
+  if (type === "bulk") {
+    return (
+      <svg viewBox="0 0 56 40" aria-hidden="true" className="h-8 w-10 fill-none">
+        {Array.from({ length: 18 }).map((_, index) => {
+          const row = Math.floor(index / 6);
+          const col = index % 6;
+          return (
+            <circle
+              key={index}
+              cx={10 + col * 7 + row * 2}
+              cy={30 - row * 9}
+              r="2.3"
+              stroke="currentColor"
+              strokeWidth="1.8"
+            />
+          );
+        })}
+      </svg>
+    );
+  }
+
+  if (type === "big-bag") {
+    return (
+      <svg viewBox="0 0 52 52" aria-hidden="true" className="h-9 w-9 fill-none">
+        <path
+          d="M14 17c2-7 6-7 8 0M30 17c2-7 6-7 8 0M14 17h24l3 26H11l3-26Z"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+        <path d="M21 31h10" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  if (type === "small-bags") {
+    return (
+      <svg viewBox="0 0 56 44" aria-hidden="true" className="h-9 w-11 fill-none">
+        <path
+          d="M7 39 10 8h14l3 31H7ZM31 39l3-31h14l3 31H31Z"
+          stroke="currentColor"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+        <path d="M15 16h4M39 16h4" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 40 48" aria-hidden="true" className="h-9 w-8 fill-none">
+      <path
+        d="M9 44 11 6h18l2 38H9Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+      <path d="M16 13h8M15 29h10" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+    </svg>
+  );
+}
+
+function ProductMobileFormats() {
+  const { t, locale } = useI18n();
+  const formatCards = packagingFormatCards[locale];
+
+  return (
+    <section
+      data-gsap-section
+      className="relative overflow-hidden bg-[#020806] px-4 py-10 sm:px-6 md:hidden"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_86%_0%,rgba(22,200,95,0.11),transparent_36%)]" />
+      <div className="relative">
+        <p className="text-[0.62rem] font-semibold uppercase tracking-[0.28em] text-atlas-sand">
+          {formatCards[0]?.eyebrow}
+        </p>
+        <h2 className="mt-3 font-display text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.02em] text-perlite-50">
+          {t.product.packaging.visualTitle}
+        </h2>
+        <div className="mt-5 grid grid-cols-2 gap-3">
+          {formatCards.map((format) => (
+            <article
+              data-gsap-card
+              key={format.title}
+              className="rounded-[0.38rem] border border-white/10 bg-white/[0.04] p-4 shadow-[0_18px_58px_rgba(0,0,0,0.22)] backdrop-blur-xl"
+            >
+              <div className="mb-3 text-[#16C85F]">
+                <PackagingLineIcon type={format.icon} />
+              </div>
+              <h3 className="font-display text-base font-semibold leading-tight text-[#16C85F]">
+                {format.title}
+              </h3>
+              <p className="mt-2 text-[0.72rem] leading-5 text-silver-200/64">{format.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProductMobileTechnicalDocuments() {
   const { t } = useI18n();
+
+  return (
+    <section
+      data-gsap-section
+      className="relative overflow-hidden bg-[#020806] px-4 py-8 sm:px-6 md:hidden"
+    >
+      <div
+        data-gsap-card
+        className="rounded-[0.38rem] border border-white/10 bg-white/[0.035] p-4 shadow-[0_18px_58px_rgba(0,0,0,0.2)] backdrop-blur-xl"
+      >
+        <p className="text-[0.62rem] font-semibold uppercase tracking-[0.26em] text-atlas-sand">
+          {t.product.specs.eyebrow}
+        </p>
+        <h2 className="mt-2 font-display text-lg font-semibold leading-tight text-perlite-50">
+          {t.product.specs.title}
+        </h2>
+        <p className="mt-2 text-xs leading-5 text-silver-200/58">{t.product.specs.description}</p>
+        <div className="mt-4 grid gap-2">
+          <a
+            href={technicalDocuments.datasheet}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bp-glass-cta bp-glass-cta--secondary min-h-[2.75rem] w-full py-2 text-[0.68rem]"
+          >
+            <Download aria-hidden="true" className="h-4 w-4" />
+            {t.product.specs.download}
+          </a>
+          <a
+            href={technicalDocuments.msds}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bp-glass-cta bp-glass-cta--secondary min-h-[2.75rem] w-full py-2 text-[0.68rem]"
+          >
+            <Download aria-hidden="true" className="h-4 w-4" />
+            {t.product.specs.msdsDownload}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProductProductionShowcase() {
+  const { t, locale } = useI18n();
+  const formatCards = packagingFormatCards[locale];
 
   return (
     <section
@@ -2064,17 +2245,18 @@ function ProductProductionShowcase() {
             <p className="mt-5 text-base leading-8 text-silver-200/72 md:text-lg">
               {t.home.process.description}
             </p>
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              {t.product.packaging.formats.slice(0, 3).map((format) => (
+            <div className="mt-8 grid max-w-[38rem] grid-cols-2 gap-4">
+              {formatCards.map((format) => (
                 <div
-                  key={format}
-                  className="rounded-[0.5rem] border border-white/10 bg-white/[0.04] p-4"
+                  key={format.title}
+                  data-gsap-card
+                  className="rounded-[0.42rem] border border-white/10 bg-white/[0.045] p-4 shadow-[0_18px_60px_rgba(0,0,0,0.2)] backdrop-blur md:p-5"
                 >
                   <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-atlas-sand">
-                    {t.product.packaging.formatsTitle}
+                    {format.eyebrow}
                   </p>
-                  <p className="mt-2 font-display text-xl font-bold text-[#16C85F]">
-                    {format}
+                  <p className="mt-3 font-display text-xl font-bold leading-tight tracking-[-0.02em] text-[#16C85F] md:text-2xl">
+                    {format.title}
                   </p>
                 </div>
               ))}
@@ -2137,7 +2319,7 @@ function ProductMobileFinalCta() {
   return (
     <section
       data-gsap-section
-      className="relative overflow-hidden bg-[#020806] px-4 pb-16 pt-8 sm:px-6 md:hidden"
+      className="relative overflow-hidden bg-[#020806] px-4 pb-16 pt-6 sm:px-6 md:hidden"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(22,200,95,0.12),transparent_35%),linear-gradient(180deg,rgba(2,8,6,0)_0%,#020806_62%)]" />
       <div
@@ -2147,11 +2329,11 @@ function ProductMobileFinalCta() {
         <p className="text-[0.65rem] font-bold uppercase tracking-[0.26em] text-atlas-sand">
           Barakah Perlite
         </p>
-        <h2 className="mt-4 font-display text-[1.85rem] font-bold leading-[1.06] tracking-[-0.02em] text-perlite-50">
-          {t.product.packaging.title}
+        <h2 className="mt-4 font-display text-[1.85rem] font-semibold leading-[1.06] tracking-[-0.02em] text-perlite-50">
+          {t.home.cta.title}
         </h2>
         <p className="mt-4 text-sm leading-7 text-silver-200/72">
-          {t.product.packaging.description}
+          {t.home.cta.description}
         </p>
         <div className="mt-7 grid gap-3">
           <Link href="/contact" className="bp-glass-cta bp-glass-cta--primary w-full">
@@ -2394,7 +2576,7 @@ function CommercialHeroCtas({
     <div
       dir="ltr"
       className={cn(
-        "mb-8 mt-8 w-full max-w-[42rem]",
+        "mb-4 mt-6 w-full max-w-[42rem] md:mb-8 md:mt-8",
         isArabic && "sm:ml-0 sm:mr-auto",
       )}
     >
@@ -2410,7 +2592,7 @@ function CommercialHeroCtas({
         <Link
           data-hero-cta
           href="/contact"
-          className="bp-glass-cta bp-glass-cta--secondary hidden w-full min-w-0 md:inline-flex"
+          className="bp-glass-cta bp-glass-cta--secondary !hidden w-full min-w-0 md:!inline-flex"
         >
           {sample}
           <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
@@ -2436,7 +2618,7 @@ function AgricultureHero({ copy }: { copy: AgricultureCommercialCopy }) {
   return (
     <section
       data-gsap-section
-      className="relative overflow-hidden border-b border-white/10 bg-[#020806] px-4 pt-28 text-white sm:px-6 md:pt-32 lg:min-h-[760px] lg:px-[5%] 2xl:min-h-[820px]"
+      className="relative overflow-hidden border-b border-white/10 bg-[#020806] px-4 pt-24 text-white sm:px-6 md:pt-32 lg:min-h-[760px] lg:px-[5%] 2xl:min-h-[820px]"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(22,200,95,0.14),transparent_28%),radial-gradient(circle_at_10%_45%,rgba(213,185,122,0.11),transparent_32%),linear-gradient(135deg,#020806_0%,#07110E_58%,#020806_100%)]" />
       <MoroccanPatternBackground density="medium" className="opacity-[0.11]" />
@@ -2445,27 +2627,27 @@ function AgricultureHero({ copy }: { copy: AgricultureCommercialCopy }) {
         <AnimatedParticles />
       </div>
 
-      <div className="relative z-[3] mx-auto grid min-w-0 max-w-[1500px] gap-8 pb-10 lg:min-h-[680px] lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-14 lg:pb-0 2xl:min-h-[720px]">
-        <div className="min-w-0 w-full max-w-[calc(100vw-2rem)] pt-4 sm:max-w-2xl lg:pt-0">
-          <div data-hero-eyebrow className="mb-7 h-0.5 w-12 bg-[#16C85F]" />
-          <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#16C85F]">
+      <div className="relative z-[3] mx-auto grid min-w-0 max-w-[1500px] gap-7 pb-8 lg:min-h-[680px] lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-14 lg:pb-0 2xl:min-h-[720px]">
+        <div className="min-w-0 w-full max-w-[calc(100vw-2rem)] pt-2 sm:max-w-2xl md:pt-4 lg:pt-0">
+          <div data-hero-eyebrow className="mb-6 h-0.5 w-12 bg-[#16C85F] md:mb-7" />
+          <p className="mb-3 text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-[#16C85F] md:mb-4 md:font-bold md:tracking-[0.24em]">
             {copy.hero.eyebrow}
           </p>
           <h1
             data-hero-title
-            className="max-w-[11ch] break-words font-display text-[2.05rem] font-bold leading-[1.08] tracking-[-0.025em] text-white sm:max-w-none sm:text-[3.45rem] lg:text-[4.6rem] xl:text-[5rem]"
+            className="max-w-[11ch] break-words font-display text-[2rem] font-semibold leading-[1.08] tracking-[-0.025em] text-white sm:max-w-none sm:text-[3.35rem] md:font-bold lg:text-[4.6rem] xl:text-[5rem]"
           >
             {copy.hero.title}
           </h1>
           <p
             data-hero-subtitle
-            className="mt-5 text-xl font-semibold leading-snug tracking-[-0.01em] text-white md:text-2xl"
+            className="mt-4 text-lg font-semibold leading-snug tracking-[-0.01em] text-white md:mt-5 md:text-2xl"
           >
             {copy.hero.kicker}
           </p>
           <p
             data-hero-subtitle
-            className="mt-4 max-w-[52ch] text-sm leading-7 text-[#B8C2BD] md:text-base md:leading-8"
+            className="mt-3 max-w-[52ch] text-sm leading-7 text-[#B8C2BD] md:mt-4 md:text-base md:leading-8"
           >
             {copy.hero.description}
           </p>
@@ -2479,7 +2661,7 @@ function AgricultureHero({ copy }: { copy: AgricultureCommercialCopy }) {
 
         <div
           data-gsap-card
-          className="relative min-h-[410px] min-w-0 max-w-[calc(100vw-2rem)] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[#07110E]/72 shadow-[0_42px_140px_rgba(0,0,0,0.44)] backdrop-blur-xl md:min-h-[520px] lg:max-w-none lg:min-h-[580px] 2xl:min-h-[620px]"
+          className="relative min-h-[315px] min-w-0 max-w-[calc(100vw-2rem)] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[#07110E]/72 shadow-[0_42px_140px_rgba(0,0,0,0.44)] backdrop-blur-xl sm:min-h-[390px] md:min-h-[520px] lg:max-w-none lg:min-h-[580px] 2xl:min-h-[620px]"
         >
           <Image
             src="/images/agriculture-greenhouse-tomatoes.jpeg"
@@ -2492,14 +2674,14 @@ function AgricultureHero({ copy }: { copy: AgricultureCommercialCopy }) {
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,6,0.08)_0%,rgba(2,8,6,0.22)_50%,rgba(2,8,6,0.72)_100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_62%_32%,rgba(22,200,95,0.16),transparent_30%),linear-gradient(90deg,rgba(2,8,6,0.32)_0%,transparent_38%,rgba(2,8,6,0.28)_100%)]" />
-          <div className="absolute left-5 top-5 rounded-full border border-white/12 bg-[#020806]/58 px-4 py-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-perlite-50 backdrop-blur-md md:left-7 md:top-7">
+          <div className="absolute left-4 top-4 rounded-full border border-white/12 bg-[#020806]/58 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50 backdrop-blur-md md:left-7 md:top-7 md:px-4 md:text-[0.65rem] md:font-bold md:tracking-[0.2em]">
             {copy.hero.visualLabel}
           </div>
           <div className="absolute inset-x-5 bottom-5 md:inset-x-7 md:bottom-7">
-            <h2 className="max-w-[14ch] break-words font-display text-[1.45rem] font-bold leading-snug tracking-[-0.015em] text-perlite-50 md:max-w-lg md:text-4xl">
+            <h2 className="max-w-[16ch] break-words font-display text-[1.25rem] font-semibold leading-snug tracking-[-0.015em] text-perlite-50 md:max-w-lg md:text-4xl md:font-bold">
               {copy.hero.visualTitle}
             </h2>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="mt-5 hidden gap-3 sm:grid-cols-2 md:grid">
               {copy.hero.metrics.map((metric) => (
                 <div
                   key={metric.label}
@@ -2525,7 +2707,7 @@ function AgricultureBenefits({ copy }: { copy: AgricultureCommercialCopy }) {
   return (
     <section
       data-gsap-section
-      className="relative overflow-hidden px-4 py-14 sm:px-6 md:py-20 lg:px-8 lg:py-24"
+      className="relative overflow-hidden px-4 py-12 sm:px-6 md:py-20 lg:px-8 lg:py-24"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(22,200,95,0.14),transparent_28%),radial-gradient(circle_at_84%_72%,rgba(213,185,122,0.1),transparent_30%)]" />
       <div className="relative mx-auto max-w-7xl">
@@ -2536,7 +2718,31 @@ function AgricultureBenefits({ copy }: { copy: AgricultureCommercialCopy }) {
             description={copy.benefits.description}
           />
         </div>
-        <div className="mt-10 grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 grid gap-3 md:hidden">
+          {copy.benefits.features.slice(0, 4).map((feature) => {
+            const Icon = iconMap[feature.icon];
+            return (
+              <article
+                data-gsap-card
+                key={feature.title}
+                className="flex gap-4 border-t border-white/10 py-4"
+              >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.45rem] border border-[#16C85F]/22 bg-[#16C85F]/8 text-[#16C85F]">
+                  <Icon aria-hidden="true" className="h-4 w-4" />
+                </div>
+                <div>
+                  <h3 className="font-display text-base font-semibold leading-tight text-perlite-50">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-silver-200/68">
+                    {feature.description}
+                  </p>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+        <div className="mt-10 hidden items-stretch gap-5 md:grid md:grid-cols-2 xl:grid-cols-4">
           {copy.benefits.features.map((feature, index) => (
             <FeatureCard
               key={feature.title}
@@ -2555,7 +2761,7 @@ function AgricultureUseCases({ copy }: { copy: AgricultureCommercialCopy }) {
   return (
     <section
       data-gsap-section
-      className="relative overflow-hidden bg-[#F5F1EA] px-4 py-14 text-[#07110E] sm:px-6 md:py-20 lg:px-8 lg:py-24"
+      className="relative overflow-hidden bg-[#F5F1EA] px-4 py-12 text-[#07110E] sm:px-6 md:py-20 lg:px-8 lg:py-24"
     >
       <div className="absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-[#16C85F]/16 blur-3xl" />
       <div className="absolute right-0 top-0 h-full w-1/2 bg-[radial-gradient(circle_at_80%_24%,rgba(22,200,95,0.12),transparent_34%)]" />
@@ -2564,15 +2770,15 @@ function AgricultureUseCases({ copy }: { copy: AgricultureCommercialCopy }) {
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.28em] text-[#16A34A]">
             {copy.useCases.eyebrow}
           </p>
-          <h2 className="font-display text-[2.15rem] font-bold leading-[1.08] tracking-[-0.02em] text-[#06110D] md:text-5xl">
+          <h2 className="font-display text-[1.9rem] font-semibold leading-[1.08] tracking-[-0.02em] text-[#06110D] md:text-5xl md:font-bold">
             {copy.useCases.title}
           </h2>
-          <p className="mt-5 text-base leading-8 text-[#20312B]/78 md:text-lg">
+          <p className="mt-4 text-sm leading-7 text-[#20312B]/78 md:mt-5 md:text-lg md:leading-8">
             {copy.useCases.description}
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-3 md:gap-5 md:grid-cols-2">
           {copy.useCases.items.map((item, index) => {
             const Icon = iconMap[item.icon];
             return (
@@ -2580,20 +2786,20 @@ function AgricultureUseCases({ copy }: { copy: AgricultureCommercialCopy }) {
                 data-gsap-card
                 key={item.title}
                 className={cn(
-                  "group rounded-[0.55rem] border border-black/5 bg-white/78 p-6 shadow-[0_24px_80px_rgba(5,11,9,0.08)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(5,11,9,0.14)]",
-                  index >= 2 && "hidden md:block",
+                  "group rounded-[0.55rem] border border-black/5 bg-white/78 p-4 shadow-[0_24px_80px_rgba(5,11,9,0.08)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(5,11,9,0.14)] md:p-6",
+                  index >= 3 && "hidden md:block",
                 )}
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#16C85F]/12 text-[#129B4A]">
-                  <Icon aria-hidden="true" className="h-6 w-6" />
+                <div className="flex h-11 w-11 items-center justify-center rounded-[0.5rem] bg-[#16C85F]/12 text-[#129B4A] md:h-14 md:w-14 md:rounded-full">
+                  <Icon aria-hidden="true" className="h-5 w-5 md:h-6 md:w-6" />
                 </div>
-                <h3 className="mt-6 font-display text-xl font-bold leading-tight text-[#06110D] md:text-2xl">
+                <h3 className="mt-4 font-display text-lg font-semibold leading-tight text-[#06110D] md:mt-6 md:text-2xl md:font-bold">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-sm leading-7 text-[#20312B]/72 md:text-base">
+                <p className="mt-3 text-sm leading-6 text-[#20312B]/72 md:mt-4 md:text-base md:leading-7">
                   {item.description}
                 </p>
-                <span className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[#129B4A]">
+                <span className="mt-5 hidden items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[#129B4A] md:inline-flex">
                   {String(index + 1).padStart(2, "0")}
                   <ArrowRight aria-hidden="true" className="h-4 w-4" />
                 </span>
@@ -2762,7 +2968,7 @@ function GreenSpaceHero({
 
         <div
           data-gsap-card
-          className="relative min-h-[410px] min-w-0 max-w-[calc(100vw-2rem)] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[#07110E]/72 shadow-[0_42px_140px_rgba(0,0,0,0.44)] backdrop-blur-xl md:min-h-[520px] lg:max-w-none lg:min-h-[580px] 2xl:min-h-[620px]"
+          className="relative min-h-[245px] min-w-0 max-w-[calc(100vw-2rem)] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[#07110E]/72 shadow-[0_28px_90px_rgba(0,0,0,0.42)] backdrop-blur-xl sm:min-h-[300px] md:min-h-[520px] md:shadow-[0_42px_140px_rgba(0,0,0,0.44)] lg:max-w-none lg:min-h-[580px] 2xl:min-h-[620px]"
         >
           <Image
             src="/images/green-space-perlite-seedlings.png"
@@ -2771,18 +2977,18 @@ function GreenSpaceHero({
             fill
             priority
             sizes="(min-width: 1024px) 52vw, 100vw"
-            className="object-cover object-center opacity-[0.84]"
+            className="object-cover object-center opacity-90 md:opacity-[0.84]"
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,6,0.06)_0%,rgba(2,8,6,0.18)_48%,rgba(2,8,6,0.7)_100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_62%_28%,rgba(22,200,95,0.14),transparent_34%),linear-gradient(90deg,rgba(2,8,6,0.18)_0%,transparent_46%,rgba(2,8,6,0.24)_100%)]" />
-          <div className="absolute left-5 top-5 rounded-full border border-white/14 bg-[#020806]/56 px-4 py-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-perlite-50 backdrop-blur-md md:left-7 md:top-7">
+          <div className="absolute left-4 top-4 rounded-full border border-white/14 bg-[#020806]/56 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50/88 backdrop-blur-md md:left-7 md:top-7 md:px-4 md:text-[0.65rem] md:font-bold md:tracking-[0.2em]">
             {copy.promise.eyebrow}
           </div>
           <div className="absolute inset-x-5 bottom-5 md:inset-x-7 md:bottom-7">
-            <h2 className="max-w-[15ch] break-words font-display text-[1.45rem] font-bold leading-snug tracking-[-0.015em] text-perlite-50 md:max-w-lg md:text-4xl">
+            <h2 className="max-w-[17ch] break-words font-display text-[1.16rem] font-semibold leading-snug tracking-[-0.015em] text-perlite-50 md:max-w-lg md:text-4xl md:font-bold">
               {copy.promise.title}
             </h2>
-            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+            <div className="mt-5 hidden gap-3 sm:grid-cols-3 md:grid">
               {copy.promise.features.map((feature) => (
                 <div
                   key={feature.title}
@@ -2960,7 +3166,7 @@ function IndustryHero({
     <section
       data-gsap-section
       dir={isArabic ? "rtl" : "ltr"}
-      className="relative overflow-hidden border-b border-white/10 bg-[#020806] px-4 pt-28 text-white sm:px-6 md:pt-32 lg:min-h-[760px] lg:px-[5%] 2xl:min-h-[820px]"
+      className="relative overflow-hidden border-b border-white/10 bg-[#020806] px-4 pt-24 text-white sm:px-6 md:pt-32 lg:min-h-[760px] lg:px-[5%] 2xl:min-h-[820px]"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(22,200,95,0.12),transparent_28%),radial-gradient(circle_at_16%_58%,rgba(213,185,122,0.1),transparent_34%),linear-gradient(135deg,#020806_0%,#07110E_56%,#020806_100%)]" />
       <MoroccanPatternBackground density="medium" className="opacity-[0.1]" />
@@ -2969,38 +3175,38 @@ function IndustryHero({
         <AnimatedParticles />
       </div>
 
-      <div className="relative z-[3] mx-auto grid min-w-0 max-w-[1500px] gap-8 pb-10 lg:min-h-[680px] lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14 lg:pb-0 2xl:min-h-[720px]">
+      <div className="relative z-[3] mx-auto grid min-w-0 max-w-[1500px] gap-7 pb-8 lg:min-h-[680px] lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14 lg:pb-0 2xl:min-h-[720px]">
         <div
           className={cn(
-            "min-w-0 w-full max-w-[calc(100vw-2rem)] pt-4 sm:max-w-2xl lg:pt-0",
+            "min-w-0 w-full max-w-[calc(100vw-2rem)] pt-2 sm:max-w-2xl md:pt-4 lg:pt-0",
             isArabic && "text-right",
           )}
         >
           <div
             data-hero-eyebrow
             className={cn(
-              "mb-7 h-0.5 w-12 bg-[#16C85F]",
+              "mb-6 h-0.5 w-12 bg-[#16C85F] md:mb-7",
               isArabic && "mr-0",
             )}
           />
-          <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#16C85F]">
+          <p className="mb-3 text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-[#16C85F] md:mb-4 md:text-[0.68rem] md:font-bold md:tracking-[0.24em]">
             {copy.hero.eyebrow}
           </p>
           <h1
             data-hero-title
-            className="max-w-[12ch] break-words font-display text-[2.05rem] font-bold leading-[1.08] tracking-[-0.025em] text-white sm:max-w-none sm:text-[3.45rem] lg:max-w-[12ch] lg:text-[4.6rem] xl:text-[5rem]"
+            className="max-w-[12ch] break-words font-display text-[2rem] font-semibold leading-[1.08] tracking-[-0.025em] text-white sm:max-w-none sm:text-[3.35rem] md:font-bold lg:max-w-[12ch] lg:text-[4.6rem] xl:text-[5rem]"
           >
             {copy.hero.title}
           </h1>
           <p
             data-hero-subtitle
-            className="mt-5 text-xl font-semibold leading-snug tracking-[-0.01em] text-white md:text-2xl"
+            className="mt-4 text-lg font-semibold leading-snug tracking-[-0.01em] text-white md:mt-5 md:text-2xl"
           >
             {copy.hero.kicker}
           </p>
           <p
             data-hero-subtitle
-            className="mt-4 max-w-[52ch] text-sm leading-7 text-[#B8C2BD] md:text-base md:leading-8"
+            className="mt-3 max-w-[52ch] text-sm leading-7 text-[#B8C2BD] md:mt-4 md:text-base md:leading-8"
           >
             {copy.hero.description}
           </p>
@@ -3015,9 +3221,9 @@ function IndustryHero({
 
         <div
           data-gsap-card
-          className="relative min-h-[390px] min-w-0 max-w-[calc(100vw-2rem)] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[radial-gradient(circle_at_72%_18%,rgba(22,200,95,0.1),transparent_32%),linear-gradient(135deg,#020806,#050B09)] shadow-[0_42px_140px_rgba(0,0,0,0.5)] backdrop-blur-xl md:min-h-[520px] lg:max-w-none lg:min-h-[580px] 2xl:min-h-[620px]"
+          className="relative min-h-[300px] min-w-0 max-w-[calc(100vw-2rem)] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[radial-gradient(circle_at_72%_18%,rgba(22,200,95,0.1),transparent_32%),linear-gradient(135deg,#020806,#050B09)] shadow-[0_42px_140px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:min-h-[360px] md:min-h-[520px] lg:max-w-none lg:min-h-[580px] 2xl:min-h-[620px]"
         >
-          <div className="absolute inset-5 rounded-[0.5rem] bg-black/70 md:inset-7" />
+          <div className="absolute inset-4 rounded-[0.5rem] bg-black/70 md:inset-7" />
           <Image
             src="/images/industry-factory-premium.png"
             alt=""
@@ -3028,14 +3234,14 @@ function IndustryHero({
             className="scale-[1.08] object-contain object-center opacity-[0.96] md:scale-[1.12]"
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,6,0.04)_0%,rgba(2,8,6,0.18)_52%,rgba(2,8,6,0.68)_100%)]" />
-          <div className="absolute left-5 top-5 rounded-full border border-white/12 bg-[#020806]/58 px-4 py-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-perlite-50 backdrop-blur-md md:left-7 md:top-7">
+          <div className="absolute left-4 top-4 rounded-full border border-white/12 bg-[#020806]/58 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50 backdrop-blur-md md:left-7 md:top-7 md:px-4 md:text-[0.65rem] md:font-bold md:tracking-[0.2em]">
             {copy.hero.visualLabel}
           </div>
-          <div className="absolute inset-x-5 bottom-5 md:inset-x-7 md:bottom-7">
-            <h2 className="max-w-[16ch] break-words font-display text-[1.4rem] font-bold leading-snug tracking-[-0.015em] text-perlite-50 md:max-w-lg md:text-4xl">
+          <div className="absolute inset-x-4 bottom-4 md:inset-x-7 md:bottom-7">
+            <h2 className="max-w-[17ch] break-words font-display text-[1.2rem] font-semibold leading-snug tracking-[-0.015em] text-perlite-50 md:max-w-lg md:text-4xl md:font-bold">
               {copy.hero.visualTitle}
             </h2>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="mt-5 hidden gap-3 sm:grid-cols-2 md:grid">
               {copy.hero.metrics.map((metric) => (
                 <div
                   key={metric.label}
@@ -3072,7 +3278,32 @@ function IndustryApplications({ copy }: { copy: IndustryCommercialCopy }) {
             description={copy.applications.description}
           />
         </div>
-        <div className="mt-10 grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 grid gap-3 md:hidden">
+          {copy.applications.features.slice(0, 3).map((feature) => {
+            const Icon = iconMap[feature.icon];
+
+            return (
+              <article
+                data-gsap-card
+                key={feature.title}
+                className="flex gap-4 border-t border-white/10 py-4"
+              >
+                <span className="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.45rem] border border-[#16C85F]/30 bg-[#16C85F]/8 text-[#58D878]">
+                  <Icon aria-hidden="true" className="h-4 w-4" />
+                </span>
+                <div>
+                  <h3 className="font-display text-lg font-semibold leading-tight tracking-[-0.01em] text-perlite-50">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-silver-200/68">
+                    {feature.description}
+                  </p>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+        <div className="mt-10 hidden items-stretch gap-5 md:grid md:grid-cols-2 xl:grid-cols-4">
           {copy.applications.features.map((feature, index) => (
             <FeatureCard
               key={feature.title}
@@ -3235,7 +3466,6 @@ export function AboutPageContent() {
       <AboutHero copy={copy} locale={locale} />
       <AboutPositioning copy={copy} />
       <AboutSupply copy={copy} />
-      <AboutRoadmap copy={copy} />
       <AboutFinalCta copy={copy} />
     </div>
   );
@@ -3254,7 +3484,7 @@ function AboutHero({
     <section
       data-gsap-section
       dir={isArabic ? "rtl" : "ltr"}
-      className="relative overflow-hidden border-b border-white/10 bg-[#020806] px-4 pt-28 text-white sm:px-6 md:pt-32 lg:min-h-[760px] lg:px-[5%] 2xl:min-h-[820px]"
+      className="relative overflow-hidden border-b border-white/10 bg-[#020806] px-4 pt-24 text-white sm:px-6 md:pt-32 lg:min-h-[760px] lg:px-[5%] 2xl:min-h-[820px]"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(22,200,95,0.14),transparent_28%),radial-gradient(circle_at_12%_54%,rgba(213,185,122,0.1),transparent_34%),linear-gradient(135deg,#020806_0%,#07110E_58%,#020806_100%)]" />
       <MoroccanPatternBackground density="medium" className="opacity-[0.11]" />
@@ -3263,24 +3493,29 @@ function AboutHero({
         <AnimatedParticles />
       </div>
 
-      <div className="relative z-[3] mx-auto grid min-w-0 max-w-[1500px] gap-8 pb-10 lg:min-h-[680px] lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-14 lg:pb-0 2xl:min-h-[720px]">
+      <div className="relative z-[3] mx-auto grid min-w-0 max-w-[1500px] gap-7 pb-8 lg:min-h-[680px] lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-14 lg:pb-0 2xl:min-h-[720px]">
         <div
           className={cn(
-            "min-w-0 w-full max-w-[calc(100vw-2rem)] pt-4 sm:max-w-2xl lg:pt-0",
+            "min-w-0 w-full max-w-[calc(100vw-2rem)] pt-2 sm:max-w-2xl md:pt-4 lg:pt-0",
             isArabic && "text-right",
           )}
         >
-          <div className="mb-7 h-0.5 w-12 bg-[#16C85F]" />
-          <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#16C85F]">
+          <div
+            className={cn(
+              "mb-6 h-0.5 w-12 bg-[#16C85F] md:mb-7",
+              isArabic && "ml-0 mr-auto",
+            )}
+          />
+          <p className="mb-3 text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-[#16C85F] md:mb-4 md:text-[0.68rem] md:font-bold md:tracking-[0.24em]">
             {copy.hero.eyebrow}
           </p>
-          <h1 className="max-w-[12ch] break-words font-display text-[2.05rem] font-bold leading-[1.08] tracking-[-0.025em] text-white sm:max-w-none sm:text-[3.45rem] lg:max-w-[12ch] lg:text-[4.6rem] xl:text-[5rem]">
+          <h1 className="max-w-[12ch] break-words font-display text-[2rem] font-semibold leading-[1.08] tracking-[-0.025em] text-white sm:max-w-none sm:text-[3.35rem] md:font-bold lg:max-w-[12ch] lg:text-[4.6rem] xl:text-[5rem]">
             {copy.hero.title}
           </h1>
-          <p className="mt-5 text-xl font-semibold leading-snug tracking-[-0.01em] text-white md:text-2xl">
+          <p className="mt-4 text-lg font-semibold leading-snug tracking-[-0.01em] text-white md:mt-5 md:text-2xl">
             {copy.hero.kicker}
           </p>
-          <p className="mt-4 max-w-[54ch] text-sm leading-7 text-[#B8C2BD] md:text-base md:leading-8">
+          <p className="mt-3 max-w-[54ch] text-sm leading-7 text-[#B8C2BD] md:mt-4 md:text-base md:leading-8">
             {copy.hero.description}
           </p>
 
@@ -3294,9 +3529,9 @@ function AboutHero({
 
         <div
           data-gsap-card
-          className="relative min-h-[390px] min-w-0 max-w-[calc(100vw-2rem)] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[radial-gradient(circle_at_72%_18%,rgba(22,200,95,0.11),transparent_32%),linear-gradient(135deg,#020806,#050B09)] shadow-[0_42px_140px_rgba(0,0,0,0.5)] backdrop-blur-xl md:min-h-[520px] lg:max-w-none lg:min-h-[580px] 2xl:min-h-[620px]"
+          className="relative min-h-[300px] min-w-0 max-w-[calc(100vw-2rem)] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[radial-gradient(circle_at_72%_18%,rgba(22,200,95,0.11),transparent_32%),linear-gradient(135deg,#020806,#050B09)] shadow-[0_42px_140px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:min-h-[360px] md:min-h-[520px] lg:max-w-none lg:min-h-[580px] 2xl:min-h-[620px]"
         >
-          <div className="absolute inset-5 rounded-[0.5rem] bg-black/70 md:inset-7" />
+          <div className="absolute inset-4 rounded-[0.5rem] bg-black/70 md:inset-7" />
           <Image
             src="/images/about-perlite-hands.jpeg"
             alt=""
@@ -3307,14 +3542,14 @@ function AboutHero({
             className="object-cover object-center opacity-[0.94]"
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,6,0.08)_0%,rgba(2,8,6,0.2)_50%,rgba(2,8,6,0.76)_100%)]" />
-          <div className="absolute left-5 top-5 rounded-full border border-white/12 bg-[#020806]/58 px-4 py-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-perlite-50 backdrop-blur-md md:left-7 md:top-7">
+          <div className="absolute left-4 top-4 rounded-full border border-white/12 bg-[#020806]/58 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50 backdrop-blur-md md:left-7 md:top-7 md:px-4 md:text-[0.65rem] md:font-bold md:tracking-[0.2em]">
             {copy.hero.visualLabel}
           </div>
-          <div className="absolute inset-x-5 bottom-5 md:inset-x-7 md:bottom-7">
-            <h2 className="max-w-[16ch] break-words font-display text-[1.4rem] font-bold leading-snug tracking-[-0.015em] text-perlite-50 md:max-w-lg md:text-4xl">
+          <div className="absolute inset-x-4 bottom-4 md:inset-x-7 md:bottom-7">
+            <h2 className="max-w-[17ch] break-words font-display text-[1.2rem] font-semibold leading-snug tracking-[-0.015em] text-perlite-50 md:max-w-lg md:text-4xl md:font-bold">
               {copy.hero.visualTitle}
             </h2>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="mt-5 hidden gap-3 sm:grid-cols-2 md:grid">
               {copy.hero.metrics.map((metric) => (
                 <div
                   key={metric.label}
@@ -3351,7 +3586,32 @@ function AboutPositioning({ copy }: { copy: AboutCommercialCopy }) {
             description={copy.positioning.description}
           />
         </div>
-        <div className="mt-10 grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 grid gap-3 md:hidden">
+          {copy.positioning.features.slice(0, 3).map((feature) => {
+            const Icon = iconMap[feature.icon];
+
+            return (
+              <article
+                data-gsap-card
+                key={feature.title}
+                className="flex gap-4 border-t border-white/10 py-4"
+              >
+                <span className="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.45rem] border border-[#16C85F]/30 bg-[#16C85F]/8 text-[#58D878]">
+                  <Icon aria-hidden="true" className="h-4 w-4" />
+                </span>
+                <div>
+                  <h3 className="font-display text-lg font-semibold leading-tight tracking-[-0.01em] text-perlite-50">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-silver-200/68">
+                    {feature.description}
+                  </p>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+        <div className="mt-10 hidden items-stretch gap-5 md:grid md:grid-cols-2 xl:grid-cols-4">
           {copy.positioning.features.map((feature, index) => (
             <FeatureCard
               key={feature.title}
@@ -3432,46 +3692,6 @@ function AboutSupply({ copy }: { copy: AboutCommercialCopy }) {
               </article>
             ))}
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function AboutRoadmap({ copy }: { copy: AboutCommercialCopy }) {
-  return (
-    <section
-      data-gsap-section
-      className="relative overflow-hidden px-4 py-14 sm:px-6 md:py-20 lg:px-8 lg:py-24"
-    >
-      <MoroccanPatternBackground density="quiet" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,6,0.97),rgba(7,17,14,0.94)),radial-gradient(circle_at_78%_26%,rgba(22,200,95,0.12),transparent_30%)]" />
-      <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.74fr_1.26fr] lg:items-start lg:gap-14">
-        <div data-gsap-section-title className="max-w-2xl">
-          <SectionTitle
-            eyebrow={copy.roadmap.eyebrow}
-            title={copy.roadmap.title}
-            description={copy.roadmap.description}
-          />
-        </div>
-        <div className="grid min-w-0 gap-4 md:grid-cols-3">
-          {copy.roadmap.items.map((item) => (
-            <article
-              data-gsap-card
-              key={item.title}
-              className="min-w-0 rounded-[0.55rem] border border-white/10 bg-white/[0.055] p-6 shadow-glass backdrop-blur-xl"
-            >
-              <p className="font-display text-3xl font-bold text-[#16C85F]">
-                {item.metric}
-              </p>
-              <h3 className="mt-5 min-w-0 break-words font-display text-xl font-bold leading-tight text-perlite-50 [overflow-wrap:anywhere] md:text-[1.35rem]">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-silver-200/70 md:text-base">
-                {item.body}
-              </p>
-            </article>
-          ))}
         </div>
       </div>
     </section>

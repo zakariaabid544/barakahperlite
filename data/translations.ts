@@ -450,14 +450,6 @@ export const translations = {
         accent: "sand",
       },
       {
-        title: "Mobilier",
-        description:
-          "Charges minérales légères pour panneaux, éléments décoratifs, composites et formulations allégées.",
-        icon: "boxes",
-        href: "/industrie",
-        accent: "silver",
-      },
-      {
         title: "Espaces verts",
         description:
           "Jardinage professionnel, sols urbains, gazons, plantations et mélanges drainants pour racines plus aérées.",
@@ -569,9 +561,9 @@ export const translations = {
       applications: {
         eyebrow: "Applications",
         title:
-          "Agriculture, industrie, mobilier et espaces verts.",
+          "Agriculture, industrie et espaces verts.",
         description:
-          "Du substrat horticole au jardinage professionnel, des formulations industrielles aux charges légères pour mobilier, la perlite ouvre des usages techniques et durables.",
+          "Du substrat horticole au jardinage professionnel, des formulations industrielles aux usages durables, la perlite ouvre des possibilités concrètes.",
       },
       origin: {
         visualTitle: "Origine marocaine, ambition internationale",
@@ -628,9 +620,9 @@ export const translations = {
       },
       process: {
         eyebrow: "Process & qualité",
-        title: "Une chaîne pensée pour la régularité des lots.",
+        title: "Une chaîne étudiée pour la régularité des lots.",
         description:
-          "Le futur avantage industriel de Barakah Perlite repose sur la maîtrise de la matière première, de l’expansion, de la granulométrie et de la traçabilité.",
+          "La qualité du produit de Barakah Perlite repose sur la maîtrise de la matière première, de l’expansion, de la granulométrie et de la traçabilité.",
       },
       cta: {
         title: "Prêt à spécifier une perlite plus performante ?",
@@ -651,8 +643,7 @@ export const translations = {
       },
       what: {
         eyebrow: "Qu’est-ce que la perlite ?",
-        title:
-          "Une matière minérale naturelle avec une architecture poreuse unique.",
+        title: "Une matière minérale naturelle.",
         description:
           "La perlite est une roche volcanique contenant de l’eau liée. Lorsqu’elle est chauffée, elle se dilate fortement et devient un matériau blanc, léger, propre et stable. Cette transformation crée des pores qui retiennent l’eau tout en maintenant l’air disponible.",
         facts: [
@@ -2341,14 +2332,6 @@ export const translations = {
         icon: "factory",
         href: "/industrie",
         accent: "sand",
-      },
-      {
-        title: "Furniture",
-        description:
-          "Light mineral fillers for panels, decorative elements, composites and lighter formulations.",
-        icon: "boxes",
-        href: "/industrie",
-        accent: "silver",
       },
       {
         title: "Green spaces",
@@ -4232,13 +4215,6 @@ export const translations = {
       "accent": "sand"
     },
     {
-      "title": "Meubilair",
-      "description": "Lichte minerale vulstoffen voor panelen, decoratieve elementen, composieten en lichtere formuleringen.",
-      "icon": "boxes",
-      "href": "/industrie",
-      "accent": "silver"
-    },
-    {
       "title": "Groene ruimtes",
       "description": "Professioneel tuinieren, stedelijke bodems, gazons, plantages en drainagemengsels voor beter beluchte wortels.",
       "icon": "leaf",
@@ -5958,14 +5934,6 @@ export const translations = {
         icon: "factory",
         href: "/industrie",
         accent: "sand",
-      },
-      {
-        title: "الأثاث",
-        description:
-          "حشوات معدنية خفيفة للألواح والعناصر الزخرفية والمركبات والتركيبات الأخف.",
-        icon: "boxes",
-        href: "/industrie",
-        accent: "silver",
       },
       {
         title: "المساحات الخضراء",

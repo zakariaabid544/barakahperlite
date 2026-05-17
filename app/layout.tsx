@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { AnalyticsTracker } from "@/components/analytics/AnalyticsTracker";
@@ -8,12 +7,6 @@ import { Header } from "@/components/layout/Header";
 import { I18nProvider } from "@/components/layout/I18nProvider";
 import { MotionProvider } from "@/components/layout/MotionProvider";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-dm-sans",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://barakahperlite.com"),
@@ -68,7 +61,7 @@ export default function RootLayout({
 
   return (
     <html lang="fr" dir="ltr" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <body className={`${dmSans.variable} overflow-x-hidden font-sans`}>
+      <body className="overflow-x-hidden font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

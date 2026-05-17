@@ -12,7 +12,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noreferrer"
       aria-label={t.whatsapp.aria}
-      title={`WhatsApp Ahmed EL Marjou - ${contact.phone}`}
+      title={`WhatsApp - ${contact.phone}`}
       style={{
         bottom: "calc(env(safe-area-inset-bottom, 0px) + 1rem)",
         right: "calc(env(safe-area-inset-right, 0px) + 1rem)",

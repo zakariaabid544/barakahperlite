@@ -52,7 +52,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
-          "var(--font-dm-sans)",
+          "Neue Montreal",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
@@ -61,7 +61,7 @@ const config: Config = {
           "sans-serif",
         ],
         display: [
-          "var(--font-dm-sans)",
+          "Neue Montreal",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
@@ -69,6 +69,14 @@ const config: Config = {
           "Segoe UI",
           "sans-serif",
         ],
+      },
+      fontWeight: {
+        normal: "400",
+        medium: "500",
+        semibold: "560",
+        bold: "620",
+        extrabold: "660",
+        black: "680",
       },
       keyframes: {
         shimmer: {
