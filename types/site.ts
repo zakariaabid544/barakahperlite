@@ -48,4 +48,5 @@ export type ContactPayload = {
   subject?: string;
   sourcePage?: string;
   honeypot?: string;
+  turnstileToken?: string;
 };

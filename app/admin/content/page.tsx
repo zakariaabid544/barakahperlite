@@ -1,4 +1,10 @@
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import { AdminContentPrototype } from "@/components/pages/AdminContentPrototype";
+import {
+  adminSessionCookieName,
+  verifySessionToken,
+} from "@/lib/auth/session";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -9,6 +15,21 @@ export const metadata = createMetadata({
   noIndex: true,
 });
 
-export default function AdminContentPage() {
+export const dynamic = "force-dynamic";
+
+export default async function AdminContentPage() {
+  const cookieStore = await cookies();
+  const session = await verifySessionToken(
+    cookieStore.get(adminSessionCookieName)?.value,
+  );
+
+  if (!session) {
+    redirect("/portal/login?next=/admin/content");
+  }
+
+  if (session.role !== "admin") {
+    redirect("/portal/client");
+  }
+
   return <AdminContentPrototype />;
 }

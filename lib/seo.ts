@@ -52,10 +52,10 @@ export function createMetadata({
       type: "website",
       images: [
         {
-          url: "/brand/barakah-perlite-logo-transparent.png",
-          width: 1254,
-          height: 1254,
-          alt: "Logo Barakah Perlite",
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "Barakah Perlite",
         },
       ],
     },
@@ -63,7 +63,7 @@ export function createMetadata({
       card: "summary_large_image",
       title: `${title} | ${siteName}`,
       description,
-      images: ["/brand/barakah-perlite-logo-transparent.png"],
+      images: ["/og-image.png"],
     },
   };
 }

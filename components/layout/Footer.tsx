@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ChevronRight, ExternalLink, Mail, MapPin, Phone } from "lucide-react";
+import { ChevronRight, Mail, MapPin, Phone } from "lucide-react";
 import { contact } from "@/data/site";
 import { MoroccanPatternBackground } from "@/components/ui/MoroccanPatternBackground";
 import { useI18n } from "@/lib/i18n";
@@ -97,15 +97,6 @@ export function Footer() {
             >
               <Mail aria-hidden="true" className="h-4 w-4 text-atlas-sand" />
               {mobileEmail}
-            </a>
-            <a
-              href={contact.websiteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center gap-3 rounded-[0.45rem] border border-white/10 bg-basalt-950/55 px-3 py-2 text-sm text-silver-200/80 transition hover:border-atlas-sand/40 hover:text-atlas-sand"
-            >
-              <ExternalLink aria-hidden="true" className="h-4 w-4 text-atlas-sand" />
-              {contact.website}
             </a>
             <div className="grid grid-cols-2 gap-2">
               <a
@@ -282,15 +273,6 @@ export function Footer() {
               </a>
             ))}
             <div className="flex flex-wrap items-center gap-3 border-t border-white/10 pt-5">
-              <a
-                href={contact.websiteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-fit items-center gap-2 rounded-[0.35rem] border border-white/10 px-3 py-2 transition hover:border-atlas-sand/50 hover:text-atlas-sand"
-              >
-                <ExternalLink aria-hidden="true" className="h-4 w-4" />
-                {contact.website}
-              </a>
               <a
                 href={contact.linkedinUrl}
                 target="_blank"

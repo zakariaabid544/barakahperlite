@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Mail, Loader2 } from "lucide-react";
+import { TurnstileWidget } from "@/components/security/TurnstileWidget";
 
 const successMessage =
   "Si cet email existe, un lien de réinitialisation a été envoyé.";
@@ -13,6 +14,8 @@ export function ForgotPasswordPage() {
     "idle",
   );
   const [message, setMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -23,7 +26,7 @@ export function ForgotPasswordPage() {
       const response = await fetch("/api/auth/forgot-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, turnstileToken }),
       });
       const result = (await response.json()) as { ok?: boolean; message?: string };
 
@@ -33,6 +36,8 @@ export function ForgotPasswordPage() {
 
       setStatus("success");
       setMessage(successMessage);
+      setTurnstileToken("");
+      setTurnstileResetKey((key) => key + 1);
     } catch (error) {
       setStatus("error");
       setMessage(error instanceof Error ? error.message : "Demande impossible.");
@@ -89,6 +94,12 @@ export function ForgotPasswordPage() {
               {message}
             </p>
           ) : null}
+
+          <TurnstileWidget
+            key={turnstileResetKey}
+            className="mt-5 min-h-[65px]"
+            onTokenChange={setTurnstileToken}
+          />
 
           <button
             type="submit"

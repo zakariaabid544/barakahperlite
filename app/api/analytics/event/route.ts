@@ -4,55 +4,17 @@ import {
   normalizeAnalyticsPayload,
   recordAnalyticsEvent,
 } from "@/lib/analytics/server";
+import { enforceRateLimit, rateLimitRules } from "@/lib/server/rate-limit";
 
 export const runtime = "nodejs";
 
-type RateLimitEntry = {
-  count: number;
-  resetAt: number;
-};
-
-const rateLimitWindowMs = 60 * 1000;
-const maxEventsPerWindow = 120;
-const rateLimitStore = new Map<string, RateLimitEntry>();
-
-async function hashRateLimitKey(value: string) {
-  const digest = await crypto.subtle.digest(
-    "SHA-256",
-    new TextEncoder().encode(value),
-  );
-  return Array.from(new Uint8Array(digest))
-    .map((byte) => byte.toString(16).padStart(2, "0"))
-    .join("");
-}
-
-async function isRateLimited(request: NextRequest) {
-  const sessionCookie = request.cookies.get(analyticsSessionCookieName)?.value;
-  const forwardedFor = request.headers.get("x-forwarded-for")?.split(",")[0] || "";
-  const keySource = sessionCookie || forwardedFor || "anonymous";
-  // Raw IP addresses are used only transiently to build a hash for abuse control.
-  // They are never stored in the analytics database.
-  const key = await hashRateLimitKey(keySource);
-  const now = Date.now();
-  const current = rateLimitStore.get(key);
-
-  // TODO: Replace this in-memory guard with durable Redis/edge rate limiting for production scale.
-  if (!current || current.resetAt <= now) {
-    rateLimitStore.set(key, { count: 1, resetAt: now + rateLimitWindowMs });
-    return false;
-  }
-
-  current.count += 1;
-  return current.count > maxEventsPerWindow;
-}
-
 export async function POST(request: NextRequest) {
-  if (await isRateLimited(request)) {
-    return NextResponse.json(
-      { ok: false, message: "Too many analytics events." },
-      { status: 429 },
-    );
-  }
+  const rateLimitResponse = await enforceRateLimit(
+    request,
+    rateLimitRules.analyticsEvent,
+    { keyParts: [request.cookies.get(analyticsSessionCookieName)?.value] },
+  );
+  if (rateLimitResponse) return rateLimitResponse;
 
   let rawPayload: unknown;
 

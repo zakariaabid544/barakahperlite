@@ -1086,7 +1086,7 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
       visualTitle:
         "Approvisionnement européen fiable aujourd’hui, ambition industrielle marocaine demain.",
       metrics: [
-        { value: "Willems", label: "partenaire Belgique" },
+        { value: "Belgique", label: "sourcing européen" },
         { value: "Maroc", label: "développement industriel" },
       ],
     },
@@ -1105,7 +1105,7 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
         {
           title: "Supply chain fiable",
           description:
-            "Pendant cette phase, l’approvisionnement est soutenu par Willems Perlite, partenaire européen basé en Belgique.",
+            "Pendant cette phase, l’approvisionnement s’appuie sur une chaîne européenne fiable basée en Belgique.",
           icon: "globe",
         },
         {
@@ -1124,12 +1124,12 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
     },
     supply: {
       eyebrow: "Partenariat & disponibilité",
-      title: "Une disponibilité commerciale appuyée par Willems Perlite en Belgique.",
+      title: "Une disponibilité commerciale appuyée par un sourcing européen fiable.",
       description:
         "Barakah ne prétend pas que toute la production marocaine est déjà opérationnelle. La promesse actuelle est plus solide: proposer une perlite expansée fiable grâce à un partenaire européen reconnu, tout en développant l’implantation industrielle locale.",
-      partnerTitle: "Willems Perlite",
+      partnerTitle: "Sourcing européen",
       partnerBody:
-        "Partenaire européen et source d’approvisionnement pour accompagner les premières demandes commerciales de Barakah Perlite.",
+        "Source d’approvisionnement européenne pour accompagner les premières demandes commerciales de Barakah Perlite.",
       partnerCta: "Voir le partenaire",
       items: [
         {
@@ -1173,7 +1173,7 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
       visualTitle:
         "Reliable European sourcing today, Moroccan industrial ambition tomorrow.",
       metrics: [
-        { value: "Willems", label: "Belgian partner" },
+        { value: "Belgium", label: "European sourcing" },
         { value: "Morocco", label: "industrial development" },
       ],
     },
@@ -1192,7 +1192,7 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
         {
           title: "Reliable source",
           description:
-            "During this phase, supply is supported by Willems Perlite, a European partner based in Belgium.",
+            "During this phase, supply relies on a reliable European chain based in Belgium.",
           icon: "globe",
         },
         {
@@ -1211,12 +1211,12 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
     },
     supply: {
       eyebrow: "Partnership & availability",
-      title: "Commercial availability supported by Willems Perlite in Belgium.",
+      title: "Commercial availability supported by reliable European sourcing.",
       description:
         "Barakah does not pretend that full Moroccan production is already operational. The current promise is stronger: reliable expanded perlite through a recognized European partner while local industrial development progresses.",
-      partnerTitle: "Willems Perlite",
+      partnerTitle: "European sourcing",
       partnerBody:
-        "European partner and supply source supporting Barakah Perlite’s first commercial demand.",
+        "European supply source supporting Barakah Perlite’s first commercial demand.",
       partnerCta: "View partner",
       items: [
         {
@@ -1260,7 +1260,7 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
       visualTitle:
         "Betrouwbare Europese levering vandaag, Marokkaanse industriële ambitie morgen.",
       metrics: [
-        { value: "Willems", label: "Belgische partner" },
+        { value: "België", label: "Europese sourcing" },
         { value: "Marokko", label: "industriële ontwikkeling" },
       ],
     },
@@ -1279,7 +1279,7 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
         {
           title: "Betrouwbare bron",
           description:
-            "Tijdens deze fase wordt de levering ondersteund door Willems Perlite, Europese partner in België.",
+            "Tijdens deze fase steunt de levering op een betrouwbare Europese keten in België.",
           icon: "globe",
         },
         {
@@ -1298,12 +1298,12 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
     },
     supply: {
       eyebrow: "Partnerschap & beschikbaarheid",
-      title: "Commerciële beschikbaarheid ondersteund door Willems Perlite in België.",
+      title: "Commerciële beschikbaarheid ondersteund door betrouwbare Europese sourcing.",
       description:
         "Barakah doet niet alsof de volledige Marokkaanse productie al operationeel is. De huidige belofte is sterker: betrouwbare geëxpandeerde perliet via een erkende Europese partner terwijl de lokale industriële ontwikkeling doorgaat.",
-      partnerTitle: "Willems Perlite",
+      partnerTitle: "Europese sourcing",
       partnerBody:
-        "Europese partner en leveringsbron voor de eerste commerciële aanvragen van Barakah Perlite.",
+        "Europese leveringsbron voor de eerste commerciële aanvragen van Barakah Perlite.",
       partnerCta: "Partner bekijken",
       items: [
         {
@@ -1347,7 +1347,7 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
       visualTitle:
         "توريد أوروبي موثوق اليوم، وطموح صناعي مغربي غداً.",
       metrics: [
-        { value: "Willems", label: "شريك بلجيكي" },
+        { value: "بلجيكا", label: "توريد أوروبي" },
         { value: "المغرب", label: "تطوير صناعي" },
       ],
     },
@@ -1366,7 +1366,7 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
         {
           title: "مصدر موثوق",
           description:
-            "في هذه المرحلة، يتم دعم التوريد عبر Willems Perlite، شريك أوروبي في بلجيكا.",
+            "في هذه المرحلة، يعتمد التوريد على سلسلة أوروبية موثوقة في بلجيكا.",
           icon: "globe",
         },
         {
@@ -1385,12 +1385,12 @@ const aboutCommercialContent: Record<Locale, AboutCommercialCopy> = {
     },
     supply: {
       eyebrow: "الشراكة والتوفر",
-      title: "توفر تجاري مدعوم من Willems Perlite في بلجيكا.",
+      title: "توفر تجاري مدعوم بتوريد أوروبي موثوق.",
       description:
         "لا تقدم Barakah نفسها كما لو أن الإنتاج المغربي الكامل يعمل بالفعل. الوعد الحالي أوضح: بيرلايت ممدد موثوق عبر شريك أوروبي معروف، مع تطوير الحضور الصناعي المحلي.",
-      partnerTitle: "Willems Perlite",
+      partnerTitle: "توريد أوروبي",
       partnerBody:
-        "شريك أوروبي ومصدر توريد لمواكبة الطلبات التجارية الأولى لـ Barakah Perlite.",
+        "مصدر توريد أوروبي لمواكبة الطلبات التجارية الأولى لـ Barakah Perlite.",
       partnerCta: "زيارة الشريك",
       items: [
         {
@@ -1827,7 +1827,7 @@ const packagingFormatCards: Record<Locale, PackagingFormatCard[]> = {
     {
       eyebrow: "Formats disponibles",
       title: "Sacs 20/24 L",
-      body: "Formats pratiques pour les cultures et jardins.",
+      body: "Formats pratiques pour les cultures.",
       icon: "small-bags",
     },
     {
@@ -3644,15 +3644,6 @@ function AboutSupply({ copy }: { copy: AboutCommercialCopy }) {
           <p className="mt-5 text-base leading-8 text-[#20312B]/78 md:text-lg">
             {copy.supply.description}
           </p>
-          <a
-            href={contact.websiteUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bp-glass-cta bp-glass-cta--primary mt-7 text-sm"
-          >
-            {copy.supply.partnerCta}
-            <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
-          </a>
         </div>
 
         <div className="grid gap-5">
@@ -3665,9 +3656,6 @@ function AboutSupply({ copy }: { copy: AboutCommercialCopy }) {
             </p>
             <p className="mt-4 text-base leading-8 text-[#20312B]/76">
               {copy.supply.partnerBody}
-            </p>
-            <p className="mt-5 text-xs font-bold uppercase tracking-[0.22em] text-[#20312B]/54">
-              {contact.website}
             </p>
           </article>
           <div className="grid gap-5 md:grid-cols-3">
@@ -4145,15 +4133,6 @@ function ContactLinks({ whatsappLabel }: { whatsappLabel: string }) {
         <WhatsAppMiniIcon />
         {whatsappLabel}
       </a>
-      <a
-        href={contact.websiteUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="flex gap-3 transition hover:text-atlas-sand"
-      >
-        <WebsiteIcon />
-        {contact.website}
-      </a>
       <p className="flex gap-3">
         <MapIcon />
         <span>
@@ -4176,10 +4155,6 @@ function PhoneIcon() {
 
 function MapIcon() {
   return <MapPin aria-hidden="true" className="h-5 w-5 text-atlas-sand" />;
-}
-
-function WebsiteIcon() {
-  return <ArrowUpRight aria-hidden="true" className="h-5 w-5 text-atlas-sand" />;
 }
 
 function WhatsAppMiniIcon() {

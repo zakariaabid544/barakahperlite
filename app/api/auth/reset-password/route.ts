@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { resetAdminPassword } from "@/lib/auth/password-reset";
+import { enforceRateLimit, rateLimitRules } from "@/lib/server/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -8,6 +9,12 @@ function cleanString(value: unknown) {
 }
 
 export async function POST(request: Request) {
+  const rateLimitResponse = await enforceRateLimit(
+    request,
+    rateLimitRules.resetPassword,
+  );
+  if (rateLimitResponse) return rateLimitResponse;
+
   let payload: unknown;
 
   try {

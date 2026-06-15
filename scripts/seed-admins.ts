@@ -14,8 +14,49 @@ const seedEmails = (process.env.SEED_ADMIN_EMAILS || "")
   .map((email) => email.trim().toLowerCase())
   .filter(Boolean);
 
+const minimumSeedPasswordLength = 16;
+const weakSeedPasswords = new Set([
+  "1234567890",
+  "password",
+  "admin",
+  "changeme",
+  "change_me",
+  "default",
+  "change_me_to_a_strong_random_password",
+]);
+
 function isPlaceholderEmail(email: string) {
   return email.startsWith("todo_") || email.includes("replace");
+}
+
+function getSeedPasswordIssues(password: string) {
+  const issues: string[] = [];
+  const normalizedPassword = password.trim().toLowerCase();
+
+  if (password.length < minimumSeedPasswordLength) {
+    issues.push(`must be at least ${minimumSeedPasswordLength} characters`);
+  }
+
+  if (
+    weakSeedPasswords.has(normalizedPassword) ||
+    normalizedPassword.includes("changeme") ||
+    normalizedPassword.includes("change_me")
+  ) {
+    issues.push("must not be an obvious default or placeholder value");
+  }
+
+  const characterClassCount = [
+    /[a-z]/.test(password),
+    /[A-Z]/.test(password),
+    /\d/.test(password),
+    /[^A-Za-z0-9]/.test(password),
+  ].filter(Boolean).length;
+
+  if (characterClassCount < 3) {
+    issues.push("must include at least three of lowercase, uppercase, number, symbol");
+  }
+
+  return issues;
 }
 
 async function main() {
@@ -27,6 +68,13 @@ async function main() {
 
   if (!seedPassword) {
     throw new Error("SEED_ADMIN_PASSWORD is required to seed admin accounts.");
+  }
+
+  const seedPasswordIssues = getSeedPasswordIssues(seedPassword);
+  if (seedPasswordIssues.length > 0) {
+    throw new Error(
+      `SEED_ADMIN_PASSWORD is too weak: ${seedPasswordIssues.join("; ")}.`,
+    );
   }
 
   const emails = seedEmails.filter((email) => !isPlaceholderEmail(email));

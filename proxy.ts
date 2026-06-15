@@ -5,7 +5,12 @@ import {
 } from "@/lib/auth/session";
 
 function getPrivatePageAccess(pathname: string) {
-  if (pathname.startsWith("/portal/analytics") || pathname.startsWith("/portal/admin")) {
+  if (
+    pathname === "/admin" ||
+    pathname.startsWith("/admin/") ||
+    pathname.startsWith("/portal/analytics") ||
+    pathname.startsWith("/portal/admin")
+  ) {
     return "admin";
   }
 
@@ -70,6 +75,8 @@ export async function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
+    "/admin",
+    "/admin/:path*",
     "/portal/analytics/:path*",
     "/portal/admin/:path*",
     "/portal/client/:path*",

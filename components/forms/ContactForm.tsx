@@ -1,7 +1,8 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useCallback, useMemo, useState } from "react";
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
+import { TurnstileWidget } from "@/components/security/TurnstileWidget";
 import type { ContactPayload } from "@/types/site";
 import type { Translation } from "@/data/translations";
 import { useI18n } from "@/lib/i18n";
@@ -19,6 +20,7 @@ const initialForm: ContactPayload = {
   subject: "",
   sourcePage: "",
   honeypot: "",
+  turnstileToken: "",
 };
 
 type Errors = Partial<Record<keyof ContactPayload, string>>;
@@ -58,6 +60,7 @@ export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle",
   );
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
 
   const canSubmit = useMemo(() => status !== "loading", [status]);
 
@@ -65,6 +68,11 @@ export function ContactForm() {
     setForm((current) => ({ ...current, [field]: value }));
     setErrors((current) => ({ ...current, [field]: undefined }));
   }
+
+  const updateTurnstileToken = useCallback((token: string) => {
+    setForm((current) => ({ ...current, turnstileToken: token }));
+    setErrors((current) => ({ ...current, turnstileToken: undefined }));
+  }, []);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -90,6 +98,7 @@ export function ContactForm() {
 
       setStatus("success");
       setForm(initialForm);
+      setTurnstileResetKey((key) => key + 1);
     } catch {
       setStatus("error");
     }
@@ -207,23 +216,30 @@ export function ContactForm() {
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs leading-6 text-silver-200/50">{formCopy.note}</p>
-        <button
-          type="submit"
-          disabled={!canSubmit}
-          className="bp-glass-cta bp-glass-cta--primary w-full text-sm disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
-        >
-          {status === "loading" ? (
-            <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />
-          ) : status === "success" ? (
-            <CheckCircle2 aria-hidden="true" className="h-4 w-4" />
-          ) : null}
-          {status === "loading"
-            ? formCopy.loading
-            : status === "success"
-              ? formCopy.success
-              : formCopy.submit}
-          <ArrowRight aria-hidden="true" className="h-4 w-4" />
-        </button>
+        <div className="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:items-end">
+          <TurnstileWidget
+            key={turnstileResetKey}
+            className="min-h-[65px]"
+            onTokenChange={updateTurnstileToken}
+          />
+          <button
+            type="submit"
+            disabled={!canSubmit}
+            className="bp-glass-cta bp-glass-cta--primary w-full text-sm disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+          >
+            {status === "loading" ? (
+              <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />
+            ) : status === "success" ? (
+              <CheckCircle2 aria-hidden="true" className="h-4 w-4" />
+            ) : null}
+            {status === "loading"
+              ? formCopy.loading
+              : status === "success"
+                ? formCopy.success
+                : formCopy.submit}
+            <ArrowRight aria-hidden="true" className="h-4 w-4" />
+          </button>
+        </div>
       </div>
 
       {status === "error" ? (

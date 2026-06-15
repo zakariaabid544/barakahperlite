@@ -4,6 +4,7 @@ import {
   adminSessionCookieName,
   getSessionCookieOptions,
 } from "@/lib/auth/session";
+import { enforceRateLimit, rateLimitRules } from "@/lib/server/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -27,6 +28,9 @@ function getSafeRedirect(role: string, nextPath: string) {
 }
 
 export async function POST(request: Request) {
+  const ipLimitResponse = await enforceRateLimit(request, rateLimitRules.loginIp);
+  if (ipLimitResponse) return ipLimitResponse;
+
   let payload: unknown;
 
   try {
@@ -49,6 +53,13 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
+
+  const accountLimitResponse = await enforceRateLimit(
+    request,
+    rateLimitRules.loginAccount,
+    { includeIp: false, keyParts: [email] },
+  );
+  if (accountLimitResponse) return accountLimitResponse;
 
   const result = await authenticatePortalUser(email, password);
   if (!result.ok || !result.token) {

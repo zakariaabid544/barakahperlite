@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { recordAnalyticsEvent } from "@/lib/analytics/server";
+import { enforceRateLimit, rateLimitRules } from "@/lib/server/rate-limit";
+import { verifyTurnstileToken } from "@/lib/server/turnstile";
 
 type ContactFormPayload = {
   name?: unknown;
@@ -15,6 +17,7 @@ type ContactFormPayload = {
   sourcePage?: unknown;
   honeypot?: unknown;
   website?: unknown;
+  turnstileToken?: unknown;
 };
 
 type NormalizedContactPayload = {
@@ -172,6 +175,12 @@ export async function handleContactEmailRequest(
   request: Request,
   formType: "contact" | "quote",
 ) {
+  const rateLimitResponse = await enforceRateLimit(
+    request,
+    formType === "quote" ? rateLimitRules.quote : rateLimitRules.contact,
+  );
+  if (rateLimitResponse) return rateLimitResponse;
+
   let payload: ContactFormPayload;
 
   try {
@@ -183,7 +192,12 @@ export async function handleContactEmailRequest(
     );
   }
 
-  // TODO: Add production rate limiting per IP/session before public launch.
+  const turnstileResponse = await verifyTurnstileToken(
+    stringValue(payload.turnstileToken),
+    request,
+  );
+  if (turnstileResponse) return turnstileResponse;
+
   const honeypot = stringValue(payload.honeypot) || stringValue(payload.website);
   if (honeypot) {
     return NextResponse.json(

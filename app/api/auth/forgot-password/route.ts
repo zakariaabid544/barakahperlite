@@ -3,6 +3,8 @@ import {
   passwordResetGenericMessage,
   requestPasswordReset,
 } from "@/lib/auth/password-reset";
+import { enforceRateLimit, rateLimitRules } from "@/lib/server/rate-limit";
+import { verifyTurnstileToken } from "@/lib/server/turnstile";
 
 export const runtime = "nodejs";
 
@@ -15,6 +17,12 @@ function isValidEmail(email: string) {
 }
 
 export async function POST(request: Request) {
+  const ipLimitResponse = await enforceRateLimit(
+    request,
+    rateLimitRules.forgotPasswordIp,
+  );
+  if (ipLimitResponse) return ipLimitResponse;
+
   let payload: unknown;
 
   try {
@@ -26,7 +34,14 @@ export async function POST(request: Request) {
     );
   }
 
-  const email = cleanString((payload as Record<string, unknown>).email).toLowerCase();
+  const data = payload as Record<string, unknown>;
+  const turnstileResponse = await verifyTurnstileToken(
+    cleanString(data.turnstileToken),
+    request,
+  );
+  if (turnstileResponse) return turnstileResponse;
+
+  const email = cleanString(data.email).toLowerCase();
 
   if (!email || !isValidEmail(email)) {
     return NextResponse.json(
@@ -36,7 +51,13 @@ export async function POST(request: Request) {
   }
 
   // Always use a generic success response for existing/non-existing admins.
-  // TODO: Add rate limiting and abuse monitoring before production launch.
+  const emailLimitResponse = await enforceRateLimit(
+    request,
+    rateLimitRules.forgotPasswordEmail,
+    { includeIp: false, keyParts: [email] },
+  );
+  if (emailLimitResponse) return emailLimitResponse;
+
   try {
     const result = await requestPasswordReset(email, new URL(request.url).origin);
     const status = result.ok ? 200 : result.message.includes("configured") ? 503 : 500;

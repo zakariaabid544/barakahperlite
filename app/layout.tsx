@@ -20,10 +20,45 @@ export const metadata: Metadata = {
   authors: [{ name: "Barakah Perlite" }],
   generator: "Next.js",
   category: "Industrial agritech",
-  manifest: "/manifest.webmanifest",
+  manifest: "/site.webmanifest",
   icons: {
-    icon: "/brand/barakah-perlite-logo-transparent.png",
-    apple: "/brand/barakah-perlite-logo-transparent.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48", type: "image/x-icon" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    other: [{ rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#20d564" }],
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Barakah Perlite",
+    title: "Barakah Perlite | Perlite marocaine agricole et industrielle",
+    description:
+      "Perlite marocaine naturelle pour substrats agricoles, horticulture, hydroponie, construction, filtration et industrie.",
+    url: "https://barakahperlite.com",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Barakah Perlite",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Barakah Perlite",
+    description:
+      "Perlite marocaine naturelle pour agriculture, espaces verts, construction et industrie.",
+    images: ["/og-image.png"],
+  },
+  other: {
+    "msapplication-config": "/browserconfig.xml",
+    "msapplication-TileColor": "#080a08",
   },
 };
 
@@ -44,7 +79,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "Barakah Perlite",
     url: "https://barakahperlite.com",
-    logo: "https://barakahperlite.com/brand/barakah-perlite-logo-transparent.png",
+    logo: "https://barakahperlite.com/social-icon-1024.png",
     address: {
       "@type": "PostalAddress",
       streetAddress: "N°5 ET.3 Imm. El Khiati, Avenue Hassan II",
