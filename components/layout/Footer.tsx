@@ -253,8 +253,12 @@ export function Footer() {
               <Mail aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-atlas-sand" />
               <div className="grid gap-2">
                 {contact.emails.map((email) => (
-                  <a key={email} href={`mailto:${email}`} className="transition hover:text-atlas-sand">
-                    {email}
+                  <a
+                    key={email.address}
+                    href={`mailto:${email.address}`}
+                    className="transition hover:text-atlas-sand"
+                  >
+                    {email.label}
                   </a>
                 ))}
               </div>

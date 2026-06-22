@@ -46,10 +46,14 @@ export const navItems: NavItem[] = [
 
 export const contact = {
   emails: [
-    "info@barakahperlite.com",
-    "support@barakahperlite.com",
-    "Sven@barakahperlite.com",
-    "Ahmed@barakahperlite.com",
+    { label: "info@barakahperlite.com", address: "info@barakahperlite.com" },
+    { label: "support@barakahperlite.com", address: "support@barakahperlite.com" },
+    { label: "Sven@barakahperlite.com", address: "Sven@barakahperlite.com" },
+    { label: "Ahmed@barakahperlite.com", address: "Ahmed@barakahperlite.com" },
+    {
+      label: "MohamedGouaskar@barakahperlite.com",
+      address: "mohamedgouaskar@barakahperlite.com",
+    },
   ],
   email: "info@barakahperlite.com",
   phones: [

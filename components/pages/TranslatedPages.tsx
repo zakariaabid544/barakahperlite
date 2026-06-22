@@ -4103,12 +4103,12 @@ function ContactLinks({ whatsappLabel }: { whatsappLabel: string }) {
     <>
       {contact.emails.map((email) => (
         <a
-          key={email}
-          href={`mailto:${email}`}
+          key={email.address}
+          href={`mailto:${email.address}`}
           className="flex gap-3 transition hover:text-atlas-sand"
         >
           <MailIcon />
-          {email}
+          {email.label}
         </a>
       ))}
       {contact.phones.map((phone) => (
