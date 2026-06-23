@@ -6,7 +6,11 @@ import {
   revalidateHeroSlides,
 } from "@/lib/hero-slides/server";
 import { HERO_AGRICULTURE_PAGE } from "@/lib/hero-slides/types";
-import { isBlobConfigured, uploadHeroImage } from "@/lib/server/blob-storage";
+import {
+  describeBlobEnv,
+  isBlobConfigured,
+  uploadHeroImage,
+} from "@/lib/server/blob-storage";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -34,8 +38,18 @@ export async function POST(request: Request) {
   if (!auth.ok) return auth.response;
 
   if (!isBlobConfigured()) {
+    const diagnostics = describeBlobEnv();
+    console.error(
+      "[hero-slides] Upload blocked: no Blob token at runtime.",
+      diagnostics,
+    );
     return NextResponse.json(
-      { ok: false, message: "Stockage non configuré (BLOB_READ_WRITE_TOKEN)." },
+      {
+        ok: false,
+        message:
+          "Stockage non configuré: BLOB_READ_WRITE_TOKEN absent de l'environnement runtime.",
+        diagnostics,
+      },
       { status: 503 },
     );
   }
@@ -88,9 +102,12 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true, slide }, { status: 201 });
   } catch (error) {
-    console.error("Hero slide upload failed", error);
+    // Never hide the original exception: log it in full and surface its
+    // message so the real @vercel/blob / DB cause is visible to the admin.
+    console.error("[hero-slides] Upload failed (raw error):", error);
+    const detail = error instanceof Error ? error.message : String(error);
     return NextResponse.json(
-      { ok: false, message: "Échec de l'enregistrement de l'image." },
+      { ok: false, message: `Échec de l'enregistrement de l'image: ${detail}` },
       { status: 500 },
     );
   }
