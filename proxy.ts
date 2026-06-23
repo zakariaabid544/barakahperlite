@@ -26,6 +26,10 @@ function getPrivateApiAccess(pathname: string) {
     return "admin";
   }
 
+  if (pathname.startsWith("/api/admin/")) {
+    return "admin";
+  }
+
   return null;
 }
 
@@ -81,5 +85,6 @@ export const config = {
     "/portal/admin/:path*",
     "/portal/client/:path*",
     "/api/analytics/summary/:path*",
+    "/api/admin/:path*",
   ],
 };

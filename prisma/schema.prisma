@@ -113,3 +113,18 @@ model AnalyticsEvent {
   @@index([country, city])
   @@map("analytics_events")
 }
+
+model HeroSlide {
+  id         String   @id @default(cuid())
+  page       String   @default("agriculture")
+  imageUrl   String
+  storageKey String
+  title      String?
+  sortOrder  Int      @default(0)
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([page, isActive, sortOrder])
+  @@map("hero_slides")
+}

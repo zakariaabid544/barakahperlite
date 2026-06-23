@@ -19,6 +19,11 @@ import { ProductHero } from "@/components/sections/ProductHero";
 import { QuoteCTA } from "@/components/sections/QuoteCTA";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { Hero } from "@/components/sections/Hero";
+import { HeroCarousel } from "@/components/sections/HeroCarousel";
+import {
+  HERO_FALLBACK_IMAGE,
+  type HeroCarouselSlide,
+} from "@/lib/hero-slides/types";
 import { ApplicationCard } from "@/components/ui/ApplicationCard";
 import { AnimatedParticles } from "@/components/ui/AnimatedParticles";
 import { FeatureCard } from "@/components/ui/FeatureCard";
@@ -2546,13 +2551,17 @@ export function ProductDetailPageContent({
   );
 }
 
-export function AgriculturePageContent() {
+export function AgriculturePageContent({
+  heroSlides = [],
+}: {
+  heroSlides?: HeroCarouselSlide[];
+}) {
   const { locale } = useI18n();
   const copy = agricultureCommercialContent[locale];
 
   return (
     <div data-agriculture-page className="overflow-hidden bg-[#020806]">
-      <AgricultureHero copy={copy} />
+      <AgricultureHero copy={copy} heroSlides={heroSlides} />
       <AgricultureBenefits copy={copy} />
       <AgricultureUseCases copy={copy} />
       <AgricultureTrust copy={copy} />
@@ -2614,7 +2623,13 @@ function CommercialHeroCtas({
   );
 }
 
-function AgricultureHero({ copy }: { copy: AgricultureCommercialCopy }) {
+function AgricultureHero({
+  copy,
+  heroSlides,
+}: {
+  copy: AgricultureCommercialCopy;
+  heroSlides: HeroCarouselSlide[];
+}) {
   return (
     <section
       data-gsap-section
@@ -2663,15 +2678,7 @@ function AgricultureHero({ copy }: { copy: AgricultureCommercialCopy }) {
           data-gsap-card
           className="relative min-h-[315px] min-w-0 max-w-[calc(100vw-2rem)] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[#07110E]/72 shadow-[0_42px_140px_rgba(0,0,0,0.44)] backdrop-blur-xl sm:min-h-[390px] md:min-h-[520px] lg:max-w-none lg:min-h-[580px] 2xl:min-h-[620px]"
         >
-          <Image
-            src="/images/agriculture-greenhouse-tomatoes.jpeg"
-            alt=""
-            aria-hidden="true"
-            fill
-            priority
-            sizes="(min-width: 1024px) 52vw, 100vw"
-            className="object-cover object-center opacity-[0.82]"
-          />
+          <HeroCarousel slides={heroSlides} fallbackSrc={HERO_FALLBACK_IMAGE} />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,6,0.08)_0%,rgba(2,8,6,0.22)_50%,rgba(2,8,6,0.72)_100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_62%_32%,rgba(22,200,95,0.16),transparent_30%),linear-gradient(90deg,rgba(2,8,6,0.32)_0%,transparent_38%,rgba(2,8,6,0.28)_100%)]" />
           <div className="absolute left-4 top-4 rounded-full border border-white/12 bg-[#020806]/58 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50 backdrop-blur-md md:left-7 md:top-7 md:px-4 md:text-[0.65rem] md:font-bold md:tracking-[0.2em]">

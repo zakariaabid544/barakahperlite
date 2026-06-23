@@ -1,4 +1,6 @@
 import { AgriculturePageContent } from "@/components/pages/TranslatedPages";
+import { getActiveHeroSlides } from "@/lib/hero-slides/server";
+import { HERO_AGRICULTURE_PAGE } from "@/lib/hero-slides/types";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -9,6 +11,11 @@ export const metadata = createMetadata({
   keywords: ["perlite agricole Maroc", "perlite horticole", "substrat hydroponique"],
 });
 
-export default function AgriculturePage() {
-  return <AgriculturePageContent />;
+// ISR: regenerate at most every 60s; admin changes purge instantly via
+// revalidatePath("/agriculture") in the hero-slides API routes.
+export const revalidate = 60;
+
+export default async function AgriculturePage() {
+  const heroSlides = await getActiveHeroSlides(HERO_AGRICULTURE_PAGE);
+  return <AgriculturePageContent heroSlides={heroSlides} />;
 }

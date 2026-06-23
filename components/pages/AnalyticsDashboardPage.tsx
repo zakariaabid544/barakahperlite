@@ -1,13 +1,16 @@
 import { BarChart3, Download, FileText, Globe2, MousePointer2, Users } from "lucide-react";
 import type { ReactNode } from "react";
+import { HeroImagesManager } from "@/components/pages/HeroImagesManager";
 import { LogoutButton } from "@/components/portal/LogoutButton";
 import type {
   AnalyticsDashboardData,
   AnalyticsMetricRow,
 } from "@/lib/analytics/types";
+import type { HeroSlideDTO } from "@/lib/hero-slides/types";
 
 type AnalyticsDashboardPageProps = {
   data: AnalyticsDashboardData;
+  heroSlides: HeroSlideDTO[];
 };
 
 function formatNumber(value: number) {
@@ -95,7 +98,10 @@ function MetricPanel({
   );
 }
 
-export function AnalyticsDashboardPage({ data }: AnalyticsDashboardPageProps) {
+export function AnalyticsDashboardPage({
+  data,
+  heroSlides,
+}: AnalyticsDashboardPageProps) {
   const { kpis } = data;
 
   return (
@@ -182,6 +188,10 @@ export function AnalyticsDashboardPage({ data }: AnalyticsDashboardPageProps) {
             icon={<BarChart3 aria-hidden="true" className="h-5 w-5" />}
             rows={data.funnel}
           />
+        </section>
+
+        <section className="mt-8">
+          <HeroImagesManager initialSlides={heroSlides} />
         </section>
       </div>
     </main>
