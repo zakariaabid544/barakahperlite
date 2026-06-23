@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
@@ -13,8 +13,8 @@ type HeroCarouselProps = {
 
 const AUTOPLAY_MS = 5000;
 const IMAGE_SIZES = "(min-width: 1024px) 52vw, 100vw";
-// Keeps the exact look of the previous static hero image.
-const IMAGE_CLASS = "object-cover object-center opacity-[0.82]";
+// Natural, full-brightness image; framing comes only from the top/bottom fades.
+const IMAGE_CLASS = "object-cover object-center";
 
 const variants = {
   enter: (direction: number) => ({
@@ -26,6 +26,12 @@ const variants = {
     y: direction >= 0 ? "-100%" : "100%",
     opacity: 0,
   }),
+};
+
+const reducedVariants = {
+  enter: { opacity: 0 },
+  center: { opacity: 1 },
+  exit: { opacity: 0 },
 };
 
 export function HeroCarousel({ slides, fallbackSrc }: HeroCarouselProps) {
@@ -44,13 +50,11 @@ export function HeroCarousel({ slides, fallbackSrc }: HeroCarouselProps) {
   const [focused, setFocused] = useState(false);
   const paused = hovered || focused;
 
-  const go = useCallback(
-    (delta: number) => {
-      setState(([current]) => [(current + delta + count) % count, delta]);
-    },
-    [count],
-  );
+  const go = (delta: number) => {
+    setState(([current]) => [(current + delta + count) % count, delta]);
+  };
 
+  // Autoplay: only with 2+ slides, paused on hover/focus and reduced-motion.
   useEffect(() => {
     if (!isCarousel || paused || prefersReducedMotion) return;
     const timer = window.setInterval(() => {
@@ -59,27 +63,32 @@ export function HeroCarousel({ slides, fallbackSrc }: HeroCarouselProps) {
     return () => window.clearInterval(timer);
   }, [isCarousel, paused, prefersReducedMotion, count]);
 
-  const safeIndex = index % count;
+  const safeIndex = ((index % count) + count) % count;
   const current = items[safeIndex];
 
   const transition = prefersReducedMotion
-    ? { duration: 0.2 }
+    ? { duration: 0.25 }
     : { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const };
+
+  const bounceTransition = {
+    duration: 2.2,
+    repeat: Infinity,
+    ease: "easeInOut" as const,
+  };
+
+  const arrowClass =
+    "absolute left-1/2 -translate-x-1/2 rounded text-white opacity-[0.65] drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)] transition-opacity duration-300 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70";
 
   return (
     <>
-      {/* Image layer (behind every existing card overlay/badge/title). */}
+      {/* Image layer — sits behind the badge and arrows. */}
       <div className="absolute inset-0 overflow-hidden">
         {isCarousel ? (
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={`${safeIndex}-${current.id}`}
               custom={direction}
-              variants={
-                prefersReducedMotion
-                  ? { enter: { opacity: 0 }, center: { opacity: 1 }, exit: { opacity: 0 } }
-                  : variants
-              }
+              variants={prefersReducedMotion ? reducedVariants : variants}
               initial="enter"
               animate="center"
               exit="exit"
@@ -110,20 +119,21 @@ export function HeroCarousel({ slides, fallbackSrc }: HeroCarouselProps) {
         )}
       </div>
 
-      {/* Soft top + bottom fade of the image only — never lateral. */}
+      {/* Fade only at the top and bottom — never lateral; centre stays bright. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#020806]/85 via-[#020806]/35 to-transparent md:h-28"
+        className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#020806]/75 via-[#020806]/15 to-transparent md:h-28"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#020806]/90 via-[#020806]/40 to-transparent md:h-32"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#020806]/80 via-[#020806]/20 to-transparent md:h-28"
       />
 
-      {/* Controls — only when there is something to scroll. */}
+      {/* Controls — only when there is more than one image. The full-card layer
+          captures hover/focus to pause autoplay. */}
       {isCarousel ? (
         <div
-          className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-3"
+          className="absolute inset-0 z-30"
           role="group"
           aria-roledescription="carrousel"
           aria-label="Images de la serre"
@@ -136,17 +146,30 @@ export function HeroCarousel({ slides, fallbackSrc }: HeroCarouselProps) {
             type="button"
             onClick={() => go(-1)}
             aria-label="Image précédente"
-            className="pointer-events-auto inline-flex h-11 w-11 items-center justify-center rounded-md text-perlite-50/90 drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)] transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16C85F]"
+            className={`${arrowClass} top-2 md:top-3.5`}
           >
-            <ChevronUp aria-hidden="true" className="h-7 w-7" />
+            <motion.span
+              className="block"
+              animate={prefersReducedMotion ? undefined : { y: [0, -3.5, 0] }}
+              transition={prefersReducedMotion ? undefined : bounceTransition}
+            >
+              <ChevronUp aria-hidden="true" className="h-7 w-7" />
+            </motion.span>
           </button>
+
           <button
             type="button"
             onClick={() => go(1)}
             aria-label="Image suivante"
-            className="pointer-events-auto inline-flex h-11 w-11 items-center justify-center rounded-md text-perlite-50/90 drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)] transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16C85F]"
+            className={`${arrowClass} bottom-2 md:bottom-3.5`}
           >
-            <ChevronDown aria-hidden="true" className="h-7 w-7" />
+            <motion.span
+              className="block"
+              animate={prefersReducedMotion ? undefined : { y: [0, 3.5, 0] }}
+              transition={prefersReducedMotion ? undefined : bounceTransition}
+            >
+              <ChevronDown aria-hidden="true" className="h-7 w-7" />
+            </motion.span>
           </button>
         </div>
       ) : null}

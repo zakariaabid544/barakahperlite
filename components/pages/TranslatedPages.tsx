@@ -2679,30 +2679,8 @@ function AgricultureHero({
           className="relative min-h-[315px] min-w-0 max-w-[calc(100vw-2rem)] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[#07110E]/72 shadow-[0_42px_140px_rgba(0,0,0,0.44)] backdrop-blur-xl sm:min-h-[390px] md:min-h-[520px] lg:max-w-none lg:min-h-[580px] 2xl:min-h-[620px]"
         >
           <HeroCarousel slides={heroSlides} fallbackSrc={HERO_FALLBACK_IMAGE} />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,6,0.08)_0%,rgba(2,8,6,0.22)_50%,rgba(2,8,6,0.72)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_62%_32%,rgba(22,200,95,0.16),transparent_30%),linear-gradient(90deg,rgba(2,8,6,0.32)_0%,transparent_38%,rgba(2,8,6,0.28)_100%)]" />
-          <div className="absolute left-4 top-4 rounded-full border border-white/12 bg-[#020806]/58 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50 backdrop-blur-md md:left-7 md:top-7 md:px-4 md:text-[0.65rem] md:font-bold md:tracking-[0.2em]">
+          <div className="absolute left-4 top-4 z-20 rounded-full border border-white/12 bg-[#020806]/58 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50 backdrop-blur-md md:left-7 md:top-7 md:px-4 md:text-[0.65rem] md:font-bold md:tracking-[0.2em]">
             {copy.hero.visualLabel}
-          </div>
-          <div className="absolute inset-x-5 bottom-5 md:inset-x-7 md:bottom-7">
-            <h2 className="max-w-[16ch] break-words font-display text-[1.25rem] font-semibold leading-snug tracking-[-0.015em] text-perlite-50 md:max-w-lg md:text-4xl md:font-bold">
-              {copy.hero.visualTitle}
-            </h2>
-            <div className="mt-5 hidden gap-3 sm:grid-cols-2 md:grid">
-              {copy.hero.metrics.map((metric) => (
-                <div
-                  key={metric.label}
-                  className="rounded-[0.75rem] border border-white/12 bg-[#020806]/62 p-4 backdrop-blur-md"
-                >
-                  <p className="font-display text-xl font-bold text-white">
-                    {metric.value}
-                  </p>
-                  <p className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-silver-200/62">
-                    {metric.label}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
