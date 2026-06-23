@@ -1,5 +1,5 @@
 import { GreenSpacePageContent } from "@/components/pages/TranslatedPages";
-import { getActiveHeroSlides } from "@/lib/hero-slides/server";
+import { getActiveHeroSlides, getHeroSettings } from "@/lib/hero-slides/server";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -18,6 +18,11 @@ export const metadata = createMetadata({
 export const revalidate = 60;
 
 export default async function GreenSpacePage() {
-  const heroSlides = await getActiveHeroSlides("green-space");
-  return <GreenSpacePageContent heroSlides={heroSlides} />;
+  const [heroSlides, heroSettings] = await Promise.all([
+    getActiveHeroSlides("green-space"),
+    getHeroSettings("green-space"),
+  ]);
+  return (
+    <GreenSpacePageContent heroSlides={heroSlides} heroSettings={heroSettings} />
+  );
 }

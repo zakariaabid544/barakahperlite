@@ -6,11 +6,12 @@ import type {
   AnalyticsDashboardData,
   AnalyticsMetricRow,
 } from "@/lib/analytics/types";
-import type { HeroSlideDTO } from "@/lib/hero-slides/types";
+import type { HeroSettingsDTO, HeroSlideDTO } from "@/lib/hero-slides/types";
 
 type AnalyticsDashboardPageProps = {
   data: AnalyticsDashboardData;
   heroSlides: HeroSlideDTO[];
+  heroSettings: HeroSettingsDTO;
 };
 
 function formatNumber(value: number) {
@@ -101,6 +102,7 @@ function MetricPanel({
 export function AnalyticsDashboardPage({
   data,
   heroSlides,
+  heroSettings,
 }: AnalyticsDashboardPageProps) {
   const { kpis } = data;
 
@@ -191,7 +193,10 @@ export function AnalyticsDashboardPage({
         </section>
 
         <section className="mt-8">
-          <HeroImagesManager initialSlides={heroSlides} />
+          <HeroImagesManager
+            initialSlides={heroSlides}
+            initialSettings={heroSettings}
+          />
         </section>
       </div>
     </main>

@@ -1,5 +1,5 @@
 import { AgriculturePageContent } from "@/components/pages/TranslatedPages";
-import { getActiveHeroSlides } from "@/lib/hero-slides/server";
+import { getActiveHeroSlides, getHeroSettings } from "@/lib/hero-slides/server";
 import { HERO_AGRICULTURE_PAGE } from "@/lib/hero-slides/types";
 import { createMetadata } from "@/lib/seo";
 
@@ -16,6 +16,11 @@ export const metadata = createMetadata({
 export const revalidate = 60;
 
 export default async function AgriculturePage() {
-  const heroSlides = await getActiveHeroSlides(HERO_AGRICULTURE_PAGE);
-  return <AgriculturePageContent heroSlides={heroSlides} />;
+  const [heroSlides, heroSettings] = await Promise.all([
+    getActiveHeroSlides(HERO_AGRICULTURE_PAGE),
+    getHeroSettings(HERO_AGRICULTURE_PAGE),
+  ]);
+  return (
+    <AgriculturePageContent heroSlides={heroSlides} heroSettings={heroSettings} />
+  );
 }

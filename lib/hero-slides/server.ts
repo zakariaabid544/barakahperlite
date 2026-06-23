@@ -3,9 +3,12 @@ import "server-only";
 import { revalidatePath } from "next/cache";
 import { getPrisma } from "@/lib/db";
 import {
+  DEFAULT_HERO_SETTINGS,
   HERO_AGRICULTURE_PAGE,
   HERO_PAGES,
+  normalizeHeroSettings,
   type HeroCarouselSlide,
+  type HeroSettingsDTO,
   type HeroSlideDTO,
 } from "@/lib/hero-slides/types";
 
@@ -143,4 +146,37 @@ export function revalidateHeroSlides() {
   for (const page of HERO_PAGES) {
     revalidatePath(`/${page.key}`);
   }
+}
+
+// ---- Hero settings ------------------------------------------------------
+
+export async function getHeroSettings(
+  page: string = HERO_AGRICULTURE_PAGE,
+): Promise<HeroSettingsDTO> {
+  const prisma = getPrisma();
+  if (!prisma) return DEFAULT_HERO_SETTINGS;
+
+  try {
+    const row = await prisma.heroSetting.findUnique({ where: { page } });
+    return row ? normalizeHeroSettings(row) : DEFAULT_HERO_SETTINGS;
+  } catch (error) {
+    console.error("getHeroSettings failed", error);
+    return DEFAULT_HERO_SETTINGS;
+  }
+}
+
+export async function updateHeroSettings(
+  page: string,
+  settings: HeroSettingsDTO,
+): Promise<HeroSettingsDTO> {
+  const prisma = getPrisma();
+  if (!prisma) throw new Error("Database is not configured.");
+
+  const row = await prisma.heroSetting.upsert({
+    where: { page },
+    update: settings,
+    create: { page, ...settings },
+  });
+
+  return normalizeHeroSettings(row);
 }

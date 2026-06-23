@@ -4,14 +4,18 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import type { HeroCarouselSlide } from "@/lib/hero-slides/types";
+import {
+  DEFAULT_HERO_SETTINGS,
+  type HeroCarouselSlide,
+  type HeroSettingsDTO,
+} from "@/lib/hero-slides/types";
 
 type HeroCarouselProps = {
   slides: HeroCarouselSlide[];
   fallbackSrc: string;
+  settings?: HeroSettingsDTO;
 };
 
-const AUTOPLAY_MS = 5000;
 const IMAGE_SIZES = "(min-width: 1024px) 52vw, 100vw";
 // Natural, full-brightness image; framing comes only from the top/bottom fades.
 const IMAGE_CLASS = "object-cover object-center";
@@ -34,8 +38,13 @@ const reducedVariants = {
   exit: { opacity: 0 },
 };
 
-export function HeroCarousel({ slides, fallbackSrc }: HeroCarouselProps) {
+export function HeroCarousel({
+  slides,
+  fallbackSrc,
+  settings = DEFAULT_HERO_SETTINGS,
+}: HeroCarouselProps) {
   const prefersReducedMotion = useReducedMotion();
+  const { mode, showArrows, autoplay, intervalMs } = settings;
 
   const items: HeroCarouselSlide[] =
     slides.length > 0
@@ -43,7 +52,15 @@ export function HeroCarousel({ slides, fallbackSrc }: HeroCarouselProps) {
       : [{ id: "__fallback__", imageUrl: fallbackSrc, title: null }];
 
   const count = items.length;
-  const isCarousel = slides.length >= 2;
+
+  // Animated carousel only in carousel mode with 2+ slides. In "fixed" mode (or
+  // with a single image) we render just the first active image.
+  const isCarousel = mode === "carousel" && slides.length >= 2;
+  const arrowsVisible = isCarousel && showArrows;
+  const autoplayOn = isCarousel && autoplay;
+  // A full-card interaction layer is needed to host arrows and/or to pause
+  // autoplay on hover/focus.
+  const showControls = arrowsVisible || autoplayOn;
 
   const [[index, direction], setState] = useState<[number, number]>([0, 0]);
   const [hovered, setHovered] = useState(false);
@@ -54,14 +71,13 @@ export function HeroCarousel({ slides, fallbackSrc }: HeroCarouselProps) {
     setState(([current]) => [(current + delta + count) % count, delta]);
   };
 
-  // Autoplay: only with 2+ slides, paused on hover/focus and reduced-motion.
   useEffect(() => {
-    if (!isCarousel || paused || prefersReducedMotion) return;
+    if (!autoplayOn || paused || prefersReducedMotion) return;
     const timer = window.setInterval(() => {
       setState(([current]) => [(current + 1) % count, 1]);
-    }, AUTOPLAY_MS);
+    }, intervalMs);
     return () => window.clearInterval(timer);
-  }, [isCarousel, paused, prefersReducedMotion, count]);
+  }, [autoplayOn, paused, prefersReducedMotion, count, intervalMs]);
 
   const safeIndex = ((index % count) + count) % count;
   const current = items[safeIndex];
@@ -129,9 +145,8 @@ export function HeroCarousel({ slides, fallbackSrc }: HeroCarouselProps) {
         className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#020806]/80 via-[#020806]/20 to-transparent md:h-28"
       />
 
-      {/* Controls — only when there is more than one image. The full-card layer
-          captures hover/focus to pause autoplay. */}
-      {isCarousel ? (
+      {/* Controls / pause layer — present only when there is something to drive. */}
+      {showControls ? (
         <div
           className="absolute inset-0 z-30"
           role="group"
@@ -142,35 +157,39 @@ export function HeroCarousel({ slides, fallbackSrc }: HeroCarouselProps) {
           onFocusCapture={() => setFocused(true)}
           onBlurCapture={() => setFocused(false)}
         >
-          <button
-            type="button"
-            onClick={() => go(-1)}
-            aria-label="Image précédente"
-            className={`${arrowClass} top-2 md:top-3.5`}
-          >
-            <motion.span
-              className="block"
-              animate={prefersReducedMotion ? undefined : { y: [0, -3.5, 0] }}
-              transition={prefersReducedMotion ? undefined : bounceTransition}
-            >
-              <ChevronUp aria-hidden="true" className="h-7 w-7" />
-            </motion.span>
-          </button>
+          {arrowsVisible ? (
+            <>
+              <button
+                type="button"
+                onClick={() => go(-1)}
+                aria-label="Image précédente"
+                className={`${arrowClass} top-2 md:top-3.5`}
+              >
+                <motion.span
+                  className="block"
+                  animate={prefersReducedMotion ? undefined : { y: [0, -3.5, 0] }}
+                  transition={prefersReducedMotion ? undefined : bounceTransition}
+                >
+                  <ChevronUp aria-hidden="true" className="h-7 w-7" />
+                </motion.span>
+              </button>
 
-          <button
-            type="button"
-            onClick={() => go(1)}
-            aria-label="Image suivante"
-            className={`${arrowClass} bottom-2 md:bottom-3.5`}
-          >
-            <motion.span
-              className="block"
-              animate={prefersReducedMotion ? undefined : { y: [0, 3.5, 0] }}
-              transition={prefersReducedMotion ? undefined : bounceTransition}
-            >
-              <ChevronDown aria-hidden="true" className="h-7 w-7" />
-            </motion.span>
-          </button>
+              <button
+                type="button"
+                onClick={() => go(1)}
+                aria-label="Image suivante"
+                className={`${arrowClass} bottom-2 md:bottom-3.5`}
+              >
+                <motion.span
+                  className="block"
+                  animate={prefersReducedMotion ? undefined : { y: [0, 3.5, 0] }}
+                  transition={prefersReducedMotion ? undefined : bounceTransition}
+                >
+                  <ChevronDown aria-hidden="true" className="h-7 w-7" />
+                </motion.span>
+              </button>
+            </>
+          ) : null}
         </div>
       ) : null}
     </>

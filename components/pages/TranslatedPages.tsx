@@ -21,9 +21,11 @@ import { StatsSection } from "@/components/sections/StatsSection";
 import { Hero } from "@/components/sections/Hero";
 import { HeroCarousel } from "@/components/sections/HeroCarousel";
 import {
+  DEFAULT_HERO_SETTINGS,
   HERO_FALLBACK_IMAGE,
   heroFallbackImage,
   type HeroCarouselSlide,
+  type HeroSettingsDTO,
 } from "@/lib/hero-slides/types";
 import { ApplicationCard } from "@/components/ui/ApplicationCard";
 import { AnimatedParticles } from "@/components/ui/AnimatedParticles";
@@ -1807,13 +1809,15 @@ export function HomePageContent() {
 
 export function ProductPageContent({
   heroSlides = [],
+  heroSettings = DEFAULT_HERO_SETTINGS,
 }: {
   heroSlides?: HeroCarouselSlide[];
+  heroSettings?: HeroSettingsDTO;
 }) {
   return (
     <div data-product-page className="overflow-hidden">
       <ProductGsapPrototype />
-      <ProductHero heroSlides={heroSlides} />
+      <ProductHero heroSlides={heroSlides} heroSettings={heroSettings} />
 
       <ProductCommercialIntro />
       <ProductApplicationsShowcase />
@@ -2558,15 +2562,21 @@ export function ProductDetailPageContent({
 
 export function AgriculturePageContent({
   heroSlides = [],
+  heroSettings = DEFAULT_HERO_SETTINGS,
 }: {
   heroSlides?: HeroCarouselSlide[];
+  heroSettings?: HeroSettingsDTO;
 }) {
   const { locale } = useI18n();
   const copy = agricultureCommercialContent[locale];
 
   return (
     <div data-agriculture-page className="overflow-hidden bg-[#020806]">
-      <AgricultureHero copy={copy} heroSlides={heroSlides} />
+      <AgricultureHero
+        copy={copy}
+        heroSlides={heroSlides}
+        heroSettings={heroSettings}
+      />
       <AgricultureBenefits copy={copy} />
       <AgricultureUseCases copy={copy} />
       <AgricultureTrust copy={copy} />
@@ -2631,9 +2641,11 @@ function CommercialHeroCtas({
 function AgricultureHero({
   copy,
   heroSlides,
+  heroSettings,
 }: {
   copy: AgricultureCommercialCopy;
   heroSlides: HeroCarouselSlide[];
+  heroSettings: HeroSettingsDTO;
 }) {
   return (
     <section
@@ -2683,7 +2695,11 @@ function AgricultureHero({
           data-gsap-card
           className="relative min-h-[315px] min-w-0 max-w-[calc(100vw-2rem)] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[#07110E]/72 shadow-[0_42px_140px_rgba(0,0,0,0.44)] backdrop-blur-xl sm:min-h-[390px] md:min-h-[520px] lg:max-w-none lg:min-h-[580px] 2xl:min-h-[620px]"
         >
-          <HeroCarousel slides={heroSlides} fallbackSrc={HERO_FALLBACK_IMAGE} />
+          <HeroCarousel
+            slides={heroSlides}
+            fallbackSrc={HERO_FALLBACK_IMAGE}
+            settings={heroSettings}
+          />
           <div className="absolute left-4 top-4 z-20 rounded-full border border-white/12 bg-[#020806]/58 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50 backdrop-blur-md md:left-7 md:top-7 md:px-4 md:text-[0.65rem] md:font-bold md:tracking-[0.2em]">
             {copy.hero.visualLabel}
           </div>
@@ -2894,8 +2910,10 @@ function AgricultureFinalCta({ copy }: { copy: AgricultureCommercialCopy }) {
 
 export function GreenSpacePageContent({
   heroSlides = [],
+  heroSettings = DEFAULT_HERO_SETTINGS,
 }: {
   heroSlides?: HeroCarouselSlide[];
+  heroSettings?: HeroSettingsDTO;
 }) {
   const { locale, t } = useI18n();
   const copy = greenSpaceContent[locale];
@@ -2907,6 +2925,7 @@ export function GreenSpacePageContent({
         quoteLabel={t.common.quoteRequest}
         locale={locale}
         heroSlides={heroSlides}
+        heroSettings={heroSettings}
       />
       <GreenSpaceBenefits copy={copy} />
       <GreenSpaceUseCases copy={copy} />
@@ -2920,11 +2939,13 @@ function GreenSpaceHero({
   quoteLabel,
   locale,
   heroSlides,
+  heroSettings,
 }: {
   copy: GreenSpaceCopy;
   quoteLabel: string;
   locale: Locale;
   heroSlides: HeroCarouselSlide[];
+  heroSettings: HeroSettingsDTO;
 }) {
   const isArabic = locale === "ar";
 
@@ -2974,6 +2995,7 @@ function GreenSpaceHero({
           <HeroCarousel
             slides={heroSlides}
             fallbackSrc={heroFallbackImage("green-space")}
+            settings={heroSettings}
           />
           <div className="absolute left-4 top-4 z-20 rounded-full border border-white/14 bg-[#020806]/56 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50/88 backdrop-blur-md md:left-7 md:top-7 md:px-4 md:text-[0.65rem] md:font-bold md:tracking-[0.2em]">
             {copy.promise.eyebrow}

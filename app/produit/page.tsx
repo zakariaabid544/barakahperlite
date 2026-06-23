@@ -1,5 +1,5 @@
 import { ProductPageContent } from "@/components/pages/TranslatedPages";
-import { getActiveHeroSlides } from "@/lib/hero-slides/server";
+import { getActiveHeroSlides, getHeroSettings } from "@/lib/hero-slides/server";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -13,6 +13,11 @@ export const metadata = createMetadata({
 export const revalidate = 60;
 
 export default async function ProductPage() {
-  const heroSlides = await getActiveHeroSlides("produit");
-  return <ProductPageContent heroSlides={heroSlides} />;
+  const [heroSlides, heroSettings] = await Promise.all([
+    getActiveHeroSlides("produit"),
+    getHeroSettings("produit"),
+  ]);
+  return (
+    <ProductPageContent heroSlides={heroSlides} heroSettings={heroSettings} />
+  );
 }

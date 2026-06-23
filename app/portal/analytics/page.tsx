@@ -7,7 +7,7 @@ import {
   verifySessionToken,
 } from "@/lib/auth/session";
 import { getAnalyticsDashboardData } from "@/lib/analytics/server";
-import { listHeroSlides } from "@/lib/hero-slides/server";
+import { getHeroSettings, listHeroSlides } from "@/lib/hero-slides/server";
 
 export const dynamic = "force-dynamic";
 
@@ -26,9 +26,16 @@ export default async function Page() {
   if (!session) redirect("/portal/login?next=/portal/analytics");
   if (session.role !== "admin") redirect("/portal/client");
 
-  const [data, heroSlides] = await Promise.all([
+  const [data, heroSlides, heroSettings] = await Promise.all([
     getAnalyticsDashboardData(),
     listHeroSlides(),
+    getHeroSettings("agriculture"),
   ]);
-  return <AnalyticsDashboardPage data={data} heroSlides={heroSlides} />;
+  return (
+    <AnalyticsDashboardPage
+      data={data}
+      heroSlides={heroSlides}
+      heroSettings={heroSettings}
+    />
+  );
 }

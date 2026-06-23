@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth/api-guard";
 import {
   createHeroSlide,
+  getHeroSettings,
   listHeroSlides,
   revalidateHeroSlides,
 } from "@/lib/hero-slides/server";
@@ -29,8 +30,11 @@ export async function GET(request: Request) {
   if (!auth.ok) return auth.response;
 
   const page = resolveHeroPage(new URL(request.url).searchParams.get("page"));
-  const slides = await listHeroSlides(page);
-  return NextResponse.json({ ok: true, page, slides });
+  const [slides, settings] = await Promise.all([
+    listHeroSlides(page),
+    getHeroSettings(page),
+  ]);
+  return NextResponse.json({ ok: true, page, slides, settings });
 }
 
 // POST /api/admin/hero-slides — multipart upload of a new slide.

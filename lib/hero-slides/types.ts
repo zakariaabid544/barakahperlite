@@ -68,3 +68,46 @@ export type HeroCarouselSlide = {
   imageUrl: string;
   title: string | null;
 };
+
+// ---- Per-page hero display settings -------------------------------------
+
+export type HeroMode = "carousel" | "fixed";
+
+export type HeroSettingsDTO = {
+  mode: HeroMode;
+  showArrows: boolean;
+  autoplay: boolean;
+  intervalMs: number;
+};
+
+export const HERO_INTERVAL_OPTIONS = [3000, 5000, 7000, 10000] as const;
+
+export const DEFAULT_HERO_SETTINGS: HeroSettingsDTO = {
+  mode: "carousel",
+  showArrows: true,
+  autoplay: true,
+  intervalMs: 5000,
+};
+
+// Coerce arbitrary input (DB row or request body) into valid settings,
+// falling back to defaults for anything missing or invalid.
+export function normalizeHeroSettings(input: unknown): HeroSettingsDTO {
+  const data = (input ?? {}) as Record<string, unknown>;
+  const interval =
+    typeof data.intervalMs === "number" ? data.intervalMs : Number.NaN;
+
+  return {
+    mode: data.mode === "fixed" ? "fixed" : "carousel",
+    showArrows:
+      typeof data.showArrows === "boolean"
+        ? data.showArrows
+        : DEFAULT_HERO_SETTINGS.showArrows,
+    autoplay:
+      typeof data.autoplay === "boolean"
+        ? data.autoplay
+        : DEFAULT_HERO_SETTINGS.autoplay,
+    intervalMs: (HERO_INTERVAL_OPTIONS as readonly number[]).includes(interval)
+      ? interval
+      : DEFAULT_HERO_SETTINGS.intervalMs,
+  };
+}

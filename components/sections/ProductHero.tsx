@@ -7,8 +7,10 @@ import { HeroCarousel } from "@/components/sections/HeroCarousel";
 import { MoroccanPatternBackground } from "@/components/ui/MoroccanPatternBackground";
 import { contact } from "@/data/site";
 import {
+  DEFAULT_HERO_SETTINGS,
   heroFallbackImage,
   type HeroCarouselSlide,
+  type HeroSettingsDTO,
 } from "@/lib/hero-slides/types";
 import { useI18n } from "@/lib/i18n";
 import type { Locale } from "@/types/i18n";
@@ -28,8 +30,10 @@ const heroTitleLines: Partial<Record<Locale, string[]>> = {
 
 export function ProductHero({
   heroSlides = [],
+  heroSettings = DEFAULT_HERO_SETTINGS,
 }: {
   heroSlides?: HeroCarouselSlide[];
+  heroSettings?: HeroSettingsDTO;
 }) {
   const { locale, t } = useI18n();
   const isArabic = locale === "ar";
@@ -51,6 +55,7 @@ export function ProductHero({
           <HeroCarousel
             slides={heroSlides}
             fallbackSrc={heroFallbackImage("produit")}
+            settings={heroSettings}
           />
         </div>
       </div>
@@ -69,12 +74,12 @@ export function ProductHero({
 
       <div
         dir="ltr"
-        className="relative z-[4] mx-auto flex w-full max-w-[1500px] flex-col justify-end px-5 pb-0 sm:px-6 lg:px-[5%]"
+        className="pointer-events-none relative z-[4] mx-auto flex w-full max-w-[1500px] flex-col justify-end px-5 pb-0 sm:px-6 lg:px-[5%]"
       >
         <div className="flex flex-1 items-center py-9 md:py-12 lg:py-24">
           <div
             dir={heroTextDirection}
-            className={`min-w-0 max-w-[540px] ${heroTextAlign} md:max-w-[560px] lg:max-w-[500px] xl:max-w-[600px]`}
+            className={`pointer-events-auto min-w-0 max-w-[540px] ${heroTextAlign} md:max-w-[560px] lg:max-w-[500px] xl:max-w-[600px]`}
           >
             <div data-hero-eyebrow className="mb-6 h-0.5 w-12 bg-[#16C85F] md:mb-7" />
             <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#16C85F]">
@@ -151,6 +156,7 @@ export function ProductHero({
               <HeroCarousel
                 slides={heroSlides}
                 fallbackSrc={heroFallbackImage("produit")}
+                settings={heroSettings}
               />
               <div className="absolute left-4 top-4 z-20 rounded-full border border-white/12 bg-[#020806]/58 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50/88 backdrop-blur-md">
                 {t.product.header.eyebrow}
