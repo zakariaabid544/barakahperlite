@@ -1,4 +1,5 @@
 import { GreenSpacePageContent } from "@/components/pages/TranslatedPages";
+import { getActiveHeroSlides } from "@/lib/hero-slides/server";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -14,6 +15,9 @@ export const metadata = createMetadata({
   ],
 });
 
-export default function GreenSpacePage() {
-  return <GreenSpacePageContent />;
+export const revalidate = 60;
+
+export default async function GreenSpacePage() {
+  const heroSlides = await getActiveHeroSlides("green-space");
+  return <GreenSpacePageContent heroSlides={heroSlides} />;
 }

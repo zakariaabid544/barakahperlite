@@ -4,12 +4,12 @@ import {
   reorderHeroSlides,
   revalidateHeroSlides,
 } from "@/lib/hero-slides/server";
-import { HERO_AGRICULTURE_PAGE } from "@/lib/hero-slides/types";
+import { resolveHeroPage } from "@/lib/hero-slides/types";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-// POST /api/admin/hero-slides/reorder — body: { ids: string[] } in new order.
+// POST /api/admin/hero-slides/reorder — body: { page, ids: string[] } in order.
 export async function POST(request: Request) {
   const auth = await requireAdmin();
   if (!auth.ok) return auth.response;
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    await reorderHeroSlides(HERO_AGRICULTURE_PAGE, ids as string[]);
+    await reorderHeroSlides(resolveHeroPage(body.page), ids as string[]);
     revalidateHeroSlides();
     return NextResponse.json({ ok: true });
   } catch (error) {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowDown,
   ArrowUp,
@@ -11,32 +11,70 @@ import {
   Trash2,
   Upload,
 } from "lucide-react";
-import type { HeroSlideDTO } from "@/lib/hero-slides/types";
+import {
+  HERO_PAGES,
+  type HeroPageKey,
+  type HeroSlideDTO,
+} from "@/lib/hero-slides/types";
 
 const ENDPOINT = "/api/admin/hero-slides";
 
 type HeroImagesManagerProps = {
+  // Slides for the default page (agriculture), rendered without a refetch.
   initialSlides: HeroSlideDTO[];
 };
 
 export function HeroImagesManager({ initialSlides }: HeroImagesManagerProps) {
+  const [page, setPage] = useState<HeroPageKey>("agriculture");
   const [slides, setSlides] = useState<HeroSlideDTO[]>(initialSlides);
   const [title, setTitle] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [pendingId, setPendingId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const firstRender = useRef(true);
 
   const activeCount = slides.filter((slide) => slide.isActive).length;
 
-  async function refresh() {
-    const response = await fetch(ENDPOINT, { cache: "no-store" });
-    const payload = await response.json().catch(() => null);
-    if (response.ok && payload?.ok) {
-      setSlides(payload.slides as HeroSlideDTO[]);
+  async function loadPage(target: HeroPageKey) {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(`${ENDPOINT}?page=${target}`, {
+        cache: "no-store",
+      });
+      const payload = await response.json().catch(() => null);
+      if (response.ok && payload?.ok) {
+        setSlides(payload.slides as HeroSlideDTO[]);
+      } else {
+        setSlides([]);
+        setError(payload?.message ?? "Échec du chargement des images.");
+      }
+    } catch {
+      setSlides([]);
+      setError("Erreur réseau pendant le chargement.");
+    } finally {
+      setLoading(false);
     }
+  }
+
+  // Reload whenever the selected page changes; the first render already has the
+  // agriculture slides from the server, so skip it.
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+    resetForm();
+    void loadPage(page);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
+
+  async function refresh() {
+    await loadPage(page);
   }
 
   function onSelectFile(selected: File | null) {
@@ -60,6 +98,7 @@ export function HeroImagesManager({ initialSlides }: HeroImagesManagerProps) {
     setError(null);
     try {
       const body = new FormData();
+      body.append("page", page);
       body.append("file", file);
       if (title.trim()) body.append("title", title.trim());
 
@@ -129,7 +168,7 @@ export function HeroImagesManager({ initialSlides }: HeroImagesManagerProps) {
     const response = await fetch(`${ENDPOINT}/reorder`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ids: next.map((slide) => slide.id) }),
+      body: JSON.stringify({ page, ids: next.map((slide) => slide.id) }),
     });
     if (!response.ok) {
       setError("Échec de la réorganisation.");
@@ -139,14 +178,13 @@ export function HeroImagesManager({ initialSlides }: HeroImagesManagerProps) {
 
   return (
     <section className="rounded-lg border border-white/10 bg-white/[0.045] p-5 shadow-glass">
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <h2 className="font-display text-xl text-perlite-50 md:text-2xl">
-            Images Hero Agriculture
+            Images Hero
           </h2>
           <p className="mt-1 text-sm text-silver-200/55">
-            {slides.length} image(s) · {activeCount} active(s). Ordre = ordre du
-            carrousel. Sans image active, l&apos;image par défaut est utilisée.
+            Les images affichées dépendent de la page sélectionnée.
           </p>
         </div>
         <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-atlas-sand/20 text-atlas-sand">
@@ -154,10 +192,37 @@ export function HeroImagesManager({ initialSlides }: HeroImagesManagerProps) {
         </span>
       </div>
 
+      {/* Page selector */}
+      <div className="mt-5 flex flex-wrap items-center gap-3">
+        <label
+          htmlFor="hero-page"
+          className="text-xs font-semibold uppercase tracking-[0.18em] text-atlas-sand"
+        >
+          Page
+        </label>
+        <select
+          id="hero-page"
+          value={page}
+          onChange={(event) => setPage(event.target.value as HeroPageKey)}
+          className="rounded-md border border-white/10 bg-basalt-950/70 px-3 py-2 text-sm font-semibold text-perlite-50 outline-none focus:border-agritech-emerald/50"
+        >
+          {HERO_PAGES.map((entry) => (
+            <option key={entry.key} value={entry.key}>
+              {entry.label}
+            </option>
+          ))}
+        </select>
+        <span className="text-sm text-silver-200/55">
+          {loading
+            ? "Chargement…"
+            : `${slides.length} image(s) · ${activeCount} active(s)`}
+        </span>
+      </div>
+
       {/* Upload form */}
       <form
         onSubmit={handleUpload}
-        className="mt-5 grid gap-4 rounded-md border border-white/10 bg-basalt-950/55 p-4 sm:grid-cols-[auto_1fr_auto] sm:items-end"
+        className="mt-4 grid gap-4 rounded-md border border-white/10 bg-basalt-950/55 p-4 sm:grid-cols-[auto_1fr_auto] sm:items-end"
       >
         <div className="grid gap-2">
           <span className="text-xs font-semibold uppercase tracking-[0.18em] text-silver-200/60">
@@ -181,7 +246,7 @@ export function HeroImagesManager({ initialSlides }: HeroImagesManagerProps) {
 
         <div className="grid gap-3">
           <label className="grid gap-2 text-sm font-semibold text-silver-200/75">
-            Image (JPEG, PNG, WebP, AVIF — max 8 Mo)
+            Image (JPEG, JPG, PNG, WebP, AVIF — max 8 Mo)
             <input
               ref={fileInputRef}
               type="file"
@@ -189,6 +254,9 @@ export function HeroImagesManager({ initialSlides }: HeroImagesManagerProps) {
               onChange={(event) => onSelectFile(event.target.files?.[0] ?? null)}
               className="block w-full text-sm text-silver-200/70 file:mr-4 file:rounded-md file:border-0 file:bg-agritech-emerald/20 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-agritech-emerald hover:file:bg-agritech-emerald/30"
             />
+            <span className="text-xs font-normal text-silver-200/45">
+              Format recommandé : 1920 × 2400 px — ratio 4:5 — WebP recommandé.
+            </span>
           </label>
           <label className="grid gap-2 text-sm font-semibold text-silver-200/75">
             Titre (optionnel — usage interne)
@@ -230,8 +298,8 @@ export function HeroImagesManager({ initialSlides }: HeroImagesManagerProps) {
       <ul className="mt-5 grid gap-3">
         {slides.length === 0 ? (
           <li className="rounded-md border border-dashed border-white/12 px-4 py-8 text-center text-sm text-silver-200/55">
-            Aucune image. L&apos;image par défaut est affichée sur la page
-            Agriculture.
+            Aucune image pour cette page. L&apos;image par défaut de la page est
+            affichée.
           </li>
         ) : (
           slides.map((slide, index) => (

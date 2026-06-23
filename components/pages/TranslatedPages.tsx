@@ -22,6 +22,7 @@ import { Hero } from "@/components/sections/Hero";
 import { HeroCarousel } from "@/components/sections/HeroCarousel";
 import {
   HERO_FALLBACK_IMAGE,
+  heroFallbackImage,
   type HeroCarouselSlide,
 } from "@/lib/hero-slides/types";
 import { ApplicationCard } from "@/components/ui/ApplicationCard";
@@ -1804,11 +1805,15 @@ export function HomePageContent() {
   );
 }
 
-export function ProductPageContent() {
+export function ProductPageContent({
+  heroSlides = [],
+}: {
+  heroSlides?: HeroCarouselSlide[];
+}) {
   return (
     <div data-product-page className="overflow-hidden">
       <ProductGsapPrototype />
-      <ProductHero />
+      <ProductHero heroSlides={heroSlides} />
 
       <ProductCommercialIntro />
       <ProductApplicationsShowcase />
@@ -2887,13 +2892,22 @@ function AgricultureFinalCta({ copy }: { copy: AgricultureCommercialCopy }) {
   );
 }
 
-export function GreenSpacePageContent() {
+export function GreenSpacePageContent({
+  heroSlides = [],
+}: {
+  heroSlides?: HeroCarouselSlide[];
+}) {
   const { locale, t } = useI18n();
   const copy = greenSpaceContent[locale];
 
   return (
     <div data-green-space-page className="overflow-hidden bg-[#020806]">
-      <GreenSpaceHero copy={copy} quoteLabel={t.common.quoteRequest} locale={locale} />
+      <GreenSpaceHero
+        copy={copy}
+        quoteLabel={t.common.quoteRequest}
+        locale={locale}
+        heroSlides={heroSlides}
+      />
       <GreenSpaceBenefits copy={copy} />
       <GreenSpaceUseCases copy={copy} />
       <GreenSpaceFinalCta copy={copy} quoteLabel={t.common.quoteRequest} />
@@ -2905,10 +2919,12 @@ function GreenSpaceHero({
   copy,
   quoteLabel,
   locale,
+  heroSlides,
 }: {
   copy: GreenSpaceCopy;
   quoteLabel: string;
   locale: Locale;
+  heroSlides: HeroCarouselSlide[];
 }) {
   const isArabic = locale === "ar";
 
@@ -2955,36 +2971,12 @@ function GreenSpaceHero({
           data-gsap-card
           className="relative min-h-[245px] min-w-0 max-w-[calc(100vw-2rem)] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[#07110E]/72 shadow-[0_28px_90px_rgba(0,0,0,0.42)] backdrop-blur-xl sm:min-h-[300px] md:min-h-[520px] md:shadow-[0_42px_140px_rgba(0,0,0,0.44)] lg:max-w-none lg:min-h-[580px] 2xl:min-h-[620px]"
         >
-          <Image
-            src="/images/green-space-perlite-seedlings.png"
-            alt=""
-            aria-hidden="true"
-            fill
-            priority
-            sizes="(min-width: 1024px) 52vw, 100vw"
-            className="object-cover object-center opacity-90 md:opacity-[0.84]"
+          <HeroCarousel
+            slides={heroSlides}
+            fallbackSrc={heroFallbackImage("green-space")}
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,6,0.06)_0%,rgba(2,8,6,0.18)_48%,rgba(2,8,6,0.7)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_62%_28%,rgba(22,200,95,0.14),transparent_34%),linear-gradient(90deg,rgba(2,8,6,0.18)_0%,transparent_46%,rgba(2,8,6,0.24)_100%)]" />
-          <div className="absolute left-4 top-4 rounded-full border border-white/14 bg-[#020806]/56 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50/88 backdrop-blur-md md:left-7 md:top-7 md:px-4 md:text-[0.65rem] md:font-bold md:tracking-[0.2em]">
+          <div className="absolute left-4 top-4 z-20 rounded-full border border-white/14 bg-[#020806]/56 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50/88 backdrop-blur-md md:left-7 md:top-7 md:px-4 md:text-[0.65rem] md:font-bold md:tracking-[0.2em]">
             {copy.promise.eyebrow}
-          </div>
-          <div className="absolute inset-x-5 bottom-5 md:inset-x-7 md:bottom-7">
-            <h2 className="max-w-[17ch] break-words font-display text-[1.16rem] font-semibold leading-snug tracking-[-0.015em] text-perlite-50 md:max-w-lg md:text-4xl md:font-bold">
-              {copy.promise.title}
-            </h2>
-            <div className="mt-5 hidden gap-3 sm:grid-cols-3 md:grid">
-              {copy.promise.features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="rounded-[0.75rem] border border-white/12 bg-[#020806]/62 p-4 backdrop-blur-md"
-                >
-                  <p className="font-display text-lg font-bold leading-snug tracking-[-0.01em] text-white">
-                    {feature.title}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>

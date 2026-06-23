@@ -1,11 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AnimatedParticles } from "@/components/ui/AnimatedParticles";
+import { HeroCarousel } from "@/components/sections/HeroCarousel";
 import { MoroccanPatternBackground } from "@/components/ui/MoroccanPatternBackground";
 import { contact } from "@/data/site";
+import {
+  heroFallbackImage,
+  type HeroCarouselSlide,
+} from "@/lib/hero-slides/types";
 import { useI18n } from "@/lib/i18n";
 import type { Locale } from "@/types/i18n";
 
@@ -16,20 +20,17 @@ const heroTaglines: Record<Locale, string> = {
   ar: "خفيف. طبيعي. عالي الأداء.",
 };
 
-const mobileImageHeadlines: Record<Locale, string> = {
-  fr: "Perlite expansée du Maroc.",
-  en: "Expanded perlite from Morocco.",
-  nl: "Geëxpandeerd perliet uit Marokko.",
-  ar: "بيرلايت مغربي ممدد.",
-};
-
 const heroTitleLines: Partial<Record<Locale, string[]>> = {
   en: ["Moroccan expanded", "perlite for agriculture,", "industry and export."],
   nl: ["Marokkaans geëxpandeerd", "perliet voor landbouw,", "industrie en export."],
   ar: ["بيرلايت مغربي ممدد", "للزراعة والصناعة", "والتصدير."],
 };
 
-export function ProductHero() {
+export function ProductHero({
+  heroSlides = [],
+}: {
+  heroSlides?: HeroCarouselSlide[];
+}) {
   const { locale, t } = useI18n();
   const isArabic = locale === "ar";
   const heroTextDirection = isArabic ? "rtl" : "ltr";
@@ -45,16 +46,11 @@ export function ProductHero() {
       <div data-hero-image className="absolute inset-0 z-[2] will-change-transform">
         <div
           data-soft-parallax
-          className="pointer-events-none absolute bottom-[12%] right-[4%] top-[14%] hidden w-[44%] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[#07110E]/72 shadow-[0_42px_140px_rgba(0,0,0,0.46)] backdrop-blur-xl md:block lg:right-[5%] xl:right-[6%] xl:w-[42%]"
+          className="absolute bottom-[12%] right-[4%] top-[14%] hidden w-[44%] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[#07110E]/72 shadow-[0_42px_140px_rgba(0,0,0,0.46)] backdrop-blur-xl md:block lg:right-[5%] xl:right-[6%] xl:w-[42%]"
         >
-          <Image
-            src="/images/barakah-hero-plant.jpg"
-            alt=""
-            aria-hidden="true"
-            fill
-            priority
-            sizes="(min-width: 1280px) 46vw, (min-width: 768px) 50vw, 100vw"
-            className="object-cover object-center"
+          <HeroCarousel
+            slides={heroSlides}
+            fallbackSrc={heroFallbackImage("produit")}
           />
         </div>
       </div>
@@ -152,24 +148,12 @@ export function ProductHero() {
               data-gsap-card
               className="relative mt-7 min-h-[245px] overflow-hidden rounded-[0.65rem] border border-white/10 bg-[#07110E]/72 shadow-[0_28px_90px_rgba(0,0,0,0.42)] backdrop-blur-xl sm:min-h-[300px] md:hidden"
             >
-              <Image
-                src="/images/barakah-hero-plant.jpg"
-                alt=""
-                aria-hidden="true"
-                fill
-                priority
-                sizes="100vw"
-                className="object-cover object-center"
+              <HeroCarousel
+                slides={heroSlides}
+                fallbackSrc={heroFallbackImage("produit")}
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,6,0.05)_0%,rgba(2,8,6,0.2)_58%,rgba(2,8,6,0.58)_100%)]" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_66%_24%,rgba(22,200,95,0.12),transparent_32%),linear-gradient(90deg,rgba(2,8,6,0.24)_0%,transparent_42%,rgba(2,8,6,0.18)_100%)]" />
-              <div className="absolute left-4 top-4 rounded-full border border-white/12 bg-[#020806]/58 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50/88 backdrop-blur-md">
+              <div className="absolute left-4 top-4 z-20 rounded-full border border-white/12 bg-[#020806]/58 px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-perlite-50/88 backdrop-blur-md">
                 {t.product.header.eyebrow}
-              </div>
-              <div className={`absolute inset-x-5 bottom-5 ${isArabic ? "text-right" : "text-left"}`}>
-                <h2 className="max-w-[16ch] break-words font-display text-[1.22rem] font-semibold leading-snug tracking-[-0.015em] text-perlite-50">
-                  {mobileImageHeadlines[locale]}
-                </h2>
               </div>
             </div>
           </div>

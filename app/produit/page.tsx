@@ -1,4 +1,5 @@
 import { ProductPageContent } from "@/components/pages/TranslatedPages";
+import { getActiveHeroSlides } from "@/lib/hero-slides/server";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -9,6 +10,9 @@ export const metadata = createMetadata({
   keywords: ["perlite expansée Maroc", "perlite agricole", "perlite industrielle"],
 });
 
-export default function ProductPage() {
-  return <ProductPageContent />;
+export const revalidate = 60;
+
+export default async function ProductPage() {
+  const heroSlides = await getActiveHeroSlides("produit");
+  return <ProductPageContent heroSlides={heroSlides} />;
 }

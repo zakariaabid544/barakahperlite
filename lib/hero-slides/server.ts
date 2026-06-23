@@ -4,11 +4,10 @@ import { revalidatePath } from "next/cache";
 import { getPrisma } from "@/lib/db";
 import {
   HERO_AGRICULTURE_PAGE,
+  HERO_PAGES,
   type HeroCarouselSlide,
   type HeroSlideDTO,
 } from "@/lib/hero-slides/types";
-
-const AGRICULTURE_PATH = "/agriculture";
 
 type HeroSlideRow = {
   id: string;
@@ -137,7 +136,11 @@ export async function reorderHeroSlides(
   );
 }
 
-// Call after any mutation so the public Agriculture hero refreshes immediately.
+// Call after any mutation so the affected public hero refreshes immediately.
+// Mutations by id don't always carry the page, so we purge every hero route —
+// each is a cheap, on-demand revalidation triggered only by admin actions.
 export function revalidateHeroSlides() {
-  revalidatePath(AGRICULTURE_PATH);
+  for (const page of HERO_PAGES) {
+    revalidatePath(`/${page.key}`);
+  }
 }

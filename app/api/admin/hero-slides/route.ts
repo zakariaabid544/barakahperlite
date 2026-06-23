@@ -5,7 +5,7 @@ import {
   listHeroSlides,
   revalidateHeroSlides,
 } from "@/lib/hero-slides/server";
-import { HERO_AGRICULTURE_PAGE } from "@/lib/hero-slides/types";
+import { resolveHeroPage } from "@/lib/hero-slides/types";
 import {
   describeBlobEnv,
   isBlobConfigured,
@@ -23,13 +23,14 @@ const ALLOWED_MIME = new Set([
   "image/avif",
 ]);
 
-// GET /api/admin/hero-slides — list every slide (admin dashboard).
-export async function GET() {
+// GET /api/admin/hero-slides?page=<key> — list every slide for one page.
+export async function GET(request: Request) {
   const auth = await requireAdmin();
   if (!auth.ok) return auth.response;
 
-  const slides = await listHeroSlides(HERO_AGRICULTURE_PAGE);
-  return NextResponse.json({ ok: true, slides });
+  const page = resolveHeroPage(new URL(request.url).searchParams.get("page"));
+  const slides = await listHeroSlides(page);
+  return NextResponse.json({ ok: true, page, slides });
 }
 
 // POST /api/admin/hero-slides — multipart upload of a new slide.
@@ -64,6 +65,7 @@ export async function POST(request: Request) {
     );
   }
 
+  const page = resolveHeroPage(form.get("page"));
   const file = form.get("file");
   const rawTitle = form.get("title");
   const title =
@@ -93,7 +95,7 @@ export async function POST(request: Request) {
   try {
     const { url, key } = await uploadHeroImage(file);
     const slide = await createHeroSlide({
-      page: HERO_AGRICULTURE_PAGE,
+      page,
       imageUrl: url,
       storageKey: key,
       title,
